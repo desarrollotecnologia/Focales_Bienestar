@@ -24,7 +24,7 @@ Sistema web para reemplazar el seguimiento de **Grupos Focales** que hoy se llev
 5. `scripts\dev.bat` — desarrollo  
    o `scripts\start.bat` — producción local
 
-Login: **coordinacion.gestionhumana@colbeef.com** / **Colbeef2026***
+Las credenciales de acceso se configuran en el seed / base de datos (no se documentan aquí).
 
 ## Vistas
 

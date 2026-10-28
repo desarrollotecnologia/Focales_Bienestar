@@ -35,8 +35,7 @@ if %errorlevel% neq 0 goto :error
 
 cd ..
 echo.
-echo Base lista.
-echo Usuario: coordinacion.gestionhumana@colbeef.com
+echo Base lista. Credenciales de acceso: ver con el administrador del sistema.
 pause
 exit /b 0
 
