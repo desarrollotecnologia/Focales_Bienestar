@@ -1,0 +1,3658 @@
+{
+  "areas": [
+    "Administración",
+    "Ambiental",
+    "Calidad",
+    "Corrales",
+    "Limpieza y Desinfección",
+    "Logística",
+    "Línea",
+    "PCCOM",
+    "SST"
+  ],
+  "categorias": [
+    "Calidad e Inocuidad",
+    "Compras y Servicios",
+    "Dirección",
+    "Dirección/Administración",
+    "Gestión Humana",
+    "Jurídica",
+    "Liderazgo",
+    "Mantenimiento",
+    "Nómina",
+    "Operaciones",
+    "Operaciones y Mantenimiento",
+    "Planillaje",
+    "SST",
+    "Tecnología"
+  ],
+  "subcategorias": [
+    {
+      "categoria": "Calidad e Inocuidad",
+      "nombre": "Control de Plagas"
+    },
+    {
+      "categoria": "Compras y Servicios",
+      "nombre": "Procesos y Comunicación"
+    },
+    {
+      "categoria": "Dirección",
+      "nombre": "Estructura organizacional"
+    },
+    {
+      "categoria": "Dirección",
+      "nombre": "Liderazgo"
+    },
+    {
+      "categoria": "Dirección",
+      "nombre": "Planeación de proceso"
+    },
+    {
+      "categoria": "Dirección/Administración",
+      "nombre": "Infraestructura Vial"
+    },
+    {
+      "categoria": "Gestión Humana",
+      "nombre": "Acompañamiento"
+    },
+    {
+      "categoria": "Gestión Humana",
+      "nombre": "Actividades Bienestar"
+    },
+    {
+      "categoria": "Gestión Humana",
+      "nombre": "Beneficios"
+    },
+    {
+      "categoria": "Gestión Humana",
+      "nombre": "Bienestar y Salario Emocional"
+    },
+    {
+      "categoria": "Gestión Humana",
+      "nombre": "Carga Laboral y Estructura"
+    },
+    {
+      "categoria": "Gestión Humana",
+      "nombre": "Clima Laboral"
+    },
+    {
+      "categoria": "Gestión Humana",
+      "nombre": "Clima laboral"
+    },
+    {
+      "categoria": "Gestión Humana",
+      "nombre": "Clima laboral y Desempeño"
+    },
+    {
+      "categoria": "Gestión Humana",
+      "nombre": "Compensaciones"
+    },
+    {
+      "categoria": "Gestión Humana",
+      "nombre": "Comunicación"
+    },
+    {
+      "categoria": "Gestión Humana",
+      "nombre": "Comunicación Interna"
+    },
+    {
+      "categoria": "Gestión Humana",
+      "nombre": "Contratación"
+    },
+    {
+      "categoria": "Gestión Humana",
+      "nombre": "Convivencia y Bienestar"
+    },
+    {
+      "categoria": "Gestión Humana",
+      "nombre": "Cultura Organizacional"
+    },
+    {
+      "categoria": "Gestión Humana",
+      "nombre": "Cultura Organizacional y Capacitación"
+    },
+    {
+      "categoria": "Gestión Humana",
+      "nombre": "Estructura de Personal"
+    },
+    {
+      "categoria": "Gestión Humana",
+      "nombre": "Estructura organizacional"
+    },
+    {
+      "categoria": "Gestión Humana",
+      "nombre": "Liderazgo y Clima"
+    },
+    {
+      "categoria": "Gestión Humana",
+      "nombre": "SST"
+    },
+    {
+      "categoria": "Gestión Humana",
+      "nombre": "Selección"
+    },
+    {
+      "categoria": "Gestión Humana",
+      "nombre": "Selección y Desempeño"
+    },
+    {
+      "categoria": "Gestión Humana",
+      "nombre": "Servicios / Alimentación"
+    },
+    {
+      "categoria": "Gestión Humana",
+      "nombre": "Servicios Generales"
+    },
+    {
+      "categoria": "Jurídica",
+      "nombre": "Procesos Disciplinarios"
+    },
+    {
+      "categoria": "Liderazgo",
+      "nombre": "Equipos y Herramientas"
+    },
+    {
+      "categoria": "Liderazgo",
+      "nombre": "Planificación de Vacaciones"
+    },
+    {
+      "categoria": "Liderazgo",
+      "nombre": "Políticas"
+    },
+    {
+      "categoria": "Mantenimiento",
+      "nombre": "Condiciones Ambientales (SST)"
+    },
+    {
+      "categoria": "Mantenimiento",
+      "nombre": "Desempeño"
+    },
+    {
+      "categoria": "Mantenimiento",
+      "nombre": "Equipos y Herramientas"
+    },
+    {
+      "categoria": "Mantenimiento",
+      "nombre": "Herramientas e Insumos"
+    },
+    {
+      "categoria": "Mantenimiento",
+      "nombre": "Infraestructura"
+    },
+    {
+      "categoria": "Mantenimiento",
+      "nombre": "Inspecciones (SST)"
+    },
+    {
+      "categoria": "Mantenimiento",
+      "nombre": "Maquinaria y Proceso"
+    },
+    {
+      "categoria": "Mantenimiento",
+      "nombre": "Planeación de proceso"
+    },
+    {
+      "categoria": "Mantenimiento",
+      "nombre": "Proveedores"
+    },
+    {
+      "categoria": "Mantenimiento",
+      "nombre": "Saneamiento Básico"
+    },
+    {
+      "categoria": "Nómina",
+      "nombre": "Beneficios"
+    },
+    {
+      "categoria": "Nómina",
+      "nombre": "Capacitación y Formación"
+    },
+    {
+      "categoria": "Nómina",
+      "nombre": "Compensaciones"
+    },
+    {
+      "categoria": "Nómina",
+      "nombre": "Estructura Salarial"
+    },
+    {
+      "categoria": "Operaciones",
+      "nombre": "Almacenamiento Operativo"
+    },
+    {
+      "categoria": "Operaciones",
+      "nombre": "Almacenamiento y Cavas"
+    },
+    {
+      "categoria": "Operaciones",
+      "nombre": "Apoyos temporales"
+    },
+    {
+      "categoria": "Operaciones",
+      "nombre": "Bienestar"
+    },
+    {
+      "categoria": "Operaciones",
+      "nombre": "Comidas"
+    },
+    {
+      "categoria": "Operaciones",
+      "nombre": "Compensaciones"
+    },
+    {
+      "categoria": "Operaciones",
+      "nombre": "Comunicación"
+    },
+    {
+      "categoria": "Operaciones",
+      "nombre": "Distribución de Espacios"
+    },
+    {
+      "categoria": "Operaciones",
+      "nombre": "Equipos de Comunicación"
+    },
+    {
+      "categoria": "Operaciones",
+      "nombre": "Equipos y Herramientas"
+    },
+    {
+      "categoria": "Operaciones",
+      "nombre": "Herramientas e Insumos"
+    },
+    {
+      "categoria": "Operaciones",
+      "nombre": "Infraestructura"
+    },
+    {
+      "categoria": "Operaciones",
+      "nombre": "Liderazgo"
+    },
+    {
+      "categoria": "Operaciones",
+      "nombre": "Planeación de proceso"
+    },
+    {
+      "categoria": "Operaciones",
+      "nombre": "SST"
+    },
+    {
+      "categoria": "Operaciones",
+      "nombre": "Servicios al personal"
+    },
+    {
+      "categoria": "Operaciones y Mantenimiento",
+      "nombre": "Herramientas e Insumos"
+    },
+    {
+      "categoria": "Planillaje",
+      "nombre": "Planeación de proceso"
+    },
+    {
+      "categoria": "SST",
+      "nombre": "Acompañamiento"
+    },
+    {
+      "categoria": "SST",
+      "nombre": "Acompañamiento y Elementos de Protección Personal (EPP)"
+    },
+    {
+      "categoria": "SST",
+      "nombre": "Control de Accesos"
+    },
+    {
+      "categoria": "SST",
+      "nombre": "Cultura de Higiene"
+    },
+    {
+      "categoria": "SST",
+      "nombre": "Dotación"
+    },
+    {
+      "categoria": "SST",
+      "nombre": "Elementos de Protección Personal (EPP)"
+    },
+    {
+      "categoria": "SST",
+      "nombre": "Emergencias y Prevención"
+    },
+    {
+      "categoria": "SST",
+      "nombre": "Equipos y Herramientas"
+    },
+    {
+      "categoria": "SST",
+      "nombre": "Gestión Preventiva"
+    },
+    {
+      "categoria": "SST",
+      "nombre": "Inspecciones (SST)"
+    },
+    {
+      "categoria": "SST",
+      "nombre": "Locativo y Riesgo Mecánico"
+    },
+    {
+      "categoria": "SST",
+      "nombre": "Manejo de Sustancias Químicas"
+    },
+    {
+      "categoria": "SST",
+      "nombre": "Proveedores"
+    },
+    {
+      "categoria": "SST",
+      "nombre": "Puntos de Higiene y EPP"
+    },
+    {
+      "categoria": "SST",
+      "nombre": "Riesgo Locativo"
+    },
+    {
+      "categoria": "SST",
+      "nombre": "Señalización"
+    },
+    {
+      "categoria": "Tecnología",
+      "nombre": "Equipos y Herramientas"
+    },
+    {
+      "categoria": "Tecnología",
+      "nombre": "Herramientas TI"
+    }
+  ],
+  "responsables": [
+    "Administración",
+    "Calidad",
+    "Comercial",
+    "Comité Directivo",
+    "Compras",
+    "Dir. Comercial",
+    "Dirección",
+    "Dirección - GG",
+    "Dirección Comercial",
+    "Dirección Operaciones",
+    "Dirección Planta",
+    "Dirección de Planta",
+    "Equipo Comercial",
+    "Equipo Compras",
+    "Equipo Logística",
+    "Equipo Operaciones",
+    "Equipo SST",
+    "Especialista PMO",
+    "Gestión Humana",
+    "Jefe de Planta",
+    "Jefe de Producción",
+    "Jefe de producción",
+    "Jurídica",
+    "Líder Ambiental",
+    "Líder Beneficio",
+    "Líder Corrales",
+    "Líder L&D",
+    "Líder Logística",
+    "Líder LyD",
+    "Líder SST",
+    "Líderes",
+    "Mantenimiento",
+    "Nómina",
+    "Operaciones",
+    "PMO",
+    "Planillaje",
+    "SST",
+    "Supervisor Limpieza y Desinfección",
+    "Supervisora LyD",
+    "Tecnología"
+  ],
+  "escala": {
+    "termometro": {
+      "POSITIVO": 100,
+      "MEDIO": 60,
+      "CRITICO": 20
+    },
+    "estados_area": [
+      {
+        "min": 85,
+        "max": 100,
+        "estado": "Excelente"
+      },
+      {
+        "min": 70,
+        "max": 84,
+        "estado": "Aceptable / Estable"
+      },
+      {
+        "min": 50,
+        "max": 69,
+        "estado": "En Riesgo / Alerta"
+      },
+      {
+        "min": 0,
+        "max": 49,
+        "estado": "Crítico / Vulnerable"
+      }
+    ]
+  },
+  "hallazgos": [
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-07-17",
+      "area": "Ambiental",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Clima laboral y Desempeño",
+      "termometro": "CRITICO",
+      "observacion": "Inconformidad persistente con el colaborador Cristian Carrascal: entrega inadecuada del puesto, actitud defensiva y falta de compañerismo.",
+      "compromiso": "Realizar intervención individual\ny definir plan de compromisos actitudinales y de desempeño.",
+      "responsables": [
+        "Líder Ambiental",
+        "Gestión Humana"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Programación de sesión de retroalimentación con Líder Ambiental, GH y el colaborador para formalizar acuerdo actitudinal bajo la metodología de 4 Tiempos.\n*El Líder Ambiental envió a GH la solicitud para el Asesoramiento Constructivo.\nÚLTIMA ACTUALIZACIÓN: Se realizó reunión para establecer compromisos (18/09/2026).\nNOVEDAD: No se ha registrado una evolución favorable en su desempeño ni cumplimiento. En consecuencia, debido a la reiteración de las fallas, se procederá a solicitar formalmente la apertura del proceso disciplinario ante Gestión Humana.",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-07-17",
+      "area": "Ambiental",
+      "categoria": "SST",
+      "subcategoria": "Elementos de Protección Personal (EPP)",
+      "termometro": "CRITICO",
+      "observacion": "Riesgo de salpicaduras en el rostro durante la operación y olores fuertes especialmente los días festivos.",
+      "compromiso": "Evaluar la entrega de protección facial (caretas) y tapabocas de alta eficiencia.",
+      "responsables": [
+        "Equipo SST",
+        "Líder Ambiental"
+      ],
+      "estado": "CERRADO",
+      "avances": "Solicitud en trámite, por parte del equipo de SST, para la asignación y entrega de impermeables de caucho y careta facial destinados a la operación de PTAR.\nSe cumplió con la entrega el 20/08/2026 (1 traje y 1 carilla).",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-07-17",
+      "area": "Ambiental",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "MEDIO",
+      "observacion": "Dificultades en el secado de prendas al aire libre (contaminación y afectación por aves/chulos).",
+      "compromiso": "Evaluar inclusión en lavandería de la empresa o adecuar un cuarto/espacio cubierto para secado.",
+      "responsables": [
+        "Dirección Planta",
+        "Líder Ambiental"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Inspección en sitio realizada por Dirección de Planta y Especialista PMO.\nEl Líder Ambiental adquiere compromiso de la solicitud ante Compras, para para iniciar cotización de la zona de secado (ubicada junto a la PTAR).\nNota: El Especialista PMO indica que aún no se ha realizado la inspección.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-07-17",
+      "area": "Ambiental",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "MEDIO",
+      "observacion": "Demora en la instalación del nuevo techo tras el retiro del anterior hace una semana.",
+      "compromiso": "Agilizar y finalizar el montaje del nuevo techo.",
+      "responsables": [
+        "Líder Ambiental",
+        "Mantenimiento"
+      ],
+      "estado": "CERRADO",
+      "avances": "Proceso de instalación del techo en la PTAR en curso, avanzando de manera gradual bajo seguimiento de la Dirección Operativa.\nÚLTIMA ACTUALIZACIÓN: Ya se cumplió con la instalación completa.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-07-17",
+      "area": "Ambiental",
+      "categoria": "Calidad e Inocuidad",
+      "subcategoria": "Control de Plagas",
+      "termometro": "MEDIO",
+      "observacion": "Proliferación de moscas en el vestier (área de consumo de alimentos).",
+      "compromiso": "Instalar lámpara atrapamoscas en la zona del vestier.",
+      "responsables": [
+        "Líder Ambiental",
+        "Calidad"
+      ],
+      "estado": "CERRADO",
+      "avances": "Ubicación aprobada por Dirección de Planta e INSUMMA. El área de  Mantenimiento ejecutará la instalación  tras recepción de insumos pendientes (Revisión por parte de Calidad con Compras).\nActualización: Ya fue instalada de la lámpara y se ha percibido la mejoría.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-07-17",
+      "area": "Ambiental",
+      "categoria": "Operaciones",
+      "subcategoria": "Comunicación",
+      "termometro": "MEDIO",
+      "observacion": "Falta de notificación oportuna sobre la finalización de la jornada de beneficio (\"matada\").",
+      "compromiso": "Establecer canal formal de notificación inmediata desde Beneficio al finalizar la faena.",
+      "responsables": [
+        "Líder Ambiental",
+        "Líder Beneficio"
+      ],
+      "estado": "CERRADO",
+      "avances": "Se realiza la notificación oportuna desde Beneficio.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-07-17",
+      "area": "Ambiental",
+      "categoria": "Nómina",
+      "subcategoria": "Capacitación y Formación",
+      "termometro": "MEDIO",
+      "observacion": "Inquietudes del personal respecto a los desprendibles y conceptos de nómina.",
+      "compromiso": "Programar espacio de capacitación en lectura de nómina.",
+      "responsables": [
+        "Gestión Humana",
+        "Nómina"
+      ],
+      "estado": "CERRADO",
+      "avances": "Capacitación agendada y ejecutada el viernes, 21 de agosto.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-07-17",
+      "area": "Ambiental",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "POSITIVO",
+      "observacion": "Avances logrados:\nInstalación del portabotas y del piso criba.",
+      "compromiso": "Mantener seguimiento a la funcionalidad de los elementos instalados.",
+      "responsables": [
+        "Mantenimiento",
+        "Líder Ambiental"
+      ],
+      "estado": "CERRADO",
+      "avances": "",
+      "calificacion": 100
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-07-17",
+      "area": "Ambiental",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Actividades Bienestar",
+      "termometro": "POSITIVO",
+      "observacion": "Valoración positiva de las actividades del Mundial por parte del equipo, señalando únicamente el ajuste de horarios en la última jornada para cubrir a los colaboradores en turnos rotativos.",
+      "compromiso": "Revisar esquemas de entrega o logística especial para garantizar la participación de todos los turnos en futuras actividades.",
+      "responsables": [
+        "Gestión Humana"
+      ],
+      "estado": "CERRADO",
+      "avances": "",
+      "calificacion": 100
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-07-21",
+      "area": "Limpieza y Desinfección",
+      "categoria": "Operaciones",
+      "subcategoria": "Planeación de proceso",
+      "termometro": "MEDIO",
+      "observacion": "Solicitud de iniciar el turno los días domingos a una hora más temprana.",
+      "compromiso": "Analizar factibilidad operativa y coordinar propuesta con la jefatura de área.",
+      "responsables": [
+        "Dirección Planta",
+        "Líder L&D"
+      ],
+      "estado": "CERRADO",
+      "avances": "Solicitud analizada y rechazada por factibilidad económica: no es posible programar ingreso antes de las 6:00 a.m. los domingos debido a los sobrecostos por recargo nocturno festivo.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-07-21",
+      "area": "Limpieza y Desinfección",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Clima laboral",
+      "termometro": "MEDIO",
+      "observacion": "Controversia en el reporte de fallas de compañeros (uso de evidencias fotográficas vs. Apoyo mutuo).",
+      "compromiso": "Intervención directa del líder de área para alinear el método de trabajo, promover el apoyo mutuo y establecer acuerdos que minimicen la necesidad de reportes entre compañeros.",
+      "responsables": [
+        "Líder L&D",
+        "Gestión Humana"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "GH liderará intervención grupal para fortalecer el trabajo en equipo y la transición cultural.\nPendiente la confirmación de 4 fechas (7:00 a.m.) por el Jefe de Producción para la ejecución de talleres experienciales.\nÚLTIMA ACTUALIZACIÓN: Bienestar se encuentra en gestión de las fechas de formación (solicitud a Comfenalco).",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-07-21",
+      "area": "Limpieza y Desinfección",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Actividades Bienestar",
+      "termometro": "MEDIO",
+      "observacion": "Deseo de retomar detalles de cumpleaños/aniversarios y organizar actividad externa para el festival de cometas y planeación de refrigerios.",
+      "compromiso": "Revisar presupuesto e incluir propuestas en el plan anual de Bienestar.",
+      "responsables": [
+        "Gestión Humana"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Pendiente aprobación por la Dirección.\nÚLTIMA ACTUALIZACIÓN: Construcción de Comité de Bienestar para definir nuevas actividades.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-07-21",
+      "area": "Limpieza y Desinfección",
+      "categoria": "Operaciones",
+      "subcategoria": "Liderazgo",
+      "termometro": "POSITIVO",
+      "observacion": "Valoración positiva del liderazgo actual, ya que brinda autonomía y confianza sin microgestión.",
+      "compromiso": "Transmitir felicitación al líder del área por la buena gestión de clima.",
+      "responsables": [
+        "Gestión Humana"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Se posterga la entrega del reconocimiento formal hasta ampliar la muestra representativa del personal del área en próximos grupos focales.",
+      "calificacion": 100
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-07-21",
+      "area": "Limpieza y Desinfección",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Actividades Bienestar",
+      "termometro": "POSITIVO",
+      "observacion": "Resaltan positivamente las actividades del Mundial. No obstante, el turno noche no asistió a la inauguración y la entrega del compartir de hamburguesas se realizó cuando ya habían finalizado su turno.",
+      "compromiso": "Ajustar la logística de futuras integraciones para garantizar cobertura del turno nocturno y personal fuera de jornada.",
+      "responsables": [
+        "Gestión Humana"
+      ],
+      "estado": "CERRADO",
+      "avances": "",
+      "calificacion": 100
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-07-23",
+      "area": "PCCOM",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "CRITICO",
+      "observacion": "Deficiencias críticas de iluminación (baja intensidad luminosa y lámparas en riesgo de caída) salvo en el área de cabezas.",
+      "compromiso": "Realizar inspección de SST y mantenimiento locativo para reemplazo y aseguramiento de luminarias.",
+      "responsables": [
+        "Dirección Planta",
+        "Equipo SST",
+        "Mantenimiento"
+      ],
+      "estado": "CERRADO",
+      "avances": "En cronograma de Mantenimiento: instalación gradual por alto costo de luminarias y capacidad operativa. Próximo frente de intervención: Vísceras Blancas (proyectado a ejecutarse en un plazo de 3 meses).\nMantenimiento: Se está validando el aumento de consumo por el cambio de luminarias.\nRevisión de nueva propuesta: Análisis técnico para instalar una estructura a menor altura que permita utilizar luminarias de menor consumo. Evaluación a cargo de Mantenimiento y el Especialista PMO.\nÚLTIMA ACTUALIZACIÓN: Ya se realizó la instalación en Vísceras Blancas y se han ido cambiando gradualmente las luminarias.",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-07-23",
+      "area": "PCCOM",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Maquinaria y Proceso",
+      "termometro": "CRITICO",
+      "observacion": "Taponamientos constantes en el Caño de Pandos/mecanismo Catalina por contenido ruminal; máquina de libros dificulta el acceso.",
+      "compromiso": "Evaluar la reubicación de la máquina de libros o habilitar acceso de mantenimiento y ajustar protocolo de limpieza preventiva.",
+      "responsables": [
+        "Jefe de producción",
+        "Mantenimiento"
+      ],
+      "estado": "CERRADO",
+      "avances": "Jefe de Producción y Mantenimiento definirán viabilidad entre reubicación de equipo o habilitación de acceso para mantenimiento y limpieza preventiva.\nMantenimiento: Se hará cargo de mover la máquina de libros.\nÚLTIMA ACTUALIZACIÓN: No es posible reubicar nuevamente la máquina de libros por temas de desagües.",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-07-23",
+      "area": "PCCOM",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Equipos y Herramientas",
+      "termometro": "CRITICO",
+      "observacion": "Carros de transporte con ruedas dañadas (requieren 4 personas para moverlos) y solo sirve 1 de 4 muelles disponibles.",
+      "compromiso": "Reparación/reemplazo de ruedas de carros de transporte y habilitación operativa de los muelles fuera de servicio.",
+      "responsables": [
+        "Dirección Planta",
+        "Mantenimiento"
+      ],
+      "estado": "CERRADO",
+      "avances": "Se han ejecutado reemplazos periódicos de llantas en carrotinas y percheros. Se mantiene seguimiento al estado funcional de muelles operativos.\nMantenimiento: Reporta 2 muelles con novedades en puertas, los cuales están en proceso de intervención.\nÚLTIMA ACTUALIZACIÓN: Los cambios se han realizado constantemente a medida que hay deterioro de las llantes.\nSe solicita al personal que se haga reporte oportuno al líder de estas novedades.",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-07-23",
+      "area": "PCCOM",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Condiciones Ambientales (SST)",
+      "termometro": "CRITICO",
+      "observacion": "Extractores en planta fallan intermitentemente, generando altas temperaturas que afectan la salud operacional.",
+      "compromiso": "Revisión técnica y reparación inmediata del sistema de extracción e inyección de aire en planta.",
+      "responsables": [
+        "Dirección Planta",
+        "Mantenimiento",
+        "Equipo SST"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Dirección de Planta confirma avances en la reparación de extractores; la intervención integral para estabilizar la ventilación finaliza durante el el mes de Agosto.\nMantenimiento: Se formalizó ante Compras la solicitud del servicio de tolvas para la zona de patas y vísceras blancas. Las cotizaciones ya fueron evaluadas y actualmente se está definiendo el proveedor.\nÚLTIMA ACTUALIZACIÓN: Respecto al funcionamiento de los extractores, se informa que presentan una falla por cortocircuito en su circuito eléctrico. El equipo de Mantenimiento se encuentra rastreando la falla para realizar la corrección puntual; sin embargo, de no ubicar el corto durante el transcurso de esta semana (hasta 15 de oct.), se ejecutará el cambio completo del cableado del circuito, considerando que esta alternativa requerirá un mayor presupuesto y tiempo de trabajo.",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-07-23",
+      "area": "PCCOM",
+      "categoria": "Operaciones",
+      "subcategoria": "Planeación de proceso",
+      "termometro": "MEDIO",
+      "observacion": "Solicitan iniciar beneficio del sábado temprano y concentrar mayor carga los viernes. Planillaje adiciona canales a última hora.",
+      "compromiso": "Revisar la programación del beneficio semanal y reforzar el cumplimiento del planillaje sin adiciones extemporáneas.",
+      "responsables": [
+        "Jefe de producción",
+        "Planillaje"
+      ],
+      "estado": "CERRADO",
+      "avances": "Jefe de Producción confirma no viabilidad: la programación del sábado depende del volumen de sacrificio y clientes. Se garantiza el pago oportuno de recargos/horas extras por adicionamiento.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-07-23",
+      "area": "PCCOM",
+      "categoria": "Operaciones",
+      "subcategoria": "Planeación de proceso",
+      "termometro": "MEDIO",
+      "observacion": "Inconsistencia en la secuencia de ingreso de animales según su ayuno, provocando aceleración drástica y cuellos de botella en Subproductos.",
+      "compromiso": "Establecer criterio riguroso de secuenciación de lotes en corrales según tiempo de ayuno antes del proceso en línea.",
+      "responsables": [
+        "Dirección de Planta",
+        "Jefe de Producción"
+      ],
+      "estado": "CERRADO",
+      "avances": "Dirección de Planta y Producción aclaran que la secuencia prioriza reses con mayor requerimiento de limpieza (afectando la velocidad percibida).",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-07-23",
+      "area": "PCCOM",
+      "categoria": "Operaciones",
+      "subcategoria": "Planeación de proceso",
+      "termometro": "MEDIO",
+      "observacion": "Percepción de inequidad en las paradas de línea: se prioriza la línea principal y se desestiman paradas necesarias en Subproductos.",
+      "compromiso": "Definir criterios estandarizados de parada técnica de emergencia para la sección de Subproductos y concientizar a contratistas.",
+      "responsables": [
+        "Jefe de Producción"
+      ],
+      "estado": "CERRADO",
+      "avances": "Jefe de Producción solicita reporte oportuno del personal ante acumulación de rumen para autorizar paradas y asume compromiso directo de intervenir al personal externo para apoyo en limpieza.\nÚLTIMA ACTUALIZACIÓN: El jefe de producción ha realizado constantemente la sensibilización con externos.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-07-23",
+      "area": "PCCOM",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Condiciones Ambientales (SST)",
+      "termometro": "MEDIO",
+      "observacion": "Salón Múltiple: filtro de agua requiere mayor mantenimiento (plagas por residuos) y ventiladores fuera de servicio / falta aire acondicionado.",
+      "compromiso": "Mantenimiento a dispensador de agua, reparación de ventiladores, evaluar climatización y campaña de orden/aseo con el personal.",
+      "responsables": [
+        "Gestión Humana",
+        "Jefe de Producción",
+        "Equipo Compras"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Agua y Filtros: GH, por medio de compras gestiona mantenimiento quincenal de los 3 filtros existentes y compra de un filtro de agua fría exclusivo para Salón Múltiple.\nProducción evalúa reubicar el filtro inicial hacia Vísceras.\nHigiene: Se incluirá la limpieza rutinaria de filtros en el plan de aseo (mismo protocolo de neveras).\nVentilación: Jefe de Producción coordinará diagnóstico con Mantenimiento sobre fallas en extractores/ventiladores.\n\nActualización: Ya se realizó el mantenimiento de todos los filtros de agua y se confirmó a Compras el filtro seleccionado para Beneficio.\n14/10/2026 - Aún no se ha ejecutado la compra.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-07-23",
+      "area": "PCCOM",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "MEDIO",
+      "observacion": "Baños en mal estado, suciedad en parqueaderos con ocupación por Transcarnes y casilleros inhabilitados con seguro.",
+      "compromiso": "Plan de aseo/reparación de baños, regulación de parqueaderos con Transcarnes y auditoría/liberación de casilleros.",
+      "responsables": [
+        "Dirección Planta",
+        "Jefe de Producción"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Baños: Jefe de Producción confirma condiciones operativas y de aseo normalizadas.\nCasilleros: Se programará jornada conjunta entre Producción y Mantenimiento para auditoría y liberación de casilleros del parqueadero.\nParqueaderos: Dirección de Planta abordó de manera directa e inmediata la regulación con Transcarnes.\nACTUALIZACIÓN: Se hará nuevamente revisión de Lockers y situación con Transcarnes.\nRespecto a los baños, el área de Mantenimiento inspeccionará el estado de las puertas para gestionar su cambio, de la mano con una estrategia de sensibilización dirigida al personal para promover el buen uso y mantenimiento de las instalaciones.\nACTUALIZACIÓN (14/10): Ante la limitación de tiempo actual del equipo de Mantenimiento para realizar una inspección exhaustiva, se solicitará apoyo al practicante de Operaciones para llevar a cabo un levantamiento y diagnóstico detallado de todos los daños en los baños.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-07-23",
+      "area": "PCCOM",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Contratación",
+      "termometro": "MEDIO",
+      "observacion": "Inconformidad con el perfil del personal contratado (falta de agilidad y adaptación), lo que genera sobrecarga en la línea y alta rotación.",
+      "compromiso": "Revisar el perfil del cargo en selección (evaluación de competencias físicas/actitudinales) y fortalecer el acompañamiento/inducción operativa.",
+      "responsables": [
+        "Gestión Humana",
+        "Jefe de Producción"
+      ],
+      "estado": "CERRADO",
+      "avances": "Cobertura total de vacantes confirmada por Jefe de Producción tras reactivación del plan de entrenamiento.\nSe focalizará la gestión en fortalecer el trabajo en equipo y el acompañamiento en curva de adaptación del personal nuevo.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-07-23",
+      "area": "PCCOM",
+      "categoria": "Gestión Humana",
+      "subcategoria": "SST",
+      "termometro": "MEDIO",
+      "observacion": "Solicitan fortalecer el equipo de SST para contar con mayor presencia y supervisión continua en las áreas operativas de la planta.",
+      "compromiso": "Evaluar la estructura y turnos del equipo de SST en planta para ampliar la cobertura de supervisión e inspección operativa.",
+      "responsables": [
+        "Líder SST"
+      ],
+      "estado": "CERRADO",
+      "avances": "Líder SST revisará el esquema de rotación del equipo para incrementar la presencia y supervisión continua en planta.\nSe enfatiza la necesidad de compromiso operativo con la asistencia a las charlas de seguridad.\nLíder SST: Se ha aumentado el seguimiento por parte del Auxiliar SST en la planta.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-07-23",
+      "area": "PCCOM",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Actividades Bienestar",
+      "termometro": "POSITIVO",
+      "observacion": "Valoración positiva de las actividades del Mundial. Solicitan mantener el alquiler de cancha de fútbol y realizar actividades fuera de la empresa.",
+      "compromiso": "Incluir la opción de alquiler de cancha en los incentivos/premios de las actividades de Bienestar  y coordinar locación externa para actividades.",
+      "responsables": [
+        "Gestión Humana"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Se conformará Comité de Bienestar para definir la viabilidad de lo propuesto.",
+      "calificacion": 100
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-07-28",
+      "area": "Línea",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Inspecciones (SST)",
+      "termometro": "CRITICO",
+      "observacion": "Alto riesgo de deslizamiento en plataformas de limpieza superior por humedad del piso.",
+      "compromiso": "Inspección de SST y evaluación técnica para reemplazo por plataformas perforadas/huecas antideslizantes.",
+      "responsables": [
+        "Jefe de Producción",
+        "Equipo SST",
+        "Mantenimiento"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Avance del 70% en el reemplazo e intervención de plataformas de limpieza superior para mitigar el riesgo de deslizamiento por humedad.\nÚLTIMA ACTUALIZACIÓN: Se confirma la aprobación de la totalidad de las plataformas proyectadas.",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-07-28",
+      "area": "Línea",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Contratación",
+      "termometro": "CRITICO",
+      "observacion": "El programa de entrenamiento no se puede ejecutar porque el personal antiguo (guías) debe cubrir puestos fijos en línea por falta de personal, sin disponibilidad para acompañar al nuevo.",
+      "compromiso": "Analizar la cobertura de puestos en planta para habilitar cupos/relevos que le permitan al personal guía acompañar la inducción operativa sin frenar la línea.",
+      "responsables": [
+        "Jefe de Producción",
+        "Gestión Humana"
+      ],
+      "estado": "CERRADO",
+      "avances": "Novedad superada: con la estabilización de la planta y cobertura de puestos en línea, Producción confirma la reactivación formal del plan de entrenamiento y el acompañamiento de los guías al personal nuevo.",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-07-28",
+      "area": "Línea",
+      "categoria": "SST",
+      "subcategoria": "Proveedores",
+      "termometro": "CRITICO",
+      "observacion": "Inconformidad con IPS de exámenes médicos: demoras de más de media jornada, cansancio previo al turno y barreras en formularios digitales.",
+      "compromiso": "Retroalimentar a la IPS sobre tiempos de atención, revisar esquema de citas y habilitar soporte para registros digitales.",
+      "responsables": [
+        "Equipo SST"
+      ],
+      "estado": "CERRADO",
+      "avances": "SST escaló las novedades de tiempos en reunión con la IPS, quedando a la espera de su informe de acciones correctivas. Paralelamente, se evalúa la viabilidad de implementar jornadas extramurales.\nÚLTIMA ACTUALIZACIÓN: Se realizó jornada extramural el pasado 11 de septiembre con éxito, registrando una notable mejora en su dinámica y logística.",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-07-28",
+      "area": "Línea",
+      "categoria": "Operaciones",
+      "subcategoria": "Planeación de proceso",
+      "termometro": "CRITICO",
+      "observacion": "Insatisfacción con horarios de ingreso tardíos (ej. sábados 5 p.m.), impactando el clima laboral y descanso del personal.",
+      "compromiso": "Analizar la factibilidad técnica y operativa para adelantar el horario de inicio de la jornada de sacrificio, optimizando la planificación de la programación general.",
+      "responsables": [
+        "Dirección Planta",
+        "Jefe de Producción"
+      ],
+      "estado": "CERRADO",
+      "avances": "Jefe de Producción confirma no viabilidad: la programación depende del volumen de sacrificio y clientes.",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-07-28",
+      "area": "Línea",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "MEDIO",
+      "observacion": "Baños en mal estado estructural, falta de separación física entre vestier y uso sanitario, y compromisos pendientes en zona de Sangría.",
+      "compromiso": "Plan de mantenimiento locativo para reparación de puertas de baños, adecuación de división interna y revisión de obras en Sangría.",
+      "responsables": [
+        "Mantenimiento"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "A pesar de los seguimientos realizados, el aumento en la cantidad de personal ha generado un deterioro y daños estructurales en las instalaciones. Ante esta situación, el Especialista PMO y Mantenimiento inspeccionarán el estado de las puertas. Asimismo, se aclara que la obstrucción constante del orinal se debe a un fallo de fondo en la tubería.\nÚLTIMPO ACTUALIZACIÓN: Los extractores sanitarios están pendientes de cotización. Responsable: Mantenimiento.\n\nACTUALIZACIÓN (14/10): Mantenimiento reporta alta carga laboral, lo que imposibilita una reparación inmediata general; el proyecto integral queda proyectado para la vigencia 2027.\nAcción Inmediata: Se coordinará con Sergio el apoyo del practicante de Operaciones para realizar una revisión técnica detallada e inventario puntual de los daños en los baños.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-07-28",
+      "area": "Línea",
+      "categoria": "SST",
+      "subcategoria": "Señalización",
+      "termometro": "MEDIO",
+      "observacion": "Confusión sobre la potabilidad del filtro de agua a la entrada de la planta y riesgo de mal uso del equipo.",
+      "compromiso": "Evaluar potabilidad e instalar señalización clara (\"Agua No Potable\" / \"Agua Potable\") y socializar el uso adecuado del filtro.",
+      "responsables": [
+        "Equipo SST",
+        "Mantenimiento"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "El equipo de SST tendrá en cuenta esta señalización en la solicitud que se está consolidando desde el área operativa para avisos y señalizaciones.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-07-28",
+      "area": "Línea",
+      "categoria": "SST",
+      "subcategoria": "Cultura de Higiene",
+      "termometro": "MEDIO",
+      "observacion": "Falta de cultura de aseo (baños tapados y basura en Salón Múltiple) y reacciones defensivas ante llamados de atención.",
+      "compromiso": "Campaña de cultura de aseo, evaluación de medidas disciplinarias vía cámaras y compromisos de convivencia con colaboradores.",
+      "responsables": [
+        "Equipo SST",
+        "Gestión Humana"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "La campaña de orden y aseo para Planta, se encuentra en fase de aprobación.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-07-28",
+      "area": "Línea",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "MEDIO",
+      "observacion": "Mobiliario dañado (sillas partidas y mesas desniveladas) y ventiladores fuera de servicio o desmontados en el Salón Múltiple.",
+      "compromiso": "Inspección, retiro y reemplazo de muebles deteriorados y mantenimiento/reparación de ventiladores.",
+      "responsables": [
+        "Jefe de Producción",
+        "Gestión Humana"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Reemplazo de Sillas:\n• Conteo e Inspección: Realizar el inventario de sillas dañadas.\n• Solicitud de Baja: Gestionar el acta de baja con el área Ambiental (enviar la solicitud a Laura Higuera con copia a Operaciones).\n• Gestión de Reemplazo: Solicitar al Jefe de Producción el requerimiento para la adquisición de sillas de mayor calibre/resistencia.\nÚLTIMA ACTUALIZACIÓN: Ya fue realizado el proceso en mención por parte de Bienestar.\nDar de Baja Ventilador:\nTramitar el acta de baja del ventilador a través del Jefe de Producción.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-07-28",
+      "area": "Línea",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Proveedores",
+      "termometro": "MEDIO",
+      "observacion": "Inconformidad con la empresa externa de mantenimiento (lentitud y falta de experticia práctica). Solicitan evaluar el retorno al modelo de contratación directa con personal propio.",
+      "compromiso": "Auditar los Acuerdos de Nivel de Servicio de la empresa de mantenimiento externa y evaluar la viabilidad del modelo de contratación directa vs. tercerizado.",
+      "responsables": [
+        "Comité Directivo"
+      ],
+      "estado": "CERRADO",
+      "avances": "Informar al personal que se ha escalado de manera formal las novedades presentadas ante los directivos de la empresa proveedora del servicio. Actualmente, la dirección de dicha compañía se encuentra evaluando el caso para ejecutar los ajustes y cambios de personal que correspondan.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-07-28",
+      "area": "Línea",
+      "categoria": "Nómina",
+      "subcategoria": "Capacitación y Formación",
+      "termometro": "MEDIO",
+      "observacion": "Requerimiento de capacitación sobre desprendibles de nómina y normatividad vigente.",
+      "compromiso": "Programar taller o espacio explicativo con el área de Nómina.",
+      "responsables": [
+        "Gestión Humana",
+        "Nómina"
+      ],
+      "estado": "CERRADO",
+      "avances": "Capacitación agendada y ejecutada el martes, 11 de agosto.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-07-28",
+      "area": "Línea",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Actividades Bienestar",
+      "termometro": "POSITIVO",
+      "observacion": "Valoración positiva de las actividades del Mundial 2026. Solicitan retomar detalles de cercanía (caramelos,detalle postvacaciones, entre otros).",
+      "compromiso": "Evaluar la viabilidad presupuestal para reconsiderar y retomar gradualmente la entrega de reconocimientos en fechas especiales (cumpleaños y aniversarios laborales), sujeto a aprobación gerencial.",
+      "responsables": [
+        "Gestión Humana"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Se conformará Comité de Bienestar para definir la viabilidad de lo propuesto.",
+      "calificacion": 100
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-07-28",
+      "area": "Línea",
+      "categoria": "Operaciones",
+      "subcategoria": "Liderazgo",
+      "termometro": "POSITIVO",
+      "observacion": "Destacan positivamente la supervisión continua del Líder Yerson y el acompañamiento puntual del colaborador Don Fidel en Sangría.",
+      "compromiso": "Socializar felicitación con el Líder de área.",
+      "responsables": [
+        "Gestión Humana"
+      ],
+      "estado": "CERRADO",
+      "avances": "El líder Yerson ya no se encuentra vinculando a la empresa.",
+      "calificacion": 100
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-04",
+      "area": "Calidad",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "CRITICO",
+      "observacion": "Plataforma de tolerancia superior pendiente de intervención técnica desde hace tiempo; incomodidad y cansancio por uso prolongado de arnés.",
+      "compromiso": "Programar intervención prioritaria a la estructura de la plataforma superior e inspección ergonómica del puesto.",
+      "responsables": [
+        "Mantenimiento",
+        "SST"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Avance de gestión: Se encuentra en proceso de recepción y evaluación de cotizaciones para la reparación técnica de las plataformas troqueladas.\nDirectriz de SST: Por razones de seguridad y cumplimiento normativo, se mantiene obligatorio el uso del arnés de seguridad hasta la finalización de los trabajos estructurales.\nACTUALIZACIÓN: Se encuentra aprobado y está en contratación.",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-04",
+      "area": "Calidad",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Condiciones Ambientales (SST)",
+      "termometro": "CRITICO",
+      "observacion": "Exceso de calor en plataforma superior, encandilamiento por nueva iluminación que afecta la vista y falta de mantenimiento a extractores.",
+      "compromiso": "Ajustar ángulo/intensidad de iluminación, realizar mantenimiento a extractores e inspección de confort térmico.",
+      "responsables": [
+        "Mantenimiento",
+        "SST"
+      ],
+      "estado": "CERRADO",
+      "avances": "Avance de gestión (Iluminación): Se realizó la instalación de las nuevas luminarias, las cuales se encuentran actualmente en período de prueba y monitoreo para ajustar los niveles de deslumbramiento.",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-04",
+      "area": "Calidad",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Equipos y Herramientas",
+      "termometro": "CRITICO",
+      "observacion": "Puertas de cavas pesadas y en mal estado; dificulta y genera riesgo operacional/físico al personal femenino los domingos en cavas.",
+      "compromiso": "Mantenimiento correctivo y lubricación/alineación de puertas de cavas para garantizar maniobrabilidad segura.",
+      "responsables": [
+        "Mantenimiento"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Se ha avanzado en la consecución y evaluación de las cotizaciones requeridas para la intervención técnica y mantenimiento correctivo de las puertas.",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-04",
+      "area": "Calidad",
+      "categoria": "Operaciones",
+      "subcategoria": "Planeación de proceso",
+      "termometro": "CRITICO",
+      "observacion": "Ingresos tardíos (3, 4 o 5 p.m.) por falta de planeación comercial y falta de stock máximo en cavas que retrasa la operación.",
+      "compromiso": "Reunión de alineación entre Comercial y Operaciones para establecer horario límite de programación y definir stock en cavas.",
+      "responsables": [
+        "Operaciones",
+        "Comercial"
+      ],
+      "estado": "CERRADO",
+      "avances": "Jefe de Producción confirma no viabilidad: la programación depende del volumen de sacrificio y clientes.",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-04",
+      "area": "Calidad",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "MEDIO",
+      "observacion": "Secabotas de planta administrativa es insuficiente para la cantidad de personal y no cuenta con servicio de secado activo.",
+      "compromiso": "Inspeccionar el equipo secabotas para habilitar la función de secado y evaluar la instalación de un módulo adicional.",
+      "responsables": [
+        "Operaciones",
+        "Mantenimiento"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Retirar botas del personal que ya no se encuentra activo (SST) y remarcación de botas y lockers (Contratación).\nÚLTIMA ACTUALIZACIÓN: SST realizó el retiro de botas y GH realizó remarcación de botas y lockers.\nDesde Bienestar se realizará solicitud de cotización de Portabotas a Compras.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-04",
+      "area": "Calidad",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "MEDIO",
+      "observacion": "Baños del personal de planta administrativo presentan bomba del sanitario dañada y puerta sin seguro.",
+      "compromiso": "Realizar mantenimiento locativo para reparación de bomba de sanitario y reinstalación del seguro de la puerta.",
+      "responsables": [
+        "Operaciones",
+        "Mantenimiento"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Mantenimiento inspeccionará el área para definir si lo repara internamente o si se requiere contratación externa.\nÚLTIMA ACTUALIZACIÓN: Ya se realizó arreglo de la puerta.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-04",
+      "area": "Calidad",
+      "categoria": "SST",
+      "subcategoria": "Dotación",
+      "termometro": "MEDIO",
+      "observacion": "Inconformidad por falta de entrega de polos institucionales con logo actual para traslados, a diferencia de otras áreas y practicantes.",
+      "compromiso": "Revisar política y alcance del paquete de dotación para el personal de Calidad e posibilidad de igualar criterios.",
+      "responsables": [
+        "SST"
+      ],
+      "estado": "CERRADO",
+      "avances": "No aplica la entrega de polos, dado que las funciones del cargo se desempeñan al interior de la planta. Para dicha labor se cuenta con una dotación operativa específica y adecuada, la cual es entregada de manera oportuna según la norma.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-04",
+      "area": "Calidad",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Actividades Bienestar",
+      "termometro": "MEDIO",
+      "observacion": "Citaciones a actividades recreativas con más de 1 hora de anticipación provocan desgaste físico previo al turno de trabajo.",
+      "compromiso": "Ajustar la logística de convocatorias de Bienestar citando con máximo 40 minutos - 1 ahora de antelación.",
+      "responsables": [
+        "Gestión Humana"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Se conformará Comité de Bienestar para definir la viabilidad de lo propuesto.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-04",
+      "area": "Calidad",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Actividades Bienestar",
+      "termometro": "MEDIO",
+      "observacion": "Mencionan que extrañan los detalles de reconocimiento (cumpleaños/aniversarios) como factor motivacional al que estaban acostumbrados.",
+      "compromiso": "Evaluar viabilidad presupuestal para reconsiderar la entrega de reconocimientos en fechas especiales.",
+      "responsables": [
+        "Gestión Humana"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Se conformará Comité de Bienestar para definir la viabilidad de lo propuesto.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-04",
+      "area": "Calidad",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Estructura organizacional",
+      "termometro": "MEDIO",
+      "observacion": "Percepción de inestabilidad y falta de organización por cambios frecuentes en la estructura organizacional / altas gerencias.",
+      "compromiso": "Reforzar la comunicación interna sobre la estrategia organizacional y estabilización de procesos.",
+      "responsables": [
+        "Dirección"
+      ],
+      "estado": "CERRADO",
+      "avances": "Se reforzará la comunicación oportuna de cambios a nivel organizacional desde GH y la Dirección.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-04",
+      "area": "Calidad",
+      "categoria": "Nómina",
+      "subcategoria": "Estructura Salarial",
+      "termometro": "MEDIO",
+      "observacion": "Desmotivación salarial por pérdida del diferencial histórico frente al SMLV, considerando esfuerzo físico y formación profesional.",
+      "compromiso": "Presentar análisis de equidad interna y valoración del cargo a la Gerencia/Comité Directivo.",
+      "responsables": [
+        "Gestión Humana",
+        "Nómina"
+      ],
+      "estado": "CERRADO",
+      "avances": "Respuesta / Posición institucional: Frente al incremento porcentual del salario mínimo, la Dirección determinó la imposibilidad de aplicar ajustes superiores en otras escalas. En consecuencia, la estructura salarial actual se mantiene sin modificaciones adicionales.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-04",
+      "area": "Calidad",
+      "categoria": "Nómina",
+      "subcategoria": "Beneficios",
+      "termometro": "MEDIO",
+      "observacion": "Solicitud de ajuste anual al auxilio de movilidad por costo de transporte.",
+      "compromiso": "Evaluar viabilidad presupuestal para revisión del auxilio de movilidad.",
+      "responsables": [
+        "Gestión Humana",
+        "Nómina"
+      ],
+      "estado": "CERRADO",
+      "avances": "Aclaración / Avance de gestión: Conforme a la política de estructura salarial, al concretarse la promoción del cargo de Auxiliar a Analista, el auxilio de movilidad fue reajustado bajo los parámetros determinados directamente por Dirección.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-04",
+      "area": "Calidad",
+      "categoria": "Dirección/Administración",
+      "subcategoria": "Infraestructura Vial",
+      "termometro": "MEDIO",
+      "observacion": "Mal estado severo de la vía de acceso a la planta representa un riesgo para la seguridad física de los colaboradores.",
+      "compromiso": "Gestionar adecuación de la vía de acceso.",
+      "responsables": [
+        "Administración"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "El requerimiento se encuentra actualmente en fase de evaluación técnica y revisión por parte del área responsable para definir las alternativas de intervención.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-04",
+      "area": "Calidad",
+      "categoria": "Nómina",
+      "subcategoria": "Capacitación y Formación",
+      "termometro": "MEDIO",
+      "observacion": "Requerimiento de capacitación explicativa sobre lectura de desprendibles de nómina y conceptos prestacionales.",
+      "compromiso": "Programar taller formativo sobre lectura e interpretación de la nómina con el área encargada.",
+      "responsables": [
+        "Gestión Humana",
+        "Nómina"
+      ],
+      "estado": "CERRADO",
+      "avances": "Capacitación agendada y ejecutada el martes, 11 de agosto.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-04",
+      "area": "Calidad",
+      "categoria": "Operaciones",
+      "subcategoria": "Liderazgo",
+      "termometro": "POSITIVO",
+      "observacion": "Existe trabajo en equipo en el área y resaltan positivamente el liderazgo de la Jefe de Calidad.",
+      "compromiso": "Socializar reconocimiento y felicitar a la Jefe de Calidad por la gestión del clima laboral.",
+      "responsables": [
+        "Gestión Humana"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "",
+      "calificacion": 100
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-11",
+      "area": "Corrales",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Condiciones Ambientales (SST)",
+      "termometro": "CRITICO",
+      "observacion": "Exposición a altas temperaturas e insolación por falta de polisombra en la matada (se reportó caso de hemorragia nasal a SST).",
+      "compromiso": "Instalación prioritaria de polisombra en la zona de la matada para protección térmica.",
+      "responsables": [
+        "Mantenimiento",
+        "Equipo SST"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Se han avanzado en las cotizaciones para este proyecto. \nEstado de Gestión: El proceso fue reiniciado para realizar un nuevo levantamiento con proveedores y consolidar la propuesta económica definitiva la próxima semana.\nPróximos Pasos / Solicitud: Definición del presupuesto consolidado y establecimiento del cronograma de ejecución (tiempos y fases de instalación).\nÚLTIMA ACTUALIZACIÓN (14/10):\nEl proceso de contratación inicial fue reiniciado debido a que la propuesta económica superaba el presupuesto (monto superior a 100 millones de pesos).\nMedida Provisional / Plan de Acción: Como solución temporal para mitigar el riesgo térmico, SST formalizará el requerimiento de compra e instalación de polisombra.",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-11",
+      "area": "Corrales",
+      "categoria": "SST",
+      "subcategoria": "Equipos y Herramientas",
+      "termometro": "CRITICO",
+      "observacion": "Tábano/picana actual genera riesgo de descarga eléctrica directa.\nFAUSTO",
+      "compromiso": "Evaluación y adquisición de un tábano/picana normado y seguro para el manejo de ganado.",
+      "responsables": [
+        "Mantenimiento",
+        "Equipo SST"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Aclaración: El tábano es una herramienta de uso exclusivo para casos de emergencia. En condiciones normales, el manejo y desplazamiento del ganado en las mangas de corrales y beneficio debe ejecutarse utilizando el banderín.\nSi el área requiere algún insumo o equipo complementario, la solicitud deberá ser canalizada a través del Líder de Corrales.",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-11",
+      "area": "Corrales",
+      "categoria": "Calidad e Inocuidad",
+      "subcategoria": "Control de Plagas",
+      "termometro": "CRITICO",
+      "observacion": "Presencia crítica de moscas en vestier/comedor; la citronela actual es insuficiente.",
+      "compromiso": "Escalamiento a Calidadpara reforzar plan de control vectorial en área de descanso.",
+      "responsables": [
+        "Calidad"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Diagnóstico / Contexto: La proliferación responde a comportamientos estacionales climáticos y está directamente vinculada con los hábitos de higiene y disposición de residuos en las zonas comunes.\nPlan de Acción / Avance:\nControl Físico: Se tramitó la solicitud para incrementar los dispositivos de control (banderines atrapamoscas) en las áreas afectadas.\nCultura y Aseo: Se reforzará la sensibilización para mantener hábitos de limpieza rigurosos en el comedor y vestier.\nÚLTIMA ACTUALIZACIÓN (14/10): La instalación de nuevos banderines atrapamoscas se encuentra temporalmente en pausa debido a que se está ejecutando un cambio de proveedor.",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-11",
+      "area": "Corrales",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "MEDIO",
+      "observacion": "Puertas de los corrales en mal estado operacional.",
+      "compromiso": "Inspección en sitio y reparación/reemplazo de las puertas de corrales dañadas.",
+      "responsables": [
+        "Mantenimiento"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Se programará la visita de proveedores para evaluar las reparaciones y tramitar las ofertas correspondientes.\nACTUALIZACIÓN: Se avanzó en las cotizaciones de pines para las puertas.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-11",
+      "area": "Corrales",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "MEDIO",
+      "observacion": "Pilas/bebederos de ganado rotos que generan fugas continuas de agua.",
+      "compromiso": "Reparación o cambio de las pilas y bebederos en mal estado para mitigar desperdicio.",
+      "responsables": [
+        "Mantenimiento"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Se solicitará la evaluación de tres plomeros especializados para definir la propuesta de reparación.\nÚLTIMA ACTUALIZACIÓN: Se informa que se conformará una cuadrilla con el equipo de SOATEC. De acuerdo con la planificación operativa, las labores darán inicio el día 15 de octubre.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-11",
+      "area": "Corrales",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "MEDIO",
+      "observacion": "Deficiencia crítica de iluminación en la zona de corrales y portería.",
+      "compromiso": "Diagnóstico e instalación de nuevas luminarias en corrales y portería.",
+      "responsables": [
+        "Mantenimiento"
+      ],
+      "estado": "CERRADO",
+      "avances": "Avance de gestión: Se completó la instalación de iluminación en la demarcación del área y en báscula.\nAlcance Aprobado y Proyección: La aprobación actual de iluminación cubre exclusivamente los sectores de Báscula y Marcación (no aplica para corrales en la vigencia en curso). La ampliación para el área de corrales queda diferida para revisión en el presupuesto 2027.\nSe realizó la demarcación del área y el reemplazo de luminarias se encuentra en proceso de ejecución.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-11",
+      "area": "Corrales",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Saneamiento Básico",
+      "termometro": "MEDIO",
+      "observacion": "Malos olores en vestier por fallas en 2 sifones y 1 lavamanos fuera de servicio.",
+      "compromiso": "Reparación de manguera del lavamanos y corrección de sifones con malos olores.",
+      "responsables": [
+        "Mantenimiento",
+        "Equipo SST"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Avance de gestión / Mantenimiento: El equipo de Mantenimiento inspeccionará el área para determinar si la reparación de los sifones y el lavamanos se realiza con recursos internos o si requiere contratación de un servicio especializado.\nAcción Complementaria: Se solicita validar la fecha programada para la visita de la Vactor, con el fin de realizar la limpieza e intervención profunda de las tuberías.\nÚLTIMA ACTUALIZACIÓN: Se informa que la aprobación de la manguera comprada está pendiente por parte de la Ing. Filomena.\nLa visita del camión Vactor ya se llevó a cabo; por lo tanto, se procederá a consultar directamente con el personal operativo para confirmar si el mal olor ha cesado o si se requiere alguna acción adicional.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-11",
+      "area": "Corrales",
+      "categoria": "SST",
+      "subcategoria": "Equipos y Herramientas",
+      "termometro": "MEDIO",
+      "observacion": "Falta de escalera adecuada en portería para la inspección segura de camiones.",
+      "compromiso": "Adquisición e implementación de una escalera segura para la zona de portería.",
+      "responsables": [
+        "Equipo SST"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Se cuenta con la cotización requerida y se procederá con el trámite de compra correspondiente.\nÚLTIMA ACTUALIZACIÓN: La escalera ya se encuentra en fabricación.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-11",
+      "area": "Corrales",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "MEDIO",
+      "observacion": "Dificultad para el manejo de ganado caído en emergencias (manga y rampas).",
+      "compromiso": "Evaluación técnica por PMO para instalar winche/diferencial en manga y rampas de comunicación.",
+      "responsables": [
+        "Mantenimiento",
+        "PMO"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-11",
+      "area": "Corrales",
+      "categoria": "Operaciones",
+      "subcategoria": "Equipos y Herramientas",
+      "termometro": "MEDIO",
+      "observacion": "Herramientas de la bañera requieren mayor presión para mejorar la limpieza del ganado.",
+      "compromiso": "Evaluación de alternativas técnicas de lavado con mayor presión en la bañera.",
+      "responsables": [
+        "Líder Corrales"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Avance de gestión / Mantenimiento: El Ing. Edgar compartirá la placa técnica de la bomba actual para validar si la opción técnica que Compras se encuentra cotizando cumple con los parámetros y expectativas de presión requeridos para el lavado de animales.\nÚLTIMA ACTUALIZACIÓN: La ficha técnica ya fue compartida y se cotizaron las primeras opciones de bombas, agregando las observaciones pertinentes del área técnica. Actualmente se está a la espera de ofertas comerciales adicionales para consolidar el cuadro comparativo y tomar la decisión de compra.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-11",
+      "area": "Corrales",
+      "categoria": "Operaciones",
+      "subcategoria": "Equipos y Herramientas",
+      "termometro": "MEDIO",
+      "observacion": "Desorden e interferencia por uso de herramientas entre Limpieza & Desinfección y Corrales.",
+      "compromiso": "Socialización de orden al finalizar turno y delimitación/independencia de insumos por área.",
+      "responsables": [
+        "Supervisor Limpieza y Desinfección",
+        "Líder Corrales"
+      ],
+      "estado": "CERRADO",
+      "avances": "Se realizó una retroalimentación al personal involucrado para prevenir la reincidencia. Adicionalmente, se asignó y cubrió la dotación requerida de herramientas propias para L&D, eliminando la interferencia entre áreas.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-11",
+      "area": "Corrales",
+      "categoria": "SST",
+      "subcategoria": "Equipos y Herramientas",
+      "termometro": "MEDIO",
+      "observacion": "Riesgo osteomuscular por flexión repetitiva al manipular las pesas desde el suelo.",
+      "compromiso": "Diseñar e instalar una base elevada para las pesas en el área de pesaje.",
+      "responsables": [
+        "Mantenimiento",
+        "Equipo SST"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Se iniciará el proceso de cotización para adquirir la solución o equipo adecuado que eleve la carga a una altura segura.\nACTUALIZACIÓN:\nProgramada reunión técnica para el día 17 de septiembre con el equipo de obra civil para evaluar la viabilidad de adaptación del espacio antes de iniciar la cotización.\nÚLTIMA ACTUALIZACIÓN: Dado que el costo estimado es de aproximadamente $2,000,000, el área de SST solicitará la gestión de una compra individual e independiente de la obra civil para agilizar su adquisición e implementación.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-11",
+      "area": "Corrales",
+      "categoria": "Operaciones",
+      "subcategoria": "Equipos y Herramientas",
+      "termometro": "MEDIO",
+      "observacion": "Falta de manguera en portería para realizar el lavado continuo del rodiluvio.",
+      "compromiso": "Habilitación de punto de agua y manguera en la portería para el rodiluvio.",
+      "responsables": [
+        "Mantenimiento",
+        "Líder Corrales"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "El Líder de Corrales indagará con la persona de la portería para conocer mejor la necesidad.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-11",
+      "area": "Corrales",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "MEDIO",
+      "observacion": "Corrales de Beneficio sin numeración visible, generando riesgo de mezcla de ganado.",
+      "compromiso": "Demarcación y señalización con numeración clara en los corrales de Beneficio.",
+      "responsables": [
+        "Mantenimiento"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "El área operativa se encuentra consolidando todas las necesidades de señalización del sitio para emitir una única solicitud formal a Compras.\nÚLTIMA ACTUALIZACIÓN: La solicitud formal de cotización se mantiene en pausa aún (Corrales ya envió la solicitud correspondiente).",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-11",
+      "area": "Corrales",
+      "categoria": "Planillaje",
+      "subcategoria": "Planeación de proceso",
+      "termometro": "MEDIO",
+      "observacion": "Cierres de planes a última hora por Planillaje generan represamiento y desajuste de jornada.",
+      "compromiso": "Retroalimentación a Planillaje para oportunidad en confirmación de cierres de carga.",
+      "responsables": [
+        "Planillaje"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Avance de gestión: Se identifica la necesidad de reestructurar la planificación de tiempos del área (planillaje).\nPróximo paso / Compromiso: El tema se agendará para revisión y tratamiento formal en el próximo Comité de Gestión Integral.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-11",
+      "area": "Corrales",
+      "categoria": "Nómina",
+      "subcategoria": "Compensaciones",
+      "termometro": "MEDIO",
+      "observacion": "Inconformidad con la compensación/equipare de horas extras al día siguiente en lugar de su pago.",
+      "compromiso": "Socialización de política de horas extras y revisión del esquema con Gestión Humana.",
+      "responsables": [
+        "Gestión Humana",
+        "Nómina"
+      ],
+      "estado": "CERRADO",
+      "avances": "Capacitación agendada y ejecutada el viernes, 21 de agosto.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-11",
+      "area": "Corrales",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Compensaciones",
+      "termometro": "MEDIO",
+      "observacion": "Solicitud de reconocimiento económico/bonificación por asumir labores de aseo del área.",
+      "compromiso": "Revisión de alcance de funciones y traslado de la inquietud a la Dirección.",
+      "responsables": [
+        "Gestión Humana",
+        "Dirección"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Antecedentes: Anteriormente se contempló este esquema mediante contrato formal durante un periodo inferior a un año.\nAvance de gestión: El caso se encuentra en proceso de revisión y validación conjunta con el Líder de Corrales para evaluar la viabilidad de la solicitud.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-11",
+      "area": "Corrales",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Actividades Bienestar",
+      "termometro": "MEDIO",
+      "observacion": "Pérdida de percepción de detalles/obsequios de cumpleaños y dulces por parte de Bienestar.",
+      "compromiso": "Evaluar alternativas de cobertura de actividades simbólicas y detalles.",
+      "responsables": [
+        "Gestión Humana"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Se conformará Comité de Bienestar para definir la viabilidad de lo propuesto.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-11",
+      "area": "Corrales",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Actividades Bienestar",
+      "termometro": "POSITIVO",
+      "observacion": "Buena acogida y participación del personal en las actividades organizadas por el Mundial.",
+      "compromiso": "Mantener dinámicas de integración masiva dentro del plan de bienestar anual.",
+      "responsables": [
+        "Gestión Humana"
+      ],
+      "estado": "CERRADO",
+      "avances": "",
+      "calificacion": 100
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-14",
+      "area": "Logística",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "CRITICO",
+      "observacion": "Falta de instalación de tapas en cavas (físicamente en planta) y alcantarilla sin tapa en cava de patas/cabezas (reportado desde abril 2025).",
+      "compromiso": "Instalación inmediata de las tapas en cavas y aseguramiento de la rejilla/tapa en la alcantarilla señalada.",
+      "responsables": [
+        "Jefe de producción",
+        "Mantenimiento"
+      ],
+      "estado": "CERRADO",
+      "avances": "Aclaración de inventario: Se confirma que el inventario de tapas se encuentra completo físicamente en planta al momento de la liberación de la zona.\nAvance de gestión: Se identificó retiros no autorizados de las tapas posterior a la entrega. Se realizará la trazabilidad con los líderes de turno para asegurar su fijación continua y evitar el desplazamiento del material.",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-14",
+      "area": "Logística",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "CRITICO",
+      "observacion": "Puerta del túnel de Desposte fuera de rieles y con peso excesivo; presentó desprendimiento y riesgo de caída sobre el personal.",
+      "compromiso": "Reparación estructural urgente e intervención del sistema de rieles de la puerta del túnel de Desposte.",
+      "responsables": [
+        "Mantenimiento"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Aclaración técnica: Aún si la puerta se descarrilara de sus rieles, su diseño estructural impide un riesgo de caída.\n\nLas áreas de Operaciones y Compras se encuentran revisando y evaluando las cotizaciones recibidas para proceder con el reemplazo de la puerta.\nÚLTIMA ACTUALIZACIÓN (14/10): Las cotizaciones correspondientes al cambio de puertas se encuentran dentro del paquete en trámite. Fue necesario realizar una nueva solicitud de ofertas esta semana.",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-14",
+      "area": "Logística",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "CRITICO",
+      "observacion": "Desgaste crítico en paquete de poleas para manejo de canales. Mantenimiento realizó prueba previa sin carga de peso real.",
+      "compromiso": "Inspección técnica con carga real y reemplazo urgente del paquete de poleas defectuosas.",
+      "responsables": [
+        "Mantenimiento"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "El proceso de gestión avanza y ya se cuenta con la primera cotización para su evaluación.\nÚLTIMA ACTUALIZACIÓN (14/10): En seguimiento al estado de las poleas, se ratifica el acuerdo del comité pasado respecto a que su reemplazo se realizará de forma gradual. Con el fin de mejorar la frecuencia de reparación —la cual disminuyó al pasar a cargo de Mantenimiento—, se solicitará a Sergio que vuelva a disponer del colaborador antes de línea que realizaba esta labor previamente. Asimismo, ante la falta de personal en Mantenimiento para atender este frente, se solicita al equipo operativo que, al detectar fallas en las poleas, no las dejen en los carros y realicen el reporte de forma inmediata.",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-14",
+      "area": "Logística",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "CRITICO",
+      "observacion": "Falta de cinta antideslizante en Sierra Circular (aprobada por SST) y necesidad de punto de agua con manguera para limpieza (turno madrugada).",
+      "compromiso": "Instalación inmediata de cinta antideslizante en Sierra Circular y adecuación de punto de agua con manguera.",
+      "responsables": [
+        "Mantenimiento",
+        "Equipo SST"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Gestión SST: Se encuentra en proceso la evaluación y selección de proveedores para el suministro de la cinta antideslizante.\nGestión Mantenimiento: Se realizará inspección técnica en sitio para verificar los requerimientos e insumos necesarios para la adecuación e instalación del punto de agua.\nÚLTIMA ACTUALIZACIÓN:\nAseo y Punto de Agua: Para optimizar las labores de limpieza del turno madrugada, el Jefe de Producción deberá tramitar la solicitud del kit de aseo operativo (haragán y recogedor negro).\nEn seguimiento a los requerimientos de la Sierra Circular, se informa que se invitó a dos proveedores para presentar sus cotizaciones. Actualmente, el proceso se encuentra a la espera de coordinar las visitas técnicas correspondientes a las instalaciones para que los proveedores evalúen el equipo y formalicen sus propuestas.",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-14",
+      "area": "Logística",
+      "categoria": "SST",
+      "subcategoria": "Dotación",
+      "termometro": "CRITICO",
+      "observacion": "Riesgo alto de caídas e incapacidades en túnel de Desposte por hielo en el piso; falta dotación de calzado con alta adherencia.",
+      "compromiso": "Gestión prioritaria para la consecución y entrega de botas antideslizantes especiales para bajas temperaturas/hielo.",
+      "responsables": [
+        "Equipo SST",
+        "Equipo Compras"
+      ],
+      "estado": "CERRADO",
+      "avances": "Gestión en curso: Las botas antideslizantes están en fase de cotización. Paralelamente, se realizarán pruebas con un tratamiento químico para mitigar el deslizamiento por acumulación de hielo en el suelo.\nDiagnóstico técnico: Si bien estas medidas reducen el riesgo, la solución definitiva y prioritaria debe ser el procedimiento estándar de descongelamiento y limpieza continua del área.\nÚLTIMA ACTUALIZACIÓN:\nEstatus de compra: SST recibirá las botas y hará la entrega (14/10).\nControl operativo: Aplicación de pruebas químicas y refuerzo al protocolo de descongelamiento/limpieza como solución de fondo.\nNo se ejecutará ninguna intervención de infraestructura o adecuación física adicional en el área.",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-14",
+      "area": "Logística",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "MEDIO",
+      "observacion": "Deterioro generalizado en sistema de rieles y llantas dañadas en carros de poleas.",
+      "compromiso": "Levantamiento de inventario de rieles/carros afectados y ejecución del plan de reemplazo gradual de llantas y rieles.",
+      "responsables": [
+        "Mantenimiento"
+      ],
+      "estado": "CERRADO",
+      "avances": "Se avanzó en la gestión de cotizaciones de pintura para atender la observación por oxidación emitida en la auditoría. No obstante, se identificó que el daño reportado requiere una intervención integral que va más allá de un tratamiento estético superficial.\nAvance: Se adquirieron 40 rodachines para el mantenimiento del sistema. Se han realizado los cambios correspondientes por parte del área de mantenimiento.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-14",
+      "area": "Logística",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "MEDIO",
+      "observacion": "Cortinas de muelles sufren impactos y desprendimientos por camiones. Solicitan evaluar traslado de rampla hidráulica de Beneficio hacia Desposte.",
+      "compromiso": "Diseñar protección para cortinas en muelles y evaluar la factibilidad técnica de reubicar la rampla hidráulica a Desposte.",
+      "responsables": [
+        "PMO",
+        "Mantenimiento"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "RTA SST:\nPlataforma hidráulica Beneficio: SST confirma que la estructura se mantiene en uso operativo por parte de Subproductos, movilizando cargas aproximadas de 150 kg.\nPlataforma hidráulica Desposte: Se iniciará la evaluación técnica para definir los requerimientos específicos de esta área.\nRTA OPERACIONES:\nCortinas de muelles: Puertas aprobadas para instalación. El tiempo de ejecución se debe a que están siendo fabricadas a la medida de cada muelle.\nRampa hidráulica: Solicitud en estudio; actualmente se encuentra en prueba piloto junto con la plataforma de Beneficio.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-14",
+      "area": "Logística",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Desempeño",
+      "termometro": "MEDIO",
+      "observacion": "Percepción de falta de programa preventivo y baja eficiencia/experticia técnica en las reparaciones en comparación con esquemas anteriores.",
+      "compromiso": "Revisar plan de Mantenimiento Preventivo e informar a la operación sobre el esquema de atención.",
+      "responsables": [
+        "Mantenimiento",
+        "Dirección"
+      ],
+      "estado": "CERRADO",
+      "avances": "Informar al personal que se ha escalado de manera formal las novedades presentadas ante los directivos de la empresa proveedora del servicio. Actualmente, la dirección de dicha compañía se encuentra evaluando el caso para ejecutar los ajustes y cambios de personal que correspondan.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-14",
+      "area": "Logística",
+      "categoria": "SST",
+      "subcategoria": "Inspecciones (SST)",
+      "termometro": "MEDIO",
+      "observacion": "Solicitud de mayor presencia, inspección y acompañamiento continuo en el área de Logística por parte del equipo de SST.",
+      "compromiso": "Reestructurar la rotación e inspecciones de SST para garantizar cobertura y presencia continua en Logística.",
+      "responsables": [
+        "Equipo SST"
+      ],
+      "estado": "CERRADO",
+      "avances": "Avance de gestión: Se ha optimizado la cobertura operativa de SST mediante un incremento en los recorridos de inspección y un acompañamiento más constante en la zona de Logística.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-14",
+      "area": "Logística",
+      "categoria": "Operaciones",
+      "subcategoria": "Compensaciones",
+      "termometro": "MEDIO",
+      "observacion": "Solicitud de ajuste en bonificación de Carnes y Carnes ($1.600 por canal, congelada hace 3 años; sugieren $2.000). Quedó pendiente con Dirección de Operaciones.",
+      "compromiso": "Análisis financiero por parte de la Dirección de Operaciones y respuesta sobre la actualización de la bonificación por canal.",
+      "responsables": [
+        "Dirección Planta"
+      ],
+      "estado": "CERRADO",
+      "avances": "El área aclara que esta bonificación es un incentivo económico exclusivo asignado al turno de la madrugada por el cargue de vehículos, beneficio que el personal de la tarde no percibe y estaría dispuesto a asumir. Se considera que el esquema actual representa una oportunidad de ingreso adicional competitiva.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-14",
+      "area": "Logística",
+      "categoria": "Operaciones",
+      "subcategoria": "Compensaciones",
+      "termometro": "MEDIO",
+      "observacion": "Falta de incentivo o reconocimiento ante alistamientos de gran volumen con poco personal (ej. 110 canales para Olímpica entre 2 personas).",
+      "compromiso": "Evaluar con la Dirección esquemas de incentivos/reconocimiento operativo para contingencias o sobrecargas puntuales.",
+      "responsables": [
+        "Dirección Planta",
+        "Jefe de Producción"
+      ],
+      "estado": "CERRADO",
+      "avances": "En relación con el reporte sobre alistamientos de alto volumen, la Jefatura de Producción precisa que las dos personas asignadas al cargue de dicho vehículo perciben una retribución económica de $80.000 a $90.000 por concepto de tarea. El área sostiene que este monto representa una compensación competitiva y suficiente por el esfuerzo requerido, aclarando que bajo este esquema no aplica el pago por horas marcadas.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-14",
+      "area": "Logística",
+      "categoria": "Operaciones",
+      "subcategoria": "Planeación de proceso",
+      "termometro": "MEDIO",
+      "observacion": "Limitación crítica de espacio operativo en la cava de Desposte.",
+      "compromiso": "Análisis de redistribución de espacio y optimización de rotación de inventarios en cavas por parte de la Dirección.",
+      "responsables": [
+        "Dirección Planta",
+        "Jefe de Producción"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Respuesta de Producción: Desde el área de Operaciones se señala que la saturación del espacio está directamente vinculada con la programación y la dinámica de despacho del área Comercial.\nPróximo paso / Compromiso: El tema se agendará para revisión y tratamiento formal en el próximo Comité de Gestión Integral.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-14",
+      "area": "Logística",
+      "categoria": "Operaciones",
+      "subcategoria": "Comidas",
+      "termometro": "MEDIO",
+      "observacion": "Descontento por el criterio de asignación de comidas en el turno de Beneficio/Logística (se otorga por puestos y se excluye a grupo reducido de máximo 4 personas).",
+      "compromiso": "Revisión y socialización de la política y criterios de asignación de alimentación para asegurar equidad en los turnos.",
+      "responsables": [
+        "Dirección Planta",
+        "Jefe de Producción"
+      ],
+      "estado": "CERRADO",
+      "avances": "Respuesta / Validación de Producción: La Jefatura de Producción desestima la novedad, informando que la entrega de alimentación se efectúa en cumplimiento de los parámetros normativos y operativos, sin presentar exclusiones ni inconsistencias en la cobertura.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-14",
+      "area": "Logística",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Comunicación",
+      "termometro": "MEDIO",
+      "observacion": "Solicitud de socialización previa de modificaciones en la estructura organizacional, cargos o cambios en la operación, evitando hacerlo sobre la marcha.",
+      "compromiso": "Establecer comunicación previa ante ajustes de estructura o cambios operativos que impacten al personal.",
+      "responsables": [
+        "Gestión Humana",
+        "Dirección Planta"
+      ],
+      "estado": "CERRADO",
+      "avances": "Se reforzará la comunicación oportuna de cambios a nivel organizacional desde GH y la Dirección.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-14",
+      "area": "Logística",
+      "categoria": "Nómina",
+      "subcategoria": "Capacitación y Formación",
+      "termometro": "MEDIO",
+      "observacion": "Dudas e inquietudes recurrentes sobre los conceptos liquidados en los desprendibles de pago.",
+      "compromiso": "Programar jornada de capacitación/socialización sobre conceptos y lectura de desprendibles de nómina con el equipo.",
+      "responsables": [
+        "Gestión Humana",
+        "Nómina"
+      ],
+      "estado": "CERRADO",
+      "avances": "Capacitación agendada y ejecutada el jueves, 20 de agosto.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-14",
+      "area": "Logística",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Actividades Bienestar",
+      "termometro": "MEDIO",
+      "observacion": "Sentimiento de pérdida de detalles simbólicos, decoración de puestos por cumpleaños y reconocimientos por aniversarios laborales.",
+      "compromiso": "Revisar plan de bienestar: Posibilidad de retomar detalles simbólicos, celebraciones de cumpleaños y reconocimientos de antigüedad.",
+      "responsables": [
+        "Gestión Humana",
+        "Dirección"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Se conformará Comité de Bienestar para definir la viabilidad de lo propuesto.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-14",
+      "area": "Logística",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Clima Laboral",
+      "termometro": "MEDIO",
+      "observacion": "Percepción de inequidad y favoritismo hacia la línea de proceso (se atienden antes sus necesidades, pausas y descansos, mientras Logística no para).",
+      "compromiso": "Equilibrar la atención de necesidades e iniciativas de clima/descansos entre áreas.",
+      "responsables": [
+        "Gestión Humana"
+      ],
+      "estado": "CERRADO",
+      "avances": "Respuesta: La Jefatura de Producción aclara que la dinámica operativa de cada área responde a naturalezas distintas, por lo que los procesos no resultan equiparables. Asimismo, se confirma que el personal de Logística cuenta con los recesos y paradas de descanso definidos dentro de su esquema operativo.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-14",
+      "area": "Logística",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Actividades Bienestar",
+      "termometro": "POSITIVO",
+      "observacion": "Buena acogida y valoración de las actividades de integración organizadas en el marco del Mundial.",
+      "compromiso": "Mantener dinámicas dentro del plan de bienestar anual.",
+      "responsables": [
+        "Gestión Humana"
+      ],
+      "estado": "CERRADO",
+      "avances": "",
+      "calificacion": 100
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-14",
+      "area": "Logística",
+      "categoria": "Operaciones",
+      "subcategoria": "Liderazgo",
+      "termometro": "POSITIVO",
+      "observacion": "Alta valoración de la gestión y liderazgo de Wilmer, identificando sobrecarga en sus responsabilidades.",
+      "compromiso": "Mantener acompañamiento al liderazgo y revisar balance de cargas administrativas/operativas de Líder de Logística.",
+      "responsables": [
+        "Gestión Humana"
+      ],
+      "estado": "CERRADO",
+      "avances": "Se registra la desvinculación del colaborador de la compañía. El hallazgo se da por cerrado al no encontrarse activo el titular del cargo.",
+      "calificacion": 100
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-18",
+      "area": "Administración",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Liderazgo y Clima",
+      "termometro": "CRITICO",
+      "observacion": "Conflicto de directrices entre líderes (\"disputa de egos\") que genera confusión en subalternos y llamados de atención injustificados.",
+      "compromiso": "Definir formalmente los alcances de cada Dirección/Liderazgo y realizar taller de alineación de equipo directivo.",
+      "responsables": [
+        "Dirección",
+        "Gestión Humana"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-18",
+      "area": "Administración",
+      "categoria": "Dirección",
+      "subcategoria": "Planeación de proceso",
+      "termometro": "CRITICO",
+      "observacion": "Pérdida de foco operativo por cambios constantes y falta de socialización previa de procedimientos estandarizados y sus riesgos.",
+      "compromiso": "Mapear, estandarizar y socializar los procedimientos operativos clave con evaluación de riesgos previa a su ejecución.",
+      "responsables": [
+        "Dirección",
+        "Gestión Humana"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-18",
+      "area": "Administración",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Estructura organizacional",
+      "termometro": "CRITICO",
+      "observacion": "Sobrecarga laboral por eliminación de cargos (Planillaje, Jurídica, Comercial), restricción de extras y falta de reemplazos (backups) para vacaciones e incapacidades.",
+      "compromiso": "Evaluar cargas de trabajo, diseñar plan de cobertura de reemplazos temporales y revisar política de extras en Planillaje.",
+      "responsables": [
+        "Dirección",
+        "Gestión Humana"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-18",
+      "area": "Administración",
+      "categoria": "SST",
+      "subcategoria": "Emergencias y Prevención",
+      "termometro": "CRITICO",
+      "observacion": "Ausencia de acompañamiento presencial de SST en emergencias (sismo) y falta de programa estructurado de pausas activas.",
+      "compromiso": "Ajustar protocolo de respuesta presencial del Brigadista/SST ante eventos sismológicos y reanudar cronograma de pausas activas.",
+      "responsables": [
+        "Equipo SST"
+      ],
+      "estado": "CERRADO",
+      "avances": "Infraestructura: Se ejecutó la inspección técnica de infraestructura, contando con el informe formal correspondiente.\nGestión psicosocial: Se difundió información a través de los canales corporativos y se invitó voluntariamente a una charla virtual para el abordaje del riesgo psicosocial.\nPausas activas: Se confirma la reactivación de las pausas activas programadas.",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-18",
+      "area": "Administración",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Compensaciones",
+      "termometro": "CRITICO",
+      "observacion": "Descontento por salarios no competitivos, impacto del desplazamiento a planta y falta de carácter prestacional en el auxilio de movilidad.",
+      "compromiso": "Presentar estudio comparativo de mercado salarial y revisar viabilidad del auxilio de movilidad prestacional con la Dirección.",
+      "responsables": [
+        "Dirección",
+        "Gestión Humana"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-18",
+      "area": "Administración",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "CRITICO",
+      "observacion": "Deterioro grave de la vía de acceso a planta, representando un riesgo vial continuo para el personal.",
+      "compromiso": "Gestionar el plan de mantenimiento, adecuación o resane de la vía de acceso principal a la planta.",
+      "responsables": [
+        "Dirección",
+        "Compras"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-18",
+      "area": "Administración",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Selección y Desempeño",
+      "termometro": "MEDIO",
+      "observacion": "Falta de definición clara de funciones, alcance y objetivos desde la contratación; trabajo reactivo (\"apagando incendios\").",
+      "compromiso": "Revisar y actualizar los manuales de funciones y descriptivos de cargo durante el proceso de selección y vinculación.",
+      "responsables": [
+        "Gestión Humana"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-18",
+      "area": "Administración",
+      "categoria": "Dirección",
+      "subcategoria": "Liderazgo",
+      "termometro": "MEDIO",
+      "observacion": "Demoras en procesos por parte de las Direcciones para la firma y aprobación de solicitudes.",
+      "compromiso": "Establecer niveles de atribución y matriz de autorizaciones para agilizar los flujos de aprobación.",
+      "responsables": [
+        "Líderes"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-18",
+      "area": "Administración",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Cultura Organizacional",
+      "termometro": "MEDIO",
+      "observacion": "Apatía interáreas, falta de visión sistémica y asimetría en la prioridad dada a las solicitudes de otras dependencias.",
+      "compromiso": "Desarrollar estrategia de cultura laboral centrada en el servicio interno y visión global del negocio.",
+      "responsables": [
+        "Gestión Humana"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-18",
+      "area": "Administración",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Comunicación Interna",
+      "termometro": "MEDIO",
+      "observacion": "Uso inadecuado de canales corporativos (WhatsApp vs. Correo) y malas prácticas en redacción y copiado de correos.",
+      "compromiso": "Difundir el protocolo de comunicaciones escritas y buenas prácticas en el uso de herramientas tecnológicas.",
+      "responsables": [
+        "Gestión Humana",
+        "Tecnología"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-18",
+      "area": "Administración",
+      "categoria": "Dirección",
+      "subcategoria": "Estructura organizacional",
+      "termometro": "MEDIO",
+      "observacion": "Ineficiencia y desorden por falta de un área específica de Facturación, al depender el proceso de tres áreas distintas (Planillaje, Contabilidad y Cartera) con horarios restringidos en Planillaje (hasta 11:00 a.m.).",
+      "compromiso": "Evaluar la viabilidad de centralizar el proceso en un área exclusiva de Facturación que asuma el ciclo completo del proceso.",
+      "responsables": [
+        "Dirección"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-18",
+      "area": "Administración",
+      "categoria": "Tecnología",
+      "subcategoria": "Herramientas TI",
+      "termometro": "MEDIO",
+      "observacion": "Alta carga manual por fallas recurrentes e inestabilidad en el sistema SIIMED, generando reprocesos y errores.",
+      "compromiso": "Escalar a Soporte TI el diagnóstico de estabilidad de SIIMED y automatización de tareas manuales.",
+      "responsables": [
+        "Tecnología"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-18",
+      "area": "Administración",
+      "categoria": "Jurídica",
+      "subcategoria": "Procesos Disciplinarios",
+      "termometro": "MEDIO",
+      "observacion": "Demoras en la notificación de faltas por parte de los líderes, afectando los términos legales de los procesos disciplinarios.",
+      "compromiso": "Capacitar a líderes en el flujo y tiempos de reporte inmediato de faltas al área Jurídica/GH.",
+      "responsables": [
+        "Jurídica",
+        "Gestión Humana"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-18",
+      "area": "Administración",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Servicios / Alimentación",
+      "termometro": "MEDIO",
+      "observacion": "Inconformidad por alto costo de almuerzos ($18.000) en casino y falta de alternativas de alimentación por la ubicación de la planta.",
+      "compromiso": "Evaluar alternativas de auxilio de alimentación o negociación de tarifa preferencial/subsidio con el casino.",
+      "responsables": [
+        "Dirección",
+        "Gestión Humana"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-18",
+      "area": "Administración",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Bienestar y Salario Emocional",
+      "termometro": "MEDIO",
+      "observacion": "Percepción de ausencia de beneficios y actividades de Bienestar en lo transcurrido del año, afectando el salario emocional.",
+      "compromiso": "Presentar el plan de bienestar anual y retomar actividades para el personal administrativo.",
+      "responsables": [
+        "Gestión Humana"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-18",
+      "area": "Administración",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Compensaciones",
+      "termometro": "MEDIO",
+      "observacion": "Percepción de alto costo económico por errores operativos que podrían prevenirse con incentivos, ajustes o contratación adecuada.",
+      "compromiso": "Evaluar la relación costo-beneficio de esquemas de incentivos y refuerzo de personal vs. pérdidas por reprocesos.",
+      "responsables": [
+        "Dirección",
+        "Gestión Humana"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-18",
+      "area": "Administración",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Acompañamiento",
+      "termometro": "MEDIO",
+      "observacion": "Percepción de baja gestión y falta de respuesta contundente por parte de Gestión Humana tras reuniones de revisión salarial.",
+      "compromiso": "Establecer un protocolo de comunicación oportuna y transparente para avances en revisiones salariales y proyectos estratégicos de GH, evitando vacíos de información.",
+      "responsables": [
+        "Gestión Humana"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-18",
+      "area": "Administración",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Servicios Generales",
+      "termometro": "MEDIO",
+      "observacion": "Sobrecarga del baño administrativo por reubicación comercial y deficiencias en aseo/limpieza (canecas llenas).",
+      "compromiso": "Revisar la asignación de baños y reforzar la rutina de aseo con Servicios Generales.",
+      "responsables": [
+        "Gestión Humana"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-18",
+      "area": "Administración",
+      "categoria": "Tecnología",
+      "subcategoria": "Equipos y Herramientas",
+      "termometro": "MEDIO",
+      "observacion": "Equipos de cómputo con rendimiento deficiente (Jurídico y Tesorería/Cartera) y falla en pantalla táctil de celular corporativo.",
+      "compromiso": "Diagnóstico, mantenimiento preventivo/correctivo y renovación de equipos tecnológicos reportados.",
+      "responsables": [
+        "Tecnología"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-20",
+      "area": "SST",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Estructura de Personal",
+      "termometro": "MEDIO",
+      "observacion": "Capacidad operativa limitada en SST por curva de aprendizaje de pasantes; sobrecarga en el único auxiliar sin esquema de rotación/descanso.",
+      "compromiso": "Evaluar a futuro la viabilidad financiera para la contratación de un Auxiliar de SST adicional que garantice la rotación y cobertura.",
+      "responsables": [
+        "Dirección",
+        "Gestión Humana"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-20",
+      "area": "SST",
+      "categoria": "Compras y Servicios",
+      "subcategoria": "Procesos y Comunicación",
+      "termometro": "MEDIO",
+      "observacion": "Oportunidad de mejora en Compras y Servicios respecto al envío de solicitudes de ingreso con mayor contexto, trazabilidad en cotizaciones y tiempos de respuesta.",
+      "compromiso": "Estandarizar el protocolo de solicitud de ingresos y compras con el líder de Compras, implementando plantillas con información completa e hilos unificados.",
+      "responsables": [
+        "Equipo Compras"
+      ],
+      "estado": "CERRADO",
+      "avances": "Avance de gestión: Se realizó sesión de retroalimentación con el equipo de Compras y Servicios para alinear los criterios de comunicación, trazabilidad en cotizaciones y optimización de los tiempos de respuesta.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-20",
+      "area": "SST",
+      "categoria": "Nómina",
+      "subcategoria": "Compensaciones",
+      "termometro": "MEDIO",
+      "observacion": "Diferencia salarial en el cargo de Auxiliar de SST tras la transición de practicante a contrato laboral (no equiparado con la asignación histórica del puesto).",
+      "compromiso": "Revisar la estructura salarial del cargo y evaluar el ajuste bajo criterios de equidad interna y valoración del puesto.",
+      "responsables": [
+        "Dirección"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 1",
+      "fecha": "2026-08-20",
+      "area": "SST",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Cultura Organizacional y Capacitación",
+      "termometro": "MEDIO",
+      "observacion": "Baja asistencia y falta de respaldo de los líderes en las capacitaciones y actividades, presentándose baja participación tanto en el área Administrativa como en la Operativa (especialmente en Logística).",
+      "compromiso": "Sensibilizar al equipo directivo/líderes sobre el cumplimiento del plan de formación e incorporar indicador de asistencia por área.",
+      "responsables": [
+        "Gestión Humana",
+        "Líderes"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-08-27",
+      "area": "Ambiental",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "CRITICO",
+      "observacion": "Falta de pasarela para lavado de bandejas en Planta 1 (genera malos olores) y deterioro avanzado por oxidación con partes sueltas en pasarela de Planta 2.",
+      "compromiso": "Realizar inspección técnica, diseñar e instalar la pasarela de Planta 1 y reparar/reemplazar la estructura deteriorada en Planta 2.",
+      "responsables": [
+        "Líder Ambiental",
+        "Equipo SST"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Se evaluará la condición en campo durante el próximo recorrido para validar el requerimiento y definir la acción correctiva.\nÚLTIMA ACTUALIZACIÓN: Durante el recorrido Mantenimiento ajustó las bandas sueltas.\nLas demás intervenciones y adecuaciones requeridas en la zona se unificarán y quedarán contempladas dentro de un proyecto de mayor envergadura.",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-08-27",
+      "area": "Ambiental",
+      "categoria": "SST",
+      "subcategoria": "Locativo y Riesgo Mecánico",
+      "termometro": "CRITICO",
+      "observacion": "Escalera de acceso a caseta de motores colapsada por oxidación, obligando al personal a ingresar mediante maniobras sobre un banco inestable.",
+      "compromiso": "Priorizar la instalación inmediata de una nueva escalera de acceso con estándares de seguridad para caseta de motores.",
+      "responsables": [
+        "Líder Ambiental",
+        "Equipo SST"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Se evaluará la condición en campo durante el próximo recorrido para validar el requerimiento y definir la acción correctiva.\nÚLTIMA ACTUALIZACIÓN: Intervenciones y adecuaciones requeridas en la zona se unificarán y quedarán contempladas dentro de un proyecto de mayor envergadura.",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-08-27",
+      "area": "Ambiental",
+      "categoria": "SST",
+      "subcategoria": "Manejo de Sustancias Químicas",
+      "termometro": "CRITICO",
+      "observacion": "Necesidad de espacio exclusivo para almacenamiento de balas de cloro gaseoso y necesidad de capacitación en protocolos de respuesta ante fugas.",
+      "compromiso": "Construir/adecuar cuarto de almacenamiento de cloro y programar capacitación en emergencias químicas con SST.",
+      "responsables": [
+        "Equipo SST",
+        "Mantenimiento"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "La capacitación fue realizada por el proveedor y SST reforzará con una reinducción; paralelamente, el Especialista PMO validará el espacio de almacenamiento exclusivo durante el próximo recorrido.\nÚLTIMA ACTUALIZACIÓN: Intervenciones y adecuaciones requeridas en la zona se unificarán y quedarán contempladas dentro de un proyecto de mayor envergadura.",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-08-27",
+      "area": "Ambiental",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "MEDIO",
+      "observacion": "Requerimiento de instalación de puntos de luz en la estructura del techo recién montado en la zona de lodos para garantizar operatividad nocturna y segura.",
+      "compromiso": "Evaluar la viabilidad técnica e instalar el sistema de iluminación en la zona de lodos.",
+      "responsables": [
+        "Mantenimiento"
+      ],
+      "estado": "CERRADO",
+      "avances": "Se habilitó iluminación provisional por parte de Mantenimiento y el 9 de septiembre se finaliza la instalación del techo por parte del proveedor externo, para dar paso a la instalación de iluminación definitiva.\nÚLTIMO REPORTE: La instalación de la iluminación ya se encuentra instalada (09/10)",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-08-27",
+      "area": "Ambiental",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "MEDIO",
+      "observacion": "Ducha de la PTAP ubicada al aire libre, requiriendo su adecuación en un espacio cerrado para la privacidad y comodidad del personal.",
+      "compromiso": "Cotizar y ejecutar la adecuación de un espacio cerrado para la ducha en la zona de la PTAP.",
+      "responsables": [
+        "Líder Ambiental",
+        "Mantenimiento"
+      ],
+      "estado": "CERRADO",
+      "avances": "Se evaluará en campo la posibilidad de construir una estructura cerrada.\nÚLTIMA ACTUALIZACIÓN: Intervenciones y adecuaciones requeridas en la zona se unificarán y quedarán contempladas dentro de un proyecto de mayor envergadura.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-08-27",
+      "area": "Ambiental",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "MEDIO",
+      "observacion": "Pérdida de \"estructuras\" provisionales de captación de agua en PTAP durante lluvias intensas por arrastre de caudal.",
+      "compromiso": "Formular la propuesta técnica y proyecto de inversión a mayor escala para la readecuación integral del sistema de captación.",
+      "responsables": [
+        "Líder Ambiental",
+        "Especialista PMO"
+      ],
+      "estado": "CERRADO",
+      "avances": "El Especialista PMO evaluará en campo la viabilidad técnica para la construcción de una estructura durante el próximo recorrido de supervisión.\nÚLTIMA ACTUALIZACIÓN: Intervenciones y adecuaciones requeridas en la zona se unificarán y quedarán contempladas dentro de un proyecto de mayor envergadura.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-08-27",
+      "area": "Ambiental",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Equipos y Herramientas",
+      "termometro": "MEDIO",
+      "observacion": "Necesidad de sustitución de bombas para vaciado fisicoquímico en PTAR, solicitando mayor diámetro de succión en los nuevos equipos.",
+      "compromiso": "Incluir la especificación de mayor diámetro de succión dentro del proceso de compra y reemplazo de bombas que adelanta Mantenimiento.",
+      "responsables": [
+        "Líder Ambiental",
+        "Mantenimiento"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "La compra ya fue realizada y únicamente se está a la espera de la entrega del equipo.\nÚLTIMA ACTUALIZACIÓN: \nKevin realizó un movimiento temporal de un equipo para cubrir la contingencia, dado que se contaban aproximadamente tres unidades en reparación. Una vez que el taller finalice el mantenimiento de las bombas y sean entregadas, se reubicarán formalmente en las posiciones de trabajo asignadas.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-08-27",
+      "area": "Ambiental",
+      "categoria": "Nómina",
+      "subcategoria": "Capacitación y Formación",
+      "termometro": "POSITIVO",
+      "observacion": "Reconocimiento positivo por la ejecución de las jornadas de capacitación en nómina.",
+      "compromiso": "Coordinar una jornada de capacitación (presencial o virtual) para resolver dudas únicamente con las 3 personas faltantes por cruce de turno.",
+      "responsables": [
+        "Gestión Humana",
+        "Nómina"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "",
+      "calificacion": 100
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-08-27",
+      "area": "Ambiental",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Actividades Bienestar",
+      "termometro": "POSITIVO",
+      "observacion": "Valoración positiva del equipo por el avance en las gestiones de infraestructura (techo de lodos, lámpara de moscas, portabotas) y la apertura de espacios de escucha.",
+      "compromiso": "Mantener los canales de diálogo abiertos y dar continuidad a la resolución ágil de necesidades reportadas por el área.",
+      "responsables": [
+        "Líder Ambiental",
+        "Gestión Humana"
+      ],
+      "estado": "CERRADO",
+      "avances": "",
+      "calificacion": 100
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-08-28",
+      "area": "Limpieza y Desinfección",
+      "categoria": "Liderazgo",
+      "subcategoria": "Planificación de Vacaciones",
+      "termometro": "MEDIO",
+      "observacion": "Asignación de vacaciones de manera unilateral y con aviso inmediato (poco días de anticipación), sumado a demoras de varios meses en su otorgamiento tras cumplirse el aniversario laboral.",
+      "compromiso": "Diseñar y socializar un cronograma anual de vacaciones concertado con el personal, garantizando tiempos de aviso oportunos y mayor cercanía a la fecha de causación.",
+      "responsables": [
+        "Líder LyD"
+      ],
+      "estado": "CERRADO",
+      "avances": "Diagnóstico / Avance de gestión: La contingencia actual responde a la regulación de periodos acumulados por incumplimientos previos en el cronograma. Una vez resuelta esta situación, se normalizará la planificación estratégica del área.\nPlan de Acción (Jefe de Produción / Líder LyD / GH):\nPara el año 2027 se estructurará y notificará con la debida antelación el cronograma anual formal de vacaciones.\nSe proyectará la contratación de personal de relevo/cobertura para suplir las ausencias por vacaciones y evitar la sobrecarga operativa en la planta.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-08-28",
+      "area": "Limpieza y Desinfección",
+      "categoria": "Liderazgo",
+      "subcategoria": "Políticas",
+      "termometro": "MEDIO",
+      "observacion": "Percepción de desequilibrio en la flexibilidad acordada entre la empresa y los trabajadores (atención a solicitudes operativas vs. requerimientos de ingreso dominical pre-6:00 a.m.).",
+      "compromiso": "Revisar con los líderes los acuerdos de horario y normatividad de ingreso dominical, promoviendo espacios de retroalimentación activa.",
+      "responsables": [
+        "Jefe de Planta",
+        "Líder LyD"
+      ],
+      "estado": "CERRADO",
+      "avances": "Aclaración / Respuesta Institucional: La Petición de adelantar el horario de ingreso los domingos fue evaluada técnicamente y ratificada como no viable por factibilidad económica. Programar la jornada antes de las 6:00 a.m. genera sobrecostos no presupuestados por concepto de recargo nocturno festivo.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-08-28",
+      "area": "Limpieza y Desinfección",
+      "categoria": "Liderazgo",
+      "subcategoria": "Equipos y Herramientas",
+      "termometro": "MEDIO",
+      "observacion": "Escasez de mangueras operativas en L&D, obligando al préstamo recurrente en el área de corrales y ralentizando los procesos de lavado.",
+      "compromiso": "Gestionar la compra prioritaria de mínimo 2 mangueras industriales y definir un flujo de reposición ágil ante fallas de herramientas.",
+      "responsables": [
+        "Líder LyD",
+        "Equipo Compras"
+      ],
+      "estado": "CERRADO",
+      "avances": "La Dirección de Operaciones informa que el inventario de mangueras está completo, tras la reposición de la última unidad pendiente. Asimismo, se precisa que este año se adquirieron 90 metros adicionales, los cuales se suman al material ya existente.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-08-28",
+      "area": "Limpieza y Desinfección",
+      "categoria": "Operaciones",
+      "subcategoria": "Herramientas e Insumos",
+      "termometro": "MEDIO",
+      "observacion": "Insuficiencia en insumos de cafetería (1 bolsa de café al mes para todo el equipo de trabajo).",
+      "compromiso": "Evaluar la factibilidad de ajustar la entrega a 1 bolsa de café quincenal para el área de L&D.",
+      "responsables": [
+        "Líder LyD"
+      ],
+      "estado": "CERRADO",
+      "avances": "Aclaración / Respuesta de Gestión: El presupuesto del año contempla únicamente la dotación de 1 bolsa mensual para el área. Previamente se propuso la implementación de una cafetera para optimizar el rendimiento del insumo, pero la medida fue rechazada por el mismo personal, haciendo que el producto se acabe rápidamente.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-08-28",
+      "area": "Limpieza y Desinfección",
+      "categoria": "SST",
+      "subcategoria": "Acompañamiento y Elementos de Protección Personal (EPP)",
+      "termometro": "MEDIO",
+      "observacion": "Incumplimiento de las visitas periódicas de SST programadas para los martes, generando demoras en la atención de solicitudes (cambio de botas de caucho y EPP).",
+      "compromiso": "Retomar el cronograma presencial de SST los martes en L&D.",
+      "responsables": [
+        "Equipo SST"
+      ],
+      "estado": "CERRADO",
+      "avances": "Canales de Atención Vigentes: Se ratifica que el Líder de SST mantiene sus recorridos en planta y que la enfermería está habilitada permanentemente para la recepción directa de requerimientos.\nProcedimiento de Escalación: Los colaboradores deben canalizar sus necesidades de EPP mediante reporte a su jefe directo. En caso de no obtener gestión por parte de la Líder de Limpieza & Desinfección (Paula), el caso debe escalarse directamente con Sergio.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-08-28",
+      "area": "Limpieza y Desinfección",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Clima laboral",
+      "termometro": "POSITIVO",
+      "observacion": "Reconocimiento positivo a la cohesión y sinergia del equipo de trabajo en L&D.",
+      "compromiso": "Reforzar el reconocimiento al desempeño del área y mantener las dinámicas de integración.",
+      "responsables": [
+        "Líder LyD",
+        "Gestión Humana"
+      ],
+      "estado": "CERRADO",
+      "avances": "Posición del Liderazgo: Si bien se valora la percepción expresada por un grupo de colaboradores, los líderes considerna necesario continuar reforzando el trabajo en equipo y las relaciones interpersonales.\nEstado: Cerrado por duplicidad / Unificado con el plan de acción del hallazgo previo sobre clima laboral y trabajo en equipo.",
+      "calificacion": 100
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-08-28",
+      "area": "Limpieza y Desinfección",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "POSITIVO",
+      "observacion": "Valoración positiva por los avances logrados en la instalación de las plataformas antideslizantes en las áreas operativas.",
+      "compromiso": "Dar continuidad al plan de instalación y mantenimiento de las plataformas antideslizantes restantes.",
+      "responsables": [
+        "Mantenimiento",
+        "Equipo SST"
+      ],
+      "estado": "CERRADO",
+      "avances": "",
+      "calificacion": 100
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-09-25",
+      "area": "Corrales",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "CRITICO",
+      "observacion": "Falta de avance en la instalación de la polisombra, generando insolación y alta exposición constante del personal.",
+      "compromiso": "Evaluar e instalar una solución o cubierta provisional de carácter urgente mientras se ejecuta el proyecto definitivo.",
+      "responsables": [
+        "Mantenimiento"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "ÚLTIMA ACTUALIZACIÓN (14/10):\nEl proceso de contratación inicial fue reiniciado debido a que la propuesta económica superaba el presupuesto (monto superior a 100 millones de pesos).\nMedida Provisional / Plan de Acción: Como solución temporal para mitigar el riesgo térmico, SST formalizará el requerimiento de compra e instalación de polisombra.",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-09-25",
+      "area": "Corrales",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Saneamiento Básico",
+      "termometro": "CRITICO",
+      "observacion": "Demora en la atención de fallas locativas que llevó a que un colaborador (Edelso) asumiera de su dinero la compra de una manguera para reparar el lavamanos del baño.",
+      "compromiso": "Reforzar la atención prioritaria de daños locativos en la zona y establecer un flujo de respuesta que evite la intervención o gasto personal del trabajador.",
+      "responsables": [
+        "Mantenimiento"
+      ],
+      "estado": "CERRADO",
+      "avances": "Se instruye que esta situación no puede reincidir (Dirección AYF), exigiendo un incremento inmediato en la efectividad y tiempos de respuesta de Mantenimiento ante novedades locativas.",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-09-25",
+      "area": "Corrales",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Desempeño",
+      "termometro": "MEDIO",
+      "observacion": "Percepción de baja frecuencia en las visitas de Mantenimiento y falta de experticia en el personal nuevo para la atención efectiva de la zona.",
+      "compromiso": "Programar acompañamiento técnico del personal antiguo en las visitas y priorizar intervenciones correctivas reales sobre la toma de apuntes.",
+      "responsables": [
+        "Mantenimiento"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Informar al personal que se ha escalado de manera formal las novedades presentadas ante los directivos de la empresa proveedora del servicio. Actualmente, la dirección de dicha compañía se encuentra evaluando el caso para ejecutar los ajustes y cambios de personal que correspondan.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-09-25",
+      "area": "Corrales",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "MEDIO",
+      "observacion": "Persistencia de fugas de agua en las pilas y falta de reflectores para visibilidad nocturna en la zona de comercialización y sacrificio.",
+      "compromiso": "Ejecutar la reparación de fugas en pilas y realizar la cotización/instalación de reflectores en las áreas indicadas.",
+      "responsables": [
+        "Mantenimiento"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "INF. CICLO 1: Se solicitará la evaluación de tres plomeros especializados para definir la propuesta de reparación.\nSe solicitará la evaluación de tres plomeros especializados para definir la propuesta de reparación.\nÚLTIMA ACTUALIZACIÓN: Se informa que se conformará una cuadrilla con el equipo de SOATEC. De acuerdo con la planificación operativa, las labores darán inicio el día 15 de octubre.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-09-25",
+      "area": "Corrales",
+      "categoria": "SST",
+      "subcategoria": "Puntos de Higiene y EPP",
+      "termometro": "MEDIO",
+      "observacion": "Ausencia de un lavabotas en la zona, lo que obliga al personal a usar la zona de emergencias para el lavado de calzado (generando llamados de atención).",
+      "compromiso": "Diseñar y adecuar una estructura locativa para el lavado de botas en una zona autorizada.",
+      "responsables": [
+        "Mantenimiento",
+        "Equipo SST"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Se verificó que se dispone de una zona de lavabotas, aunque actualmente permanece inhabilitada. Ante esta situación, se indica que el Líder de Corrales debe dar tramite formalmente ante Mantenimiento la solicitud de reparación, garantizando su habilitación para el uso del personal a la brevedad.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-09-25",
+      "area": "Corrales",
+      "categoria": "SST",
+      "subcategoria": "Equipos y Herramientas",
+      "termometro": "MEDIO",
+      "observacion": "Riesgo osteomuscular por la manipulación repetitiva de pesas desde el suelo durante las labores operativas.",
+      "compromiso": "Realizar inspección ergonómica por parte de SST para reevaluar la técnica o implementar una ayuda mecánica para el levantamiento.",
+      "responsables": [
+        "Equipo SST"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Programada reunión técnica para el día 17 de septiembre con el equipo de obra civil para evaluar la viabilidad de adaptación del espacio antes de iniciar la cotización.\nÚLTIMA ACTUALIZACIÓN: Dado que el costo estimado es de aproximadamente $2,000,000, el área de SST solicitará la gestión de una compra individual e independiente de la obra civil para agilizar su adquisición e implementación.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-09-25",
+      "area": "Corrales",
+      "categoria": "Calidad e Inocuidad",
+      "subcategoria": "Control de Plagas",
+      "termometro": "MEDIO",
+      "observacion": "Propuesta del equipo para evaluar el retorno de las trampas cuadradas de captura de moscas, como complemento a los banderines y jornadas de orden y aseo.",
+      "compromiso": "Validar la viabilidad técnica con el área de Calidad para la prueba e instalación de los dispositivos sugeridos.",
+      "responsables": [
+        "Calidad"
+      ],
+      "estado": "CERRADO",
+      "avances": "Se tramitó la solicitud para incrementar los dispositivos de control (banderines atrapamoscas) en las áreas afectadas.\nLos banderines son los mismos elementos que menciona el personal de Corrales.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-09-25",
+      "area": "Corrales",
+      "categoria": "Operaciones y Mantenimiento",
+      "subcategoria": "Herramientas e Insumos",
+      "termometro": "MEDIO",
+      "observacion": "Requerimiento de una \"Wicha\" (winche/tecle) para atención de emergencias con animales pesados en la manga y presencia de láminas de marcación oxidadas.",
+      "compromiso": "Gestionar la adquisición del equipo de izaje para emergencias y realizar la sustitución de las láminas de marcación deterioradas.",
+      "responsables": [
+        "Líder Corrales",
+        "Mantenimiento"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-09-25",
+      "area": "Corrales",
+      "categoria": "Operaciones",
+      "subcategoria": "Equipos y Herramientas",
+      "termometro": "MEDIO",
+      "observacion": "Inconvenientes y malentendidos con L&D por el préstamo/retiro de mangueras, originados principalmente por fallas o limitaciones en las llaves de paso locales.",
+      "compromiso": "Inspeccionar y reparar las llaves de paso de agua en Corrales para independizar el uso del recurso y evitar traslados de mangueras.",
+      "responsables": [
+        "Mantenimiento"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-09-25",
+      "area": "Corrales",
+      "categoria": "Operaciones",
+      "subcategoria": "Equipos de Comunicación",
+      "termometro": "MEDIO",
+      "observacion": "Dificultades de comunicación por ruido ambiental y distancia, generando fatiga vocal (dolor de cabeza) y riesgo de errores al dictar códigos.",
+      "compromiso": "Evaluar la adquisición y dotación de 6 radios de comunicación portátil (walkie-talkies) para el personal de Corrales.",
+      "responsables": [
+        "Dirección Planta",
+        "Líder Corrales",
+        "Equipo Compras"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-09-25",
+      "area": "Corrales",
+      "categoria": "Planillaje",
+      "subcategoria": "Planeación de proceso",
+      "termometro": "MEDIO",
+      "observacion": "Entregas tardías de planillas operativas que obligan a trabajar con poca luz natural e incrementan el riesgo de errores documentales.",
+      "compromiso": "Revisar y ajustar el flujo de entrega de planillaje para garantizar oportunidad en la recepción de documentos.",
+      "responsables": [
+        "Planillaje",
+        "Dir. Comercial"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Compromiso: El tema se agendará para revisión y tratamiento formal en el próximo Comité de Gestión Integral.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-09-25",
+      "area": "Corrales",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Selección",
+      "termometro": "MEDIO",
+      "observacion": "Sobrecarga operacional en báscula tras la renuncia de una integrante del equipo, requiriendo cobertura prioritaria de la vacante.",
+      "compromiso": "Agilizar el proceso de reclutamiento y selección del Auxiliar de Báscula, incluyendo una prueba técnica de Excel en la evaluación.",
+      "responsables": [
+        "Gestión Humana"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "El proceso de selección y contratación se encuentra actualmente en ejecución.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-09-28",
+      "area": "Calidad",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "CRITICO",
+      "observacion": "Emanación y retorno constante de olores penetrantes (tipo amoniaco) en áreas comunes de Desposte desde hace más de 2 años.",
+      "compromiso": "Realizar inspección técnica hidrosanitaria a la red de desagües, bajantes y sifones de la zona para identificar y corregir el origen de los gases.",
+      "responsables": [
+        "Mantenimiento"
+      ],
+      "estado": "CERRADO",
+      "avances": "En relación con el control y mantenimiento del sistema de refrigeración, se aclara que la zona de Desposte no cuenta con amoniaco, exclusivamente a la Cava 10. Asimismo, se reitera la importancia de instar al personal a reportar de manera inmediata cualquier novedad o sospecha de fuga, garantizando así una intervención oportuna por parte del personal especializado.",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-09-28",
+      "area": "Calidad",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "MEDIO",
+      "observacion": "Impacto térmico elevado en plataformas por la cercanía directa de luminarias y falta de ventilación/extracción adecuada.",
+      "compromiso": "Evaluar la reubicación/elevación de las lámparas e inspeccionar el funcionamiento del sistema de extracción o instalación de ventiladores.",
+      "responsables": [
+        "Mantenimiento"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Se percibe una disminución del calor y una reducción notable en la afectación ocular del personal. Sin embargo, el hallazgo se mantendrá \"en proceso\" hasta culminar la verificación con todos los colaboradores del área, garantizando el bienestar general antes de dar el cierre formal al requerimiento.\nSe hace especial énfasis en que los inyectores actualmente no están funcionando, por lo que se requiere su atención prioritaria.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-09-28",
+      "area": "Calidad",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "MEDIO",
+      "observacion": "Fallas continuas en el sistema de descarga de baños por antigüedad, fugas en lavaplatos de Desposte, falla en agua caliente de dispensador y filtro de laboratorio sin mantenimiento.",
+      "compromiso": "Ejecutar mantenimiento correctivo a baterías sanitarias, reparación de tubería de lavaplatos y mantenimiento/sustitución de filtro y dispensador.",
+      "responsables": [
+        "Mantenimiento",
+        "Equipo Compras"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Ya se realizó intervención en el Lavamanos de Desposte.\nBaños:\nACTUALIZACIÓN (14/10): Ante la limitación de tiempo actual del equipo de Mantenimiento para realizar una inspección exhaustiva, se solicitará apoyo al practicante de Operaciones para llevar a cabo un levantamiento y diagnóstico detallado de todos los daños en los baños.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-09-28",
+      "area": "Calidad",
+      "categoria": "Operaciones",
+      "subcategoria": "Almacenamiento Operativo",
+      "termometro": "MEDIO",
+      "observacion": "Almacenamiento e hilera de canastillas a gran altura en zonas de tránsito por falta de un área acopio fija, generando riesgo de caída de objetos.",
+      "compromiso": "Definir un punto o cuarto específico para el acopio seguro de canastillas y establecer un límite de altura de apilamiento.",
+      "responsables": [
+        "Dirección Planta",
+        "Equipo SST"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "En relación con la restricción de espacio en la Zona de Canastillas, se acordó ejecutar un plan de ordenamiento e inventario.\nSST procederá con la revisión del inventario para gestionar la baja canastillas dañadas y determinar la altura máxima segura de almacenamiento. Por su parte, Sergio estará a cargo de coordinar las acciones operativas necesarias para optimizar la distribución del espacio en el área.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-09-28",
+      "area": "Calidad",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "MEDIO",
+      "observacion": "Piso resbaladizo en Desposte por humedad y acumulación de grasa proveniente de las bandas operativas.",
+      "compromiso": "Validar con SST los resultados de las pruebas de calzado antideslizante (botas de suela azul) para definir su implementación en el área.",
+      "responsables": [
+        "Mantenimiento",
+        "Equipo SST"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "ÚLTIMA ACTUALIZACIÓN:\nEstatus de compra: SST recibirá las botas y hará la entrega (14/10).\nControl operativo: Aplicación de pruebas químicas y refuerzo al protocolo de descongelamiento/limpieza como solución de fondo.\nNo se ejecutará ninguna intervención de infraestructura o adecuación física adicional en el área.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-09-28",
+      "area": "Calidad",
+      "categoria": "Operaciones",
+      "subcategoria": "Distribución de Espacios",
+      "termometro": "MEDIO",
+      "observacion": "Interferencia constante por el paso de personal de subproductos en la zona reducida de Vísceras Rojas, generando riesgo de quemaduras con el esterilizador.",
+      "compromiso": "Evaluar la habilitación de una ruta o paso alternativo para el personal de cebo/subproductos que no interfiera con los puntos de inspección de Calidad.",
+      "responsables": [
+        "Dirección Planta",
+        "Jefe de Planta"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-09-28",
+      "area": "Calidad",
+      "categoria": "SST",
+      "subcategoria": "Elementos de Protección Personal (EPP)",
+      "termometro": "MEDIO",
+      "observacion": "Afectación al confort térmico del personal por el grosor de los petos actuales de protección.",
+      "compromiso": "Validar con SST la viabilidad técnica de utilizar un material más ligero que mantenga el nivel de protección requerido.",
+      "responsables": [
+        "Equipo SST"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "En relación con los equipos de protección en la zona de Tolerancia Cero, se informa que el área de SST ejecutará una revisión para evaluar el cambio de los petos, con el fin de ajustar el calibre de temperatura a los requerimientos térmicos de la operación y mejorar el bienestar del personal.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-09-28",
+      "area": "Calidad",
+      "categoria": "Operaciones",
+      "subcategoria": "Equipos y Herramientas",
+      "termometro": "MEDIO",
+      "observacion": "Déficit de ganchos en cabezas y vísceras rojas (se cuenta con 40 de los 70 requeridos), lo que limita la velocidad de proceso y genera cuellos de botella.",
+      "compromiso": "Gestionar la compra y/o reparación prioritaria del lote de ganchos faltantes para completar la dotación requerida.",
+      "responsables": [
+        "Dirección Planta",
+        "Jefe de Planta",
+        "Mantenimiento"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-09-28",
+      "area": "Calidad",
+      "categoria": "Operaciones",
+      "subcategoria": "Almacenamiento y Cavas",
+      "termometro": "MEDIO",
+      "observacion": "Represamiento de contenedores y congestión en Desposte por sobreocupación del espacio de almacenamiento.",
+      "compromiso": "Evaluar el aprovechamiento del espacio y revisar las condiciones del contrato de arrendamiento de la Cava 12 para liberar capacidad propia.",
+      "responsables": [
+        "Dirección Planta",
+        "Líder Logística",
+        "Dirección Comercial"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-09-28",
+      "area": "Calidad",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Carga Laboral y Estructura",
+      "termometro": "MEDIO",
+      "observacion": "Sobrecarga operacional en la Jefe de Calidad (por tareas administrativas) y en el equipo de Desposte durante jornadas extensas.",
+      "compromiso": "Analizar la factibilidad de incorporar un apoyo administrativo / pasante para liberar carga de la jefatura y reforzar el seguimiento en Desposte.",
+      "responsables": [
+        "Dirección Planta",
+        "Gestión Humana"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-09-28",
+      "area": "Calidad",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Compensaciones",
+      "termometro": "MEDIO",
+      "observacion": "Solicitud de revisión del esquema de incentivos/bonificaciones para puestos de alta presión y responsabilidad (como el punto de Tolerancia).",
+      "compromiso": "Consolidar la propuesta para la revisión salarial y de estructura de incentivos proyectada para el próximo periodo.",
+      "responsables": [
+        "Dirección Planta",
+        "Gestión Humana"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-09-28",
+      "area": "Calidad",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Beneficios",
+      "termometro": "MEDIO",
+      "observacion": "Propuesta para la creación de una política de venta preferencial de kits de carne con descuento para colaboradores de la empresa.",
+      "compromiso": "Presentar la propuesta comercial/bienestar a la Dirección para evaluar su viabilidad logística y financiera.",
+      "responsables": [
+        "Dirección Comercial",
+        "Gestión Humana",
+        "Dirección - GG"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-09-30",
+      "area": "PCCOM",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "CRITICO",
+      "observacion": "Farolas en riesgo de caída en zona de Blancas, cables directos sin interruptor en área de cabezas y luminarias fallando en Salón Múltiple.",
+      "compromiso": "Asegurar el anclaje de farolas, reinstalar interruptores en cabezas y realizar mantenimiento correctivo a lámparas en Salón Múltiple y zona de apartado.",
+      "responsables": [
+        "Mantenimiento"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Desde Mantenimiento se informa que estas labores están integradas dentro de la programación de la cuadrilla de SOATEC iniciada la semana del 14 de octubre. A la fecha, Mantenimiento ya ejecutó la corrección del toma eléctrico en la zona de Cabezas. Asimismo, se coordinará directamente con la cuadrilla la revisión y adecuación de las luminarias pendientes en el Salón Múltiple.",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-09-30",
+      "area": "PCCOM",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Condiciones Ambientales (SST)",
+      "termometro": "MEDIO",
+      "observacion": "Inoperatividad de extractores en área de cabezas y baños, sumado al calor emitido por la iluminación.",
+      "compromiso": "Realizar revisión y reparación del sistema de extracción e inspección del confort térmico en puestos de trabajo.",
+      "responsables": [
+        "Mantenimiento"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-09-30",
+      "area": "PCCOM",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "MEDIO",
+      "observacion": "Paradas constantes de planta entre semana por fallas operativas, generando desgaste en el personal y sobrecostos en servicios (agua/luz).",
+      "compromiso": "Implementar un esquema de mantenimiento preventivo al cierre de jornada para garantizar la operatividad continua al día siguiente.",
+      "responsables": [
+        "Mantenimiento"
+      ],
+      "estado": "CERRADO",
+      "avances": "La información fue transmitida al área de Mantenimiento. Confirmaron que la intervención sí es realizada de esta manera",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-09-30",
+      "area": "PCCOM",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "MEDIO",
+      "observacion": "Puertas desprendidas en baños y división de ducha partida que genera aperturas accidentales.",
+      "compromiso": "Ejecutar la reparación y fijación de puertas y sustitución de la división de ducha dañada.",
+      "responsables": [
+        "Mantenimiento"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-09-30",
+      "area": "PCCOM",
+      "categoria": "Operaciones",
+      "subcategoria": "Planeación de proceso",
+      "termometro": "MEDIO",
+      "observacion": "Taponamientos severos en la zona de pandos por acumulación excesiva de contenido ruminal, debido a que las reses no están cumpliendo el tiempo de ayuno requerido antes del sacrificio.",
+      "compromiso": "Coordinar con el equipo el cumplimiento estricto del tiempo de ayuno. Mientras tanto, evaluar la asignación temporal de 2 operarios en pandos para mitigar la sobrecarga física del trabajador.",
+      "responsables": [
+        "Jefe de Planta"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-09-30",
+      "area": "PCCOM",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "MEDIO",
+      "observacion": "Restricción de capacidad en el flujo de evacuación por diámetros reducidos en el sifón y el desagüe de la catalina.",
+      "compromiso": "Realizar levantamiento técnico de los diámetros de desagüe en catalina y sifón. Evaluar la viabilidad y costo-beneficio del proyecto sugerido por el equipo (sistema tipo hélice/remolino para ablandar el contenido ruminal).",
+      "responsables": [
+        "Jefe de Planta",
+        "Mantenimiento"
+      ],
+      "estado": "CERRADO",
+      "avances": "En proyecto para el 2027.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-09-30",
+      "area": "PCCOM",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Equipos y Herramientas",
+      "termometro": "MEDIO",
+      "observacion": "Deterioro acelerado y perforación de llantas en carros perchas por mal estado del piso y exceso de carga operacional (aprox. 350 kg).",
+      "compromiso": "Inspeccionar la capa de rodadura del piso y ajustar la ficha técnica en Compras para adquirir llantas de mayor capacidad y resistencia.",
+      "responsables": [
+        "Mantenimiento",
+        "Equipo Compras"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "Información socializada con las áreas de Compras y Mantenimiento.  Indican que se definió la selección de las llantas tipo Mega Carga debido a sus especificaciones técnicas de alta resistencia en el mercado, garantizando así mayor durabilidad en la operación.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-09-30",
+      "area": "PCCOM",
+      "categoria": "Operaciones",
+      "subcategoria": "Equipos y Herramientas",
+      "termometro": "MEDIO",
+      "observacion": "Alto porcentaje de canastillas partidas y deterioradas en circulación, lo que limita la capacidad operativa de almacenamiento e incrementa el riesgo de accidentes o caídas.",
+      "compromiso": "Realizar una jornada de inspección y de baja de canastillas rotas, gestionando la reposición urgente del lote faltante.",
+      "responsables": [
+        "Jefe de Planta"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-09-30",
+      "area": "PCCOM",
+      "categoria": "Operaciones",
+      "subcategoria": "Infraestructura",
+      "termometro": "MEDIO",
+      "observacion": "Inadecuada climatización en la oficina de PCC (ventilador sujetado con cabulla y flujo de aire directo).",
+      "compromiso": "Reemplazar el ventilador por uno de mayor cobertura o evaluar la instalación de cielo raso para mejorar la eficiencia del extractor.",
+      "responsables": [
+        "Jefe de Planta",
+        "Mantenimiento"
+      ],
+      "estado": "EN_PROCESO",
+      "avances": "SST y Mantenimiento harán la revisión de las condiciones en la oficina.",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-09-30",
+      "area": "PCCOM",
+      "categoria": "Operaciones",
+      "subcategoria": "SST",
+      "termometro": "MEDIO",
+      "observacion": "Percepción de baja frecuencia de recorridos preventivos de SST y ausencias temporales en el área de enfermería durante el turno.",
+      "compromiso": "Incrementar la frecuencia de rondas preventivas en planta (3 a 4 por turno) y garantizar la presencia continua de personal o pasante en enfermería.",
+      "responsables": [
+        "SST"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-09-30",
+      "area": "PCCOM",
+      "categoria": "Operaciones",
+      "subcategoria": "SST",
+      "termometro": "MEDIO",
+      "observacion": "Restricciones por puesto para mover carros perchas u otras labores de apoyo, generando paradas en la cadena productiva.",
+      "compromiso": "Alineación entre SST y Operaciones para establecer protocolos de apoyo mutuo seguro que no comprometan la salud del trabajador ni detengan la línea.",
+      "responsables": [
+        "SST"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-09-30",
+      "area": "PCCOM",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Convivencia y Bienestar",
+      "termometro": "MEDIO",
+      "observacion": "Mal uso de papel de manos por parte de colaboradores, uso indebido de casilleros/espacios por personal de Transcarnes y solicitud de reactivación de actividades de integración.",
+      "compromiso": "Reforzar campañas de cultura de orden y aseo, regular el uso de casilleros con la empresa externa y proyectar la agenda de bienestar/deportiva.",
+      "responsables": [
+        "Gestión Humana"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-09-30",
+      "area": "PCCOM",
+      "categoria": "Operaciones",
+      "subcategoria": "Planeación de proceso",
+      "termometro": "MEDIO",
+      "observacion": "Necesidad de proyección de cavas para fin de año y desacuerdos por citaciones extraordinarias sin disponibilidad completa de insumos (ej. poleas).",
+      "compromiso": "Articular con Comercial el tiempo de permanencia de ganado en cavas y garantizar el 100% de insumos técnicos antes de convocar jornadas especiales.",
+      "responsables": [
+        "Dirección Planta",
+        "Dirección Comercial"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-10-14",
+      "area": "Línea",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "CRITICO",
+      "observacion": "Deterioro del cajón de noqueo con soldaduras sueltas y fallas en puertas, así como desprendimiento en la puerta de acceso a Oreo con riesgo inminente de caída.",
+      "compromiso": "Ejecutar soldadura, reforzamiento y mantenimiento correctivo urgente al cajón de noqueo y asegurar/fijar la puerta del área de Oreo.",
+      "responsables": [
+        "Mantenimiento"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-10-14",
+      "area": "Línea",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "MEDIO",
+      "observacion": "Filtraciones de agua de lluvia en los puestos de izado y noqueo por falta de sellado en extractores/cubierta.",
+      "compromiso": "Realizar impermeabilización e instalar tejas sobre los extractores para sellar las entradas de agua.",
+      "responsables": [
+        "Mantenimiento"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-10-14",
+      "area": "Línea",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Planeación de proceso",
+      "termometro": "MEDIO",
+      "observacion": "Demoras en la atención diaria de reportes locativos y falta de rondas de verificación técnica al finalizar la jornada.",
+      "compromiso": "Establecer un protocolo de mantenimiento preventivo post-proceso y definir tiempos máximos de atención a reportes de línea.",
+      "responsables": [
+        "Mantenimiento"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-10-14",
+      "area": "Línea",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "MEDIO",
+      "observacion": "Puertas desprendidas en baños, filtraciones recurrentes, orinales averiados y portabotas con mal funcionamiento de secado.",
+      "compromiso": "Reparar puertas y orinales, revisar la red de tuberías del baño de hombres e inspeccionar el portabotas.",
+      "responsables": [
+        "Mantenimiento"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-10-14",
+      "area": "Línea",
+      "categoria": "Operaciones",
+      "subcategoria": "Planeación de proceso",
+      "termometro": "MEDIO",
+      "observacion": "Inconsistencias en el cumplimiento de horarios y tiempos de ayuno por parte de los ganaderos/clientes, generando sobrecarga e impacto en la limpieza del producto (pecho sucio).",
+      "compromiso": "Coordinar con Comercial la exigencia estricta de protocolos de ayuno y horarios, reforzando además el lavado inicial de pechos.",
+      "responsables": [
+        "Dirección Operaciones",
+        "Equipo Comercial"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-10-14",
+      "area": "Línea",
+      "categoria": "Operaciones",
+      "subcategoria": "Herramientas e Insumos",
+      "termometro": "MEDIO",
+      "observacion": "Falta de cuchillos de repuesto en degüello, deterioro en la pistola de noqueo, alta exigencia física en descorne y mejora en los tábanos.",
+      "compromiso": "Entregar la dotación de cuchillos prometida, hacer mantenimiento a la pistola de noqueo, evaluar el uso de tijera en descorne y dotar tábanos largos.",
+      "responsables": [
+        "Jefe de Planta"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-10-14",
+      "area": "Línea",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "MEDIO",
+      "observacion": "Oportunidad de mejora en el rodamiento de la línea y necesidad de optimizar el envío de la información de pesaje a la operación.",
+      "compromiso": "Evaluar la factibilidad técnica de una doble línea en el riel de paso de poleas y dotar de un radio de comunicación al puesto de pesaje.",
+      "responsables": [
+        "Mantenimiento",
+        "Jefe de Planta"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-10-14",
+      "area": "Línea",
+      "categoria": "SST",
+      "subcategoria": "Riesgo Locativo",
+      "termometro": "MEDIO",
+      "observacion": "Condiciones inseguras detectadas en la primera y segunda plataforma, así como en la zona posterior a la zapata.",
+      "compromiso": "Realizar inspección técnica de SST a las plataformas y zona de zapata para implementar adecuaciones y protecciones.",
+      "responsables": [
+        "SST"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-10-14",
+      "area": "Línea",
+      "categoria": "SST",
+      "subcategoria": "Gestión Preventiva",
+      "termometro": "MEDIO",
+      "observacion": "Inconformidad del personal por el enfoque en el reporte de \"actos inseguros\" mientras las \"condiciones inseguras\" reportadas tardan en ser corregidas.",
+      "compromiso": "Reforzar el cierre oportuno de reportes de condiciones inseguras y promover una cultura preventiva basada en la solución activa.",
+      "responsables": [
+        "SST"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-10-14",
+      "area": "Línea",
+      "categoria": "Operaciones",
+      "subcategoria": "Planeación de proceso",
+      "termometro": "MEDIO",
+      "observacion": "Inadecuada estandarización en la inducción de personal nuevo al delegar el entrenamiento a compañeros sin el perfil o disposición requerida.",
+      "compromiso": "Evaluar la designación de un formador fijo y calificado (estándar tipo Alberto Suárez) para estructurar el entrenamiento operativo.",
+      "responsables": [
+        "Equipo Operaciones",
+        "Gestión Humana"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-10-14",
+      "area": "Línea",
+      "categoria": "Operaciones",
+      "subcategoria": "Planeación de proceso",
+      "termometro": "MEDIO",
+      "observacion": "Retrasos en la entrega de programaciones diarias y esquemas de rotación por parte de la Liderazgo de Beneficio (enviados con poca antelación).",
+      "compromiso": "Concertar con el Líder de Beneficio (Marlon) la entrega de rotaciones y programaciones con el tiempo de anticipación acordado.",
+      "responsables": [
+        "Dirección Planta"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-10-14",
+      "area": "Línea",
+      "categoria": "Operaciones",
+      "subcategoria": "Bienestar",
+      "termometro": "MEDIO",
+      "observacion": "Inconformidad por el retiro de mesas/sillas en la zona de descanso (consumo de alimentos cerca de baños), calidad de la comida y falta de actividades de Bienestar en escenarios externos.",
+      "compromiso": "Gestionar la dotación de mobiliario de comedor, revisar el proveedor de alimentos y programar actividades de bienestar/deportes.",
+      "responsables": [
+        "Jefe de Planta",
+        "Gestión Humana"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-10-16",
+      "area": "Logística",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "CRITICO",
+      "observacion": "Desgaste severo en poleas que obliga a mover los carros entre 4 personas, y rupturas continuas de guayas en puertas de muelles por falta de stock.",
+      "compromiso": "Agilizar sustitución de poleas defectuosas, garantizar stock mínimo de guayas y evaluar estandarización de puertas al sistema de la Cava 4.",
+      "responsables": [
+        "Mantenimiento"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-10-16",
+      "area": "Logística",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "CRITICO",
+      "observacion": "Deterioro en la base del Muelle 1 con riesgo de desprendimiento en acople de vehículos. Retiro de tapas de inspección por L&D sin reubicación.",
+      "compromiso": "Reparar con urgencia la base del Muelle 1 y socializar compromiso con el contratista L&D para la correcta reubicación de tapas.",
+      "responsables": [
+        "Mantenimiento",
+        "Supervisora LyD"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-10-16",
+      "area": "Logística",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Clima laboral",
+      "termometro": "CRITICO",
+      "observacion": "Resistencia de la Auxiliar de Despachos (Sharon) en el empalme/inducción al nuevo supervisor (George), división en el equipo e interacciones inadecuadas con transportadores.",
+      "compromiso": "Realizar espacio de conversación con los implicados para acuerdos de trabajo y evaluar traslado de Sharon como apoyo a Planillaje.",
+      "responsables": [
+        "Gestión Humana",
+        "Dirección Planta"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-10-16",
+      "area": "Logística",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Herramientas e Insumos",
+      "termometro": "MEDIO",
+      "observacion": "Llantas de carros de vísceras blancas con fallas de rodamiento bajo cargas elevadas, incrementando el esfuerzo físico.",
+      "compromiso": "Realizar mantenimiento correctivo y sustitución de ruedas a carros de vísceras blancas.",
+      "responsables": [
+        "Mantenimiento",
+        "Jefe de Planta"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-10-16",
+      "area": "Logística",
+      "categoria": "Operaciones",
+      "subcategoria": "Planeación de proceso",
+      "termometro": "MEDIO",
+      "observacion": "Requerimiento de información sobre la fecha de habilitación y puesta en marcha de la cava adyacente a la Cava de Blancas.",
+      "compromiso": "Informar activación y disponibilidad de la nueva cava al equipo logístico.",
+      "responsables": [
+        "Jefe de Planta",
+        "Líder Logística"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-10-16",
+      "area": "Logística",
+      "categoria": "Planillaje",
+      "subcategoria": "Planeación de proceso",
+      "termometro": "MEDIO",
+      "observacion": "Emisión tardía de despachos adicionales a altas horas de la noche (7:00 p.m. - 8:00 p.m.) y domingos. Desconexión operativa por ubicación de Planillaje en sede administrativa.",
+      "compromiso": "Normalizar ventanas de emisión de adicionales, revisar políticas de despacho dominical y sensibilizar a Planillaje sobre la dinámica en Planta.",
+      "responsables": [
+        "Planillaje",
+        "Dir. Comercial"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-10-16",
+      "area": "Logística",
+      "categoria": "Planillaje",
+      "subcategoria": "Planeación de proceso",
+      "termometro": "MEDIO",
+      "observacion": "Conflictos entre clientes por asignación de prioridades (Transcarnes vs. AJR) y tiempos muertos en muelle por falta de personal de descarga de Transcarnes.",
+      "compromiso": "Evaluar impacto del piloto con Transcarnes, ajustar criterios de prioridad por orden/volumen y exigir cumplimiento de personal externo.",
+      "responsables": [
+        "Dir. Comercial",
+        "Planillaje",
+        "Líder Logística"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-10-16",
+      "area": "Logística",
+      "categoria": "Operaciones",
+      "subcategoria": "Planeación de proceso",
+      "termometro": "MEDIO",
+      "observacion": "Sobrecarga operativa en Logística Vísceras al contar con un solo colaborador para realizar simultáneamente el marcado y amarrado.",
+      "compromiso": "Revisar la suficiencia de personal asignado al puesto y evaluar la adición de un apoyo operativo.",
+      "responsables": [
+        "Dirección Planta",
+        "Líder Logística"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-10-16",
+      "area": "Logística",
+      "categoria": "Operaciones",
+      "subcategoria": "Herramientas e Insumos",
+      "termometro": "MEDIO",
+      "observacion": "Acumulación de canastillas dañadas y apilamiento vertical a gran altura que genera riesgo de caída y dificulta el paso/acceso.",
+      "compromiso": "Ejecutar jornada de baja e inventario de canastillas dañadas y habilitar un espacio de acopio horizontal seguro.",
+      "responsables": [
+        "SST",
+        "Jefe de Planta"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-10-16",
+      "area": "Logística",
+      "categoria": "SST",
+      "subcategoria": "Riesgo Locativo",
+      "termometro": "MEDIO",
+      "observacion": "Ausencia y desgaste de cintas antideslizantes desde la zona de Oreo hasta la Cava 4 (tramo crítico en la curva).",
+      "compromiso": "Instalar y reponer cintas antideslizantes de alto tráfico en el trayecto Oreo - Cava 4.",
+      "responsables": [
+        "Mantenimiento",
+        "SST"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-10-16",
+      "area": "Logística",
+      "categoria": "SST",
+      "subcategoria": "Control de Accesos",
+      "termometro": "MEDIO",
+      "observacion": "Ingreso no autorizado de conductores y particulares a zonas restrictivas de muelles por falta de control.",
+      "compromiso": "Reforzar el control de acceso en muelles y socializar el protocolo de seguridad/ingreso con transportadores externos.",
+      "responsables": [
+        "SST",
+        "Equipo Logística"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-10-16",
+      "area": "Logística",
+      "categoria": "Operaciones",
+      "subcategoria": "Apoyos temporales",
+      "termometro": "MEDIO",
+      "observacion": "Falta de disposición y cobertura limitada (solo tareas básicas) del personal trasladado de Logística Desposte a Beneficio por considerarlo eventual.",
+      "compromiso": "Diseñar plan de capacitación para estandarizar el desempeño en apoyos temporales.",
+      "responsables": [
+        "Gestión Humana",
+        "Líder Logística"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-10-16",
+      "area": "Logística",
+      "categoria": "SST",
+      "subcategoria": "Acompañamiento",
+      "termometro": "POSITIVO",
+      "observacion": "Reconocimiento explícito del personal al acompañamiento activo del equipo SST en la entrega y verificación del uso correcto de EPPs.",
+      "compromiso": "Mantener las rondas periódicas de acompañamiento e inspección de EPPs en la zona operativa.",
+      "responsables": [
+        "SST"
+      ],
+      "estado": "CERRADO",
+      "avances": "",
+      "calificacion": 100
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-10-16",
+      "area": "Logística",
+      "categoria": "Operaciones",
+      "subcategoria": "Servicios al personal",
+      "termometro": "POSITIVO",
+      "observacion": "Buena percepción del servicio de comidas, destacando conformidad con la calidad ofrecida.",
+      "compromiso": "Continuar con el seguimiento al proveedor de alimentos para mantener el estándar.",
+      "responsables": [
+        "Jefe de Planta"
+      ],
+      "estado": "CERRADO",
+      "avances": "",
+      "calificacion": 100
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-10-16",
+      "area": "Logística",
+      "categoria": "Operaciones",
+      "subcategoria": "Liderazgo",
+      "termometro": "POSITIVO",
+      "observacion": "Reconocimiento por parte de los colaboradores hacia el buen liderazgo ejercido en el área de Logística.",
+      "compromiso": "Fomentar la continuidad de las buenas prácticas de liderazgo y comunicación asertiva en el equipo.",
+      "responsables": [
+        "Dirección Planta"
+      ],
+      "estado": "CERRADO",
+      "avances": "",
+      "calificacion": 100
+    }
+  ]
+}

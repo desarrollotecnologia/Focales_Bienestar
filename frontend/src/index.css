@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-50: #f0fdf4;
+  --color-primary-100: #dcfce7;
+  --color-primary-200: #bbf7d0;
+  --color-primary-300: #86efac;
+  --color-primary-400: #4ade80;
+  --color-primary-500: #22c55e;
+  --color-primary-600: #16a34a;
+  --color-primary-700: #15803d;
+  --color-primary-800: #166534;
+  --color-primary-900: #14532d;
+  --color-primary-950: #052e16;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", Georgia, serif;
+}
+
+body {
+  @apply bg-stone-50 text-stone-900 antialiased;
+  font-family: var(--font-sans);
+}
+
+.login-page {
+  position: relative;
+  background:
+    radial-gradient(ellipse 70% 50% at 20% 30%, rgba(255, 255, 255, 0.08), transparent 55%),
+    linear-gradient(145deg, #0f3d24 0%, #14532d 48%, #052e16 100%);
+  overflow: hidden;
+}
+
+.login-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.14;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.badge-critico { @apply bg-red-100 text-red-800 border border-red-200; }
+.badge-medio { @apply bg-amber-100 text-amber-900 border border-amber-200; }
+.badge-positivo { @apply bg-emerald-100 text-emerald-800 border border-emerald-200; }
+.badge-abierto { @apply bg-sky-100 text-sky-800 border border-sky-200; }
+.badge-proceso { @apply bg-violet-100 text-violet-800 border border-violet-200; }
+.badge-cerrado { @apply bg-stone-200 text-stone-700 border border-stone-300; }

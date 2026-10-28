@@ -1,0 +1,211 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  ADMIN
+  EDITOR
+  VIEWER
+}
+
+enum CicloEstado {
+  ABIERTO
+  CERRADO
+}
+
+enum Termometro {
+  CRITICO
+  MEDIO
+  POSITIVO
+}
+
+enum EstadoSeguimiento {
+  ABIERTO
+  EN_PROCESO
+  CERRADO
+}
+
+model User {
+  id           String   @id @default(uuid())
+  username     String   @unique
+  email        String?  @unique
+  passwordHash String   @map("password_hash")
+  fullName     String   @map("full_name")
+  role         UserRole @default(EDITOR)
+  active       Boolean  @default(true)
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  avancesCreated AvanceHistorial[]
+
+  @@map("users")
+}
+
+model Area {
+  id        String   @id @default(uuid())
+  name      String   @unique
+  active    Boolean  @default(true)
+  sortOrder Int      @default(0) @map("sort_order")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  sesiones  SesionGrupoFocal[]
+  hallazgos Hallazgo[]
+
+  @@map("areas")
+}
+
+model Categoria {
+  id        String   @id @default(uuid())
+  name      String   @unique
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  subcategorias Subcategoria[]
+  hallazgos     Hallazgo[]
+
+  @@map("categorias")
+}
+
+model Subcategoria {
+  id          String   @id @default(uuid())
+  categoriaId String   @map("categoria_id")
+  name        String
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  categoria Categoria @relation(fields: [categoriaId], references: [id], onDelete: Cascade)
+  hallazgos Hallazgo[]
+
+  @@unique([categoriaId, name])
+  @@map("subcategorias")
+}
+
+model Responsable {
+  id        String   @id @default(uuid())
+  name      String   @unique
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  hallazgos HallazgoResponsable[]
+
+  @@map("responsables")
+}
+
+model Ciclo {
+  id          String      @id @default(uuid())
+  nombre      String
+  anio        Int
+  estado      CicloEstado @default(ABIERTO)
+  fechaInicio DateTime?   @map("fecha_inicio") @db.Date
+  fechaCierre DateTime?   @map("fecha_cierre") @db.Date
+  notas       String?     @db.Text
+  createdAt   DateTime    @default(now()) @map("created_at")
+  updatedAt   DateTime    @updatedAt @map("updated_at")
+
+  sesiones  SesionGrupoFocal[]
+  hallazgos Hallazgo[]
+
+  @@unique([nombre, anio])
+  @@map("ciclos")
+}
+
+model SesionGrupoFocal {
+  id        String    @id @default(uuid())
+  cicloId   String    @map("ciclo_id")
+  areaId    String    @map("area_id")
+  fecha     DateTime  @db.Date
+  hora      String?
+  notasActa String?   @map("notas_acta") @db.LongText
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime  @updatedAt @map("updated_at")
+
+  ciclo     Ciclo      @relation(fields: [cicloId], references: [id], onDelete: Cascade)
+  area      Area       @relation(fields: [areaId], references: [id])
+  hallazgos Hallazgo[]
+
+  @@index([cicloId, areaId])
+  @@map("sesiones_grupo_focal")
+}
+
+model Hallazgo {
+  id                String            @id @default(uuid())
+  cicloId           String            @map("ciclo_id")
+  sesionId          String?           @map("sesion_id")
+  areaId            String            @map("area_id")
+  categoriaId       String            @map("categoria_id")
+  subcategoriaId    String?           @map("subcategoria_id")
+  fecha             DateTime          @db.Date
+  termometro        Termometro
+  observacion       String            @db.LongText
+  compromiso        String?           @db.LongText
+  estadoSeguimiento EstadoSeguimiento @default(ABIERTO) @map("estado_seguimiento")
+  avances           String?           @db.LongText
+  calificacion      Int
+  createdAt         DateTime          @default(now()) @map("created_at")
+  updatedAt         DateTime          @updatedAt @map("updated_at")
+
+  ciclo        Ciclo                 @relation(fields: [cicloId], references: [id], onDelete: Cascade)
+  sesion       SesionGrupoFocal?     @relation(fields: [sesionId], references: [id], onDelete: SetNull)
+  area         Area                  @relation(fields: [areaId], references: [id])
+  categoria    Categoria             @relation(fields: [categoriaId], references: [id])
+  subcategoria Subcategoria?         @relation(fields: [subcategoriaId], references: [id], onDelete: SetNull)
+  responsables HallazgoResponsable[]
+  historial    AvanceHistorial[]
+
+  @@index([fecha])
+  @@index([cicloId])
+  @@index([areaId])
+  @@index([termometro])
+  @@index([estadoSeguimiento])
+  @@map("hallazgos")
+}
+
+model HallazgoResponsable {
+  hallazgoId    String @map("hallazgo_id")
+  responsableId String @map("responsable_id")
+
+  hallazgo    Hallazgo    @relation(fields: [hallazgoId], references: [id], onDelete: Cascade)
+  responsable Responsable @relation(fields: [responsableId], references: [id], onDelete: Cascade)
+
+  @@id([hallazgoId, responsableId])
+  @@map("hallazgo_responsables")
+}
+
+model AvanceHistorial {
+  id         String   @id @default(uuid())
+  hallazgoId String   @map("hallazgo_id")
+  texto      String   @db.Text
+  createdById String? @map("created_by_id")
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  hallazgo  Hallazgo @relation(fields: [hallazgoId], references: [id], onDelete: Cascade)
+  createdBy User?    @relation(fields: [createdById], references: [id], onDelete: SetNull)
+
+  @@index([hallazgoId])
+  @@map("avances_historial")
+}
+
+model EscalaTermometro {
+  termometro Termometro @id
+  puntos     Int
+
+  @@map("escala_termometro")
+}
+
+model EscalaEstadoArea {
+  id     Int    @id @default(autoincrement())
+  minPts Int    @map("min_pts")
+  maxPts Int    @map("max_pts")
+  estado String
+
+  @@map("escala_estado_area")
+}
