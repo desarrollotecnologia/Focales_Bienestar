@@ -38,14 +38,6 @@ const ESTADO_COLORES: Record<string, string> = {
   'Crítico / Vulnerable': 'E11D48',
 };
 
-const PALETA_SISTEMA = [
-  { hex: '059669', label: 'Verde' },
-  { hex: '0284C7', label: 'Azul' },
-  { hex: 'CA8A04', label: 'Ámbar' },
-  { hex: 'EA580C', label: 'Naranja' },
-  { hex: 'E11D48', label: 'Rojo' },
-] as const;
-
 function colorDeEstado(estado: string, color?: string | null): string {
   const raw = (color || '').replace('#', '').trim().toUpperCase();
   if (/^[0-9A-F]{6}$/.test(raw)) return raw;
@@ -273,11 +265,11 @@ export default function EscalaPage() {
                   className="rounded-xl border p-4"
                   style={{ backgroundColor: tint.bg, borderColor: tint.border }}
                 >
-                  <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
+                  <div className="flex flex-wrap items-center justify-between gap-3">
                     <div className="flex flex-wrap items-center gap-3 flex-1 min-w-0">
                       <input
                         disabled={!isAdmin}
-                        className="text-sm font-bold text-primary-950 bg-transparent border-0 border-b border-transparent focus:border-stone-300 focus:outline-none min-w-[160px] max-w-full disabled:opacity-80"
+                        className="text-sm font-bold text-primary-950 bg-white border border-stone-200 rounded-lg px-3 py-1.5 min-w-[180px] max-w-full disabled:bg-stone-100"
                         value={e.estado}
                         onChange={(ev) => {
                           const nombre = ev.target.value;
@@ -326,37 +318,6 @@ export default function EscalaPage() {
                         <Trash2 size={15} />
                       </button>
                     )}
-                  </div>
-
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="text-xs font-medium text-stone-600">Color</span>
-                    {PALETA_SISTEMA.map((c) => {
-                      const selected = hex === c.hex;
-                      return (
-                        <button
-                          key={c.hex}
-                          type="button"
-                          disabled={!isAdmin}
-                          title={c.label}
-                          onClick={() => updateEstado(i, { color: c.hex })}
-                          className={`w-8 h-8 rounded-lg border-2 shrink-0 disabled:cursor-default ${
-                            selected
-                              ? 'border-primary-950 shadow-sm'
-                              : 'border-white/80 ring-1 ring-black/5 hover:ring-stone-300'
-                          }`}
-                          style={{ backgroundColor: `#${c.hex}` }}
-                        />
-                      );
-                    })}
-                    <span
-                      className="ml-1 inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-lg bg-white/80 border border-stone-200/80 text-stone-700"
-                    >
-                      <span
-                        className="w-2.5 h-2.5 rounded-full"
-                        style={{ backgroundColor: `#${hex}` }}
-                      />
-                      {e.minPts} – {e.maxPts}
-                    </span>
                   </div>
                 </div>
               );
