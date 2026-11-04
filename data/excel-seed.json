@@ -16,6 +16,7 @@
     "Dirección",
     "Dirección/Administración",
     "Gestión Humana",
+    "Gestión Operativa",
     "Jurídica",
     "Liderazgo",
     "Mantenimiento",
@@ -89,6 +90,10 @@
     },
     {
       "categoria": "Gestión Humana",
+      "nombre": "Clima Laboral y Trabajo en Equipo"
+    },
+    {
+      "categoria": "Gestión Humana",
       "nombre": "Clima laboral"
     },
     {
@@ -125,6 +130,10 @@
     },
     {
       "categoria": "Gestión Humana",
+      "nombre": "Espacios de Escucha"
+    },
+    {
+      "categoria": "Gestión Humana",
       "nombre": "Estructura Organizacional"
     },
     {
@@ -134,6 +143,10 @@
     {
       "categoria": "Gestión Humana",
       "nombre": "Estructura organizacional"
+    },
+    {
+      "categoria": "Gestión Humana",
+      "nombre": "Liderazgo"
     },
     {
       "categoria": "Gestión Humana",
@@ -158,6 +171,10 @@
     {
       "categoria": "Gestión Humana",
       "nombre": "Servicios Generales"
+    },
+    {
+      "categoria": "Gestión Operativa",
+      "nombre": "Comunicación y Entrega de Turnos"
     },
     {
       "categoria": "Jurídica",
@@ -185,7 +202,15 @@
     },
     {
       "categoria": "Mantenimiento",
+      "nombre": "Equipos y Accesorios"
+    },
+    {
+      "categoria": "Mantenimiento",
       "nombre": "Equipos y Herramientas"
+    },
+    {
+      "categoria": "Mantenimiento",
+      "nombre": "Equipos y Maquinaria"
     },
     {
       "categoria": "Mantenimiento",
@@ -198,6 +223,10 @@
     {
       "categoria": "Mantenimiento",
       "nombre": "Inspecciones (SST)"
+    },
+    {
+      "categoria": "Mantenimiento",
+      "nombre": "Instalaciones Eléctricas"
     },
     {
       "categoria": "Mantenimiento",
@@ -226,6 +255,10 @@
     {
       "categoria": "Nómina",
       "nombre": "Compensaciones"
+    },
+    {
+      "categoria": "Nómina",
+      "nombre": "Cumplimiento Organizacional"
     },
     {
       "categoria": "Nómina",
@@ -305,6 +338,10 @@
     },
     {
       "categoria": "SST",
+      "nombre": "Accesos y Trabajo Seguro"
+    },
+    {
+      "categoria": "SST",
       "nombre": "Acompañamiento"
     },
     {
@@ -365,6 +402,10 @@
     },
     {
       "categoria": "SST",
+      "nombre": "Seguridad en Maniobras Operativas"
+    },
+    {
+      "categoria": "SST",
       "nombre": "Señalización"
     },
     {
@@ -398,6 +439,7 @@
     "Equipo Logística",
     "Equipo Operaciones",
     "Equipo SST",
+    "Equipo del área",
     "Especialista PMO",
     "Finanzas",
     "Gerencia General",
@@ -419,9 +461,11 @@
     "Operaciones",
     "PMO",
     "Planillaje",
+    "Proveedor especializado",
     "SST",
     "Supervisor Limpieza y Desinfección",
     "Supervisora LyD",
+    "TICS o proveedor eléctrico especializado",
     "Tecnología"
   ],
   "escala": {
@@ -3871,6 +3915,232 @@
       "estado": "ABIERTO",
       "avances": "",
       "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 3",
+      "fecha": "2026-10-27",
+      "area": "Ambiental",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Equipos y Maquinaria",
+      "termometro": "CRITICO",
+      "observacion": "PTAR – Tornillo prensa en tamiz rotatorio: se sugiere evaluar su cambio para mejorar el procesamiento del rumen. Actualmente se acumula exceso de material, aumenta la carga del equipo y existe preocupación por posibles daños o quemaduras por sobrecarga.",
+      "compromiso": "Inspeccionar el tamiz rotatorio y evaluar técnicamente el cambio del tornillo prensa, definiendo las acciones necesarias para disminuir la acumulación de material y prevenir sobrecargas.",
+      "responsables": [
+        "Líder Ambiental",
+        "Mantenimiento"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 3",
+      "fecha": "2026-10-27",
+      "area": "Ambiental",
+      "categoria": "SST",
+      "subcategoria": "Seguridad en Maniobras Operativas",
+      "termometro": "CRITICO",
+      "observacion": "PTAR – Adecuación de tubería de lodos: solicitan realizar la conexión desde el exterior, evitando que los colaboradores deban efectuar maniobras internas que puedan exponerlos a actos o condiciones inseguras.",
+      "compromiso": "Evaluar y adecuar la conexión de la tubería de lodos desde el exterior, eliminando en lo posible la necesidad de realizar maniobras internas y estableciendo controles de seguridad.",
+      "responsables": [
+        "Líder Ambiental",
+        "Mantenimiento",
+        "Equipo SST"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 3",
+      "fecha": "2026-10-27",
+      "area": "Ambiental",
+      "categoria": "SST",
+      "subcategoria": "Accesos y Trabajo Seguro",
+      "termometro": "CRITICO",
+      "observacion": "PTAR – Acceso al reactor biológico: se propone instalar una escalera para facilitar el destape de la tubería antiespumante, evitando maniobras improvisadas y reduciendo la exposición a riesgos durante la intervención.",
+      "compromiso": "Evaluar e instalar una escalera o acceso seguro al reactor biológico, de acuerdo con las condiciones técnicas y los estándares de seguridad aplicables.",
+      "responsables": [
+        "Líder Ambiental",
+        "Mantenimiento",
+        "Equipo SST"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 3",
+      "fecha": "2026-10-27",
+      "area": "Ambiental",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "CRITICO",
+      "observacion": "PTAP – Pasarela en Planta de Tratamiento N.º 1: solicitan reemplazar la estructura utilizada para el lavado de la planta debido a sus condiciones actuales de inseguridad, que dificultan las actividades y aumentan el riesgo de accidentes.",
+      "compromiso": "Inspeccionar la pasarela y gestionar el diseño, adecuación o reemplazo de la estructura para garantizar condiciones seguras durante las labores de lavado.",
+      "responsables": [
+        "Líder Ambiental",
+        "Mantenimiento",
+        "Equipo SST"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 3",
+      "fecha": "2026-10-27",
+      "area": "Ambiental",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Instalaciones Eléctricas",
+      "termometro": "CRITICO",
+      "observacion": "PTAP – Tablero eléctrico principal de 220 V: reportan que el tablero se encuentra quemado y no cuenta con posiciones disponibles. Se requiere reemplazo o adecuación para garantizar condiciones seguras y funcionalidad eléctrica.",
+      "compromiso": "Solicitar diagnóstico técnico especializado y gestionar el reemplazo o adecuación del tablero eléctrico, verificando capacidad, protecciones y condiciones de seguridad.",
+      "responsables": [
+        "Mantenimiento",
+        "TICS o proveedor eléctrico especializado",
+        "Líder Ambiental"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 3",
+      "fecha": "2026-10-27",
+      "area": "Ambiental",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Equipos y Accesorios",
+      "termometro": "MEDIO",
+      "observacion": "PTAP – Válvulas de llenado de tanques y apertura de filtros: presentan deterioro y no permiten una manipulación adecuada; actualmente se requiere utilizar una llave de tubo para operarlas.",
+      "compromiso": "Inspeccionar las válvulas y evaluar su reparación o reemplazo para facilitar su operación y reducir riesgos durante las maniobras.",
+      "responsables": [
+        "Mantenimiento",
+        "Líder Ambiental"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 3",
+      "fecha": "2026-10-27",
+      "area": "Ambiental",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Equipos y Maquinaria",
+      "termometro": "CRITICO",
+      "observacion": "PTAP – Sistema de inyección de cloro gaseoso: el motor no está generando la presión requerida para el proceso, situación que puede comprometer la eficiencia operativa del sistema.",
+      "compromiso": "Realizar revisión técnica del motor y del sistema de inyección de cloro gaseoso; definir y ejecutar los ajustes o el reemplazo requerido para recuperar la presión de operación.",
+      "responsables": [
+        "Mantenimiento",
+        "Líder Ambiental",
+        "Proveedor especializado"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 3",
+      "fecha": "2026-10-27",
+      "area": "Ambiental",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "POSITIVO",
+      "observacion": "Se reconocen avances en la adecuación de los soportes de los diferenciales de las bombas de la PTAR, contribuyendo a mejores condiciones de funcionamiento de los equipos.",
+      "compromiso": "Mantener el seguimiento a las adecuaciones realizadas y verificar su funcionalidad durante la operación de los equipos.",
+      "responsables": [
+        "Líder Ambiental",
+        "Mantenimiento"
+      ],
+      "estado": "CERRADO",
+      "avances": "",
+      "calificacion": 100
+    },
+    {
+      "ciclo": "Ciclo 3",
+      "fecha": "2026-10-27",
+      "area": "Ambiental",
+      "categoria": "Gestión Operativa",
+      "subcategoria": "Comunicación y Entrega de Turnos",
+      "termometro": "POSITIVO",
+      "observacion": "Se destacan avances en la comunicación y entrega de información entre turnos, favoreciendo la continuidad y coordinación de las actividades operativas.",
+      "compromiso": "Conservar las buenas prácticas de comunicación y entrega de turno, asegurando que la información relevante para la operación sea compartida oportunamente.",
+      "responsables": [
+        "Líder Ambiental",
+        "Equipo del área"
+      ],
+      "estado": "CERRADO",
+      "avances": "",
+      "calificacion": 100
+    },
+    {
+      "ciclo": "Ciclo 3",
+      "fecha": "2026-10-27",
+      "area": "Ambiental",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Clima Laboral y Trabajo en Equipo",
+      "termometro": "POSITIVO",
+      "observacion": "Se percibe una mejora general en el ambiente laboral, con mayor colaboración, disposición al trabajo en equipo y apoyo entre compañeros.",
+      "compromiso": "Promover la continuidad de las dinámicas colaborativas y mantener espacios de diálogo que permitan fortalecer el ambiente laboral y atender oportunamente las necesidades del equipo.",
+      "responsables": [
+        "Líder Ambiental",
+        "Gestión Humana"
+      ],
+      "estado": "CERRADO",
+      "avances": "",
+      "calificacion": 100
+    },
+    {
+      "ciclo": "Ciclo 3",
+      "fecha": "2026-10-27",
+      "area": "Ambiental",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Liderazgo",
+      "termometro": "POSITIVO",
+      "observacion": "El equipo reconoce positivamente el liderazgo de Kevin, destacando su compromiso, comprensión y disposición para acompañar al equipo, así como su involucramiento directo en la búsqueda de soluciones operativas.",
+      "compromiso": "Fortalecer el liderazgo cercano y facilitador, manteniendo el acompañamiento al equipo y la participación en la identificación y solución de necesidades operativas.",
+      "responsables": [
+        "Líder Ambiental",
+        "Gestión Humana"
+      ],
+      "estado": "CERRADO",
+      "avances": "",
+      "calificacion": 100
+    },
+    {
+      "ciclo": "Ciclo 3",
+      "fecha": "2026-10-27",
+      "area": "Ambiental",
+      "categoria": "Nómina",
+      "subcategoria": "Cumplimiento Organizacional",
+      "termometro": "POSITIVO",
+      "observacion": "Los colaboradores destacan positivamente el cumplimiento oportuno de Colbeef en el pago de nómina, aspecto que contribuye a la confianza y tranquilidad del equipo.",
+      "compromiso": "Mantener el cumplimiento oportuno de las obligaciones de nómina y continuar fortaleciendo la confianza de los colaboradores.",
+      "responsables": [
+        "Gestión Humana",
+        "Nómina"
+      ],
+      "estado": "CERRADO",
+      "avances": "",
+      "calificacion": 100
+    },
+    {
+      "ciclo": "Ciclo 3",
+      "fecha": "2026-10-27",
+      "area": "Ambiental",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Espacios de Escucha",
+      "termometro": "POSITIVO",
+      "observacion": "La percepción favorable sobre el ambiente de trabajo y el liderazgo representa una oportunidad para dar continuidad a los espacios de diálogo, anticipar necesidades, identificar riesgos y fortalecer el bienestar y desempeño del equipo.",
+      "compromiso": "Dar continuidad a los espacios de escucha y seguimiento con el equipo para identificar oportunamente necesidades, riesgos y oportunidades de mejora.",
+      "responsables": [
+        "Líder Ambiental",
+        "Gestión Humana"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 100
     }
   ]
 }

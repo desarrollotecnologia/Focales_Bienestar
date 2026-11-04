@@ -10,7 +10,7 @@ import openpyxl
 
 ROOT = Path(__file__).resolve().parents[1]
 OLD = Path(r"c:\Users\CAMPUSLANDS\Downloads\SEGUIMIENTO GRUPOS FOCALES.xlsx")
-NEW = Path(r"c:\Users\CAMPUSLANDS\Downloads\SEGUIMIENTO GRUPOS FOCALES (2).xlsx")
+NEW = Path(r"c:\Users\CAMPUSLANDS\Downloads\SEGUIMIENTO GRUPOS FOCALES (3).xlsx")
 SEED = ROOT / "data" / "excel-seed.json"
 
 

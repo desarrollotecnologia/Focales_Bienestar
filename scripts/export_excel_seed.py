@@ -12,7 +12,7 @@ except ImportError:
     sys.exit(1)
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_XLSX = Path(r"c:\Users\CAMPUSLANDS\Downloads\SEGUIMIENTO GRUPOS FOCALES (2).xlsx")
+DEFAULT_XLSX = Path(r"c:\Users\CAMPUSLANDS\Downloads\SEGUIMIENTO GRUPOS FOCALES (3).xlsx")
 OUT = ROOT / "data" / "excel-seed.json"
 
 
@@ -53,7 +53,16 @@ def main():
     hallazgos = []
     areas, cats, subs, resps = set(), set(), set(), set()
 
-    for sheet_name, ciclo_nombre in [("CICLO 1", "Ciclo 1"), ("CICLO 2", "Ciclo 2")]:
+    ciclo_sheets = [
+        n for n in wb.sheetnames if n.upper().startswith("CICLO")
+    ]
+    if not ciclo_sheets:
+        print("No se encontraron hojas CICLO*")
+        sys.exit(1)
+
+    for sheet_name in ciclo_sheets:
+        # "CICLO 3" -> "Ciclo 3"
+        ciclo_nombre = re.sub(r"(?i)^ciclo\s*", "Ciclo ", sheet_name).strip()
         ws = wb[sheet_name]
         for r in range(2, ws.max_row + 1):
             fecha = ws.cell(r, 2).value
@@ -104,6 +113,7 @@ def main():
                     "calificacion": pts,
                 }
             )
+    print(f"Hojas importadas: {', '.join(ciclo_sheets)}")
 
     out = {
         "areas": sorted(a for a in areas if a),
