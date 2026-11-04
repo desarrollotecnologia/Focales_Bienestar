@@ -9,6 +9,7 @@ import {
   LogOut,
   Users,
   Shield,
+  Gauge,
 } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
 
@@ -19,6 +20,7 @@ const links = [
   { to: '/ciclos', label: 'Ciclos', icon: RefreshCw },
   { to: '/resumen-mensual', label: 'Resumen mensual', icon: CalendarRange },
   { to: '/catalogos', label: 'Catálogos', icon: Tags },
+  { to: '/escala', label: 'Escala', icon: Gauge },
 ];
 
 export default function Layout() {

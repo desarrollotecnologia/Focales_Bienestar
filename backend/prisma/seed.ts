@@ -38,11 +38,27 @@ async function main() {
   const data = JSON.parse(fs.readFileSync(seedPath, 'utf8')) as SeedData;
 
   console.log('→ Escala termómetro / estado área');
+  const termDesc: Record<string, string> = {
+    POSITIVO: 'Aspectos valorados positivamente (Fortalezas / Satisfacción)',
+    MEDIO: 'Novedades / Oportunidades de mejora moderadas',
+    CRITICO: 'Puntos críticos / Riesgos altos que afectan el clima y la operación',
+  };
+  const estadoColor: Record<string, string> = {
+    Excelente: '059669',
+    Bueno: '0284C7',
+    'Aceptable / Estable': 'CA8A04',
+    'En Riesgo / Alerta': 'EA580C',
+    'Crítico / Vulnerable': 'E11D48',
+  };
   for (const [term, pts] of Object.entries(data.escala.termometro)) {
     await prisma.escalaTermometro.upsert({
       where: { termometro: term as Termometro },
-      update: { puntos: pts },
-      create: { termometro: term as Termometro, puntos: pts },
+      update: { puntos: pts, descripcion: termDesc[term] || null },
+      create: {
+        termometro: term as Termometro,
+        puntos: pts,
+        descripcion: termDesc[term] || null,
+      },
     });
   }
   await prisma.escalaEstadoArea.deleteMany();
@@ -51,6 +67,7 @@ async function main() {
       minPts: e.min,
       maxPts: e.max,
       estado: e.estado,
+      color: estadoColor[e.estado] || null,
     })),
   });
 

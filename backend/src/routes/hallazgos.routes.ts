@@ -154,7 +154,7 @@ router.post('/', requireRole('ADMIN', 'EDITOR'), async (req, res) => {
       compromiso: body.compromiso || null,
       estadoSeguimiento: body.estadoSeguimiento || 'ABIERTO',
       avances: body.avances || null,
-      calificacion: puntosTermometro(body.termometro),
+      calificacion: await puntosTermometro(body.termometro),
       responsables: body.responsableIds?.length
         ? { create: body.responsableIds.map((id) => ({ responsableId: id })) }
         : undefined,
@@ -192,7 +192,7 @@ router.put('/:id', requireRole('ADMIN', 'EDITOR'), async (req, res) => {
   if (body.fecha) data.fecha = new Date(body.fecha);
   if (body.termometro) {
     data.termometro = body.termometro;
-    data.calificacion = puntosTermometro(body.termometro);
+    data.calificacion = await puntosTermometro(body.termometro);
   }
   if (body.observacion !== undefined) data.observacion = body.observacion;
   if (body.compromiso !== undefined) data.compromiso = body.compromiso;

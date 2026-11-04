@@ -195,8 +195,9 @@ model AvanceHistorial {
 }
 
 model EscalaTermometro {
-  termometro Termometro @id
-  puntos     Int
+  termometro  Termometro @id
+  puntos      Int
+  descripcion String?    @db.Text
 
   @@map("escala_termometro")
 }
@@ -206,6 +207,7 @@ model EscalaEstadoArea {
   minPts Int    @map("min_pts")
   maxPts Int    @map("max_pts")
   estado String
+  color  String? // hex opcional para UI/PPTX
 
   @@map("escala_estado_area")
 }

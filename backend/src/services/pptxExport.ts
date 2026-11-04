@@ -44,14 +44,16 @@ function filtrosTexto(f: DashboardFilters): string {
 function scoreColor(score: number): string {
   if (score < 50) return C.crit;
   if (score < 70) return C.mid;
-  if (score < 85) return C.sky;
+  if (score < 80) return C.sky;
+  if (score < 90) return '0284C7'; // Bueno
   return C.pos;
 }
 
 function scoreBg(score: number): string {
   if (score < 50) return C.critBg;
   if (score < 70) return C.midBg;
-  if (score < 85) return C.skyBg;
+  if (score < 80) return C.skyBg;
+  if (score < 90) return 'E0F2FE';
   return C.posBg;
 }
 

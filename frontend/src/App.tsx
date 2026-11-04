@@ -11,6 +11,7 @@ import ReunionDetailPage from '@/pages/ReunionDetailPage';
 import ResumenMensualPage from '@/pages/ResumenMensualPage';
 import CatalogosPage from '@/pages/CatalogosPage';
 import UsuariosPage from '@/pages/UsuariosPage';
+import EscalaPage from '@/pages/EscalaPage';
 
 function PrivateRoute({ children }: { children: React.ReactNode }) {
   const { user, loading } = useAuth();
@@ -40,6 +41,7 @@ export default function App() {
         <Route path="resumen-mensual" element={<ResumenMensualPage />} />
         <Route path="catalogos" element={<CatalogosPage />} />
         <Route path="usuarios" element={<UsuariosPage />} />
+        <Route path="escala" element={<EscalaPage />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>

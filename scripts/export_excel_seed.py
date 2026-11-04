@@ -113,8 +113,9 @@ def main():
         "escala": {
             "termometro": {"POSITIVO": 100, "MEDIO": 60, "CRITICO": 20},
             "estados_area": [
-                {"min": 85, "max": 100, "estado": "Excelente"},
-                {"min": 70, "max": 84, "estado": "Aceptable / Estable"},
+                {"min": 90, "max": 100, "estado": "Excelente"},
+                {"min": 80, "max": 89, "estado": "Bueno"},
+                {"min": 70, "max": 79, "estado": "Aceptable / Estable"},
                 {"min": 50, "max": 69, "estado": "En Riesgo / Alerta"},
                 {"min": 0, "max": 49, "estado": "Crítico / Vulnerable"},
             ],

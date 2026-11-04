@@ -181,11 +181,83 @@ router.delete('/responsables/:id', requireRole('ADMIN', 'EDITOR'), async (req, r
 });
 
 router.get('/escala', async (_req, res) => {
-  const [termometro, estados] = await Promise.all([
-    prisma.escalaTermometro.findMany(),
-    prisma.escalaEstadoArea.findMany({ orderBy: { minPts: 'desc' } }),
-  ]);
-  res.json({ termometro, estados });
+  const { getEscalaCompleta } = await import('../services/scoring');
+  res.json(await getEscalaCompleta());
+});
+
+router.put('/escala', requireRole('ADMIN'), async (req, res) => {
+  const {
+    getEscalaCompleta,
+    invalidateEscalaCache,
+    puntosTermometro,
+    validateEstadosArea,
+    TERMOMETRO_DESC_FALLBACK,
+  } = await import('../services/scoring');
+  const body = req.body as {
+    termometro?: { termometro: string; puntos: number; descripcion?: string }[];
+    estadosArea?: { minPts: number; maxPts: number; estado: string; color?: string | null }[];
+    recalcularHallazgos?: boolean;
+  };
+
+  const termsOk = ['CRITICO', 'MEDIO', 'POSITIVO'] as const;
+
+  if (body.termometro?.length) {
+    for (const t of body.termometro) {
+      if (!termsOk.includes(t.termometro as (typeof termsOk)[number])) {
+        return res.status(400).json({ error: `Termómetro inválido: ${t.termometro}` });
+      }
+      const pts = Number(t.puntos);
+      if (!Number.isFinite(pts) || pts < 0 || pts > 100) {
+        return res.status(400).json({ error: `Puntos inválidos para ${t.termometro}` });
+      }
+    }
+    for (const t of body.termometro) {
+      const term = t.termometro as (typeof termsOk)[number];
+      await prisma.escalaTermometro.upsert({
+        where: { termometro: term },
+        update: {
+          puntos: Number(t.puntos),
+          descripcion: t.descripcion?.trim() || TERMOMETRO_DESC_FALLBACK[term],
+        },
+        create: {
+          termometro: term,
+          puntos: Number(t.puntos),
+          descripcion: t.descripcion?.trim() || TERMOMETRO_DESC_FALLBACK[term],
+        },
+      });
+    }
+  }
+
+  if (body.estadosArea) {
+    const err = validateEstadosArea(body.estadosArea);
+    if (err) return res.status(400).json({ error: err });
+    await prisma.escalaEstadoArea.deleteMany();
+    await prisma.escalaEstadoArea.createMany({
+      data: body.estadosArea.map((e) => ({
+        minPts: Number(e.minPts),
+        maxPts: Number(e.maxPts),
+        estado: e.estado.trim(),
+        color: e.color?.replace('#', '') || null,
+      })),
+    });
+  }
+
+  invalidateEscalaCache();
+
+  let recalculados = 0;
+  if (body.recalcularHallazgos !== false && body.termometro?.length) {
+    for (const term of ['CRITICO', 'MEDIO', 'POSITIVO'] as const) {
+      const pts = await puntosTermometro(term);
+      const r = await prisma.hallazgo.updateMany({
+        where: { termometro: term },
+        data: { calificacion: pts },
+      });
+      recalculados += r.count;
+    }
+  }
+
+  const escala = await getEscalaCompleta();
+  res.json({ ...escala, recalculados });
 });
 
 export default router;

@@ -81,18 +81,19 @@ export async function getDashboardData(filters: DashboardFilters) {
     porArea.set(h.areaId, cur);
   }
 
-  const termometroAreas = [...porArea.values()]
-    .map((a) => {
+  const termometroAreas = await Promise.all(
+    [...porArea.values()].map(async (a) => {
       const calificacion = a.n ? Math.round((a.suma / a.n) * 100) / 100 : 0;
       return {
         areaId: a.areaId,
         area: a.area,
         calificacion,
-        estado: estadoAreaDesdePromedio(calificacion),
+        estado: await estadoAreaDesdePromedio(calificacion),
         hallazgos: a.n,
       };
-    })
-    .sort((a, b) => a.area.localeCompare(b.area));
+    }),
+  );
+  termometroAreas.sort((a, b) => a.area.localeCompare(b.area));
 
   const promedioGeneral =
     termometroAreas.length > 0
@@ -170,7 +171,7 @@ export async function getDashboardData(filters: DashboardFilters) {
     estados: porEstado,
     termometroAreas,
     promedioGeneral,
-    estadoPromedio: estadoAreaDesdePromedio(promedioGeneral),
+    estadoPromedio: await estadoAreaDesdePromedio(promedioGeneral),
     comparativoPrevio,
     criticos,
     mediosAgrupados: [...mediosAgrupados.values()].sort((a, b) => b.count - a.count),

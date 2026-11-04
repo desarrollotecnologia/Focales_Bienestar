@@ -410,13 +410,18 @@
     },
     "estados_area": [
       {
-        "min": 85,
+        "min": 90,
         "max": 100,
         "estado": "Excelente"
       },
       {
+        "min": 80,
+        "max": 89,
+        "estado": "Bueno"
+      },
+      {
         "min": 70,
-        "max": 84,
+        "max": 79,
         "estado": "Aceptable / Estable"
       },
       {
