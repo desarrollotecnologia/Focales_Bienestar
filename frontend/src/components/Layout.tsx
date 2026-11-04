@@ -12,8 +12,15 @@ import {
   Gauge,
 } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
+import type { UserRole } from '@/types';
 
-const links = [
+const ROLE_LABEL: Record<UserRole, string> = {
+  ADMIN: 'Administrador',
+  EDITOR: 'Editor',
+  VIEWER: 'Consulta',
+};
+
+const allLinks = [
   { to: '/', label: 'Dashboard', icon: LayoutDashboard },
   { to: '/reuniones', label: 'Reuniones', icon: CalendarDays },
   { to: '/hallazgos', label: 'Hallazgos', icon: ClipboardList },
@@ -24,12 +31,14 @@ const links = [
 ];
 
 export default function Layout() {
-  const { user, logout, isAdmin } = useAuth();
+  const { user, logout, isAdmin, isViewer } = useAuth();
   const navigate = useNavigate();
 
-  const navLinks = isAdmin
-    ? [...links, { to: '/usuarios', label: 'Usuarios', icon: Shield }]
-    : links;
+  const navLinks = isViewer
+    ? allLinks.filter((l) => l.to === '/')
+    : isAdmin
+      ? [...allLinks, { to: '/usuarios', label: 'Usuarios', icon: Shield }]
+      : allLinks;
 
   return (
     <div className="min-h-screen flex bg-stone-50">
@@ -62,7 +71,9 @@ export default function Layout() {
             <Users size={16} />
             <div>
               <p className="font-medium text-white">{user?.fullName}</p>
-              <p className="text-xs opacity-70">{user?.role}</p>
+              <p className="text-xs opacity-70">
+                {user ? ROLE_LABEL[user.role] : ''}
+              </p>
             </div>
           </div>
           <button

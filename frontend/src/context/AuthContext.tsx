@@ -9,6 +9,8 @@ interface AuthContextType {
   logout: () => void;
   canEdit: boolean;
   isAdmin: boolean;
+  /** Rol Consulta: solo Dashboard + filtros */
+  isViewer: boolean;
 }
 
 const AuthContext = createContext<AuthContextType | null>(null);
@@ -53,6 +55,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         logout,
         canEdit: user?.role === 'ADMIN' || user?.role === 'EDITOR',
         isAdmin: user?.role === 'ADMIN',
+        isViewer: user?.role === 'VIEWER',
       }}
     >
       {children}

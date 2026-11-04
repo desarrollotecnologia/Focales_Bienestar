@@ -19,7 +19,7 @@ interface ManagedUser {
 const ROLE_HELP: Record<UserRole, string> = {
   ADMIN: 'Acceso total + gestión de usuarios',
   EDITOR: 'Crea y edita reuniones, hallazgos y catálogos',
-  VIEWER: 'Solo consulta (sin editar)',
+  VIEWER: 'Solo Dashboard: ver y filtrar (sin otras pantallas)',
 };
 
 const emptyForm = {
