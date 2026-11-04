@@ -32,6 +32,8 @@ export default function HallazgosPage() {
   const [showForm, setShowForm] = useState(false);
   const [form, setForm] = useState(emptyForm);
   const [saving, setSaving] = useState(false);
+  const [msg, setMsg] = useState('');
+  const [error, setError] = useState('');
 
   const load = () => {
     const params = new URLSearchParams({ pageSize: '100' });
@@ -70,15 +72,28 @@ export default function HallazgosPage() {
 
   const onCreate = async (e: FormEvent) => {
     e.preventDefault();
+    if (!form.observacion.trim()) {
+      setError('La observación / hallazgo es obligatoria.');
+      return;
+    }
+    if (!window.confirm('¿Registrar este hallazgo?')) return;
     setSaving(true);
+    setError('');
+    setMsg('');
     try {
       await api.post('/hallazgos', {
         ...form,
+        observacion: form.observacion.trim(),
+        compromiso: form.compromiso.trim() || null,
         subcategoriaId: form.subcategoriaId || null,
       });
       setShowForm(false);
       setForm((f) => ({ ...emptyForm, cicloId: f.cicloId }));
+      setMsg('Hallazgo registrado correctamente.');
       load();
+    } catch (err: unknown) {
+      const ax = err as { response?: { data?: { error?: string } } };
+      setError(ax.response?.data?.error || 'No se pudo registrar el hallazgo.');
     } finally {
       setSaving(false);
     }
@@ -93,13 +108,28 @@ export default function HallazgosPage() {
         </div>
         {canEdit && (
           <button
-            onClick={() => setShowForm((v) => !v)}
+            onClick={() => {
+              setShowForm((v) => !v);
+              setError('');
+              setMsg('');
+            }}
             className="btn-primary inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary-800 text-white text-sm font-semibold"
           >
             <Plus size={16} /> Nuevo hallazgo
           </button>
         )}
       </div>
+
+      {msg && (
+        <p className="text-sm text-emerald-800 bg-emerald-50 border border-emerald-100 rounded-xl px-3 py-2">
+          {msg}
+        </p>
+      )}
+      {error && (
+        <p className="text-sm text-rose-700 bg-rose-50 border border-rose-100 rounded-xl px-3 py-2">
+          {error}
+        </p>
+      )}
 
       <div className="flex flex-wrap gap-3">
         <div className="relative flex-1 min-w-[220px]">

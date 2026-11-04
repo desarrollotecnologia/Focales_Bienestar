@@ -181,25 +181,69 @@ router.put('/:id', requireRole('ADMIN', 'EDITOR'), async (req, res) => {
     responsableIds?: string[];
   };
 
+  const hallazgoId = paramId(req);
+  const actual = await prisma.hallazgo.findUnique({ where: { id: hallazgoId } });
+  if (!actual) return res.status(404).json({ error: 'Hallazgo no encontrado' });
+
+  if (body.observacion !== undefined && !String(body.observacion).trim()) {
+    return res.status(400).json({ error: 'La observación / hallazgo no puede quedar vacía' });
+  }
+  if (body.termometro && !['CRITICO', 'MEDIO', 'POSITIVO'].includes(body.termometro)) {
+    return res.status(400).json({ error: 'Termómetro inválido' });
+  }
+  if (
+    body.estadoSeguimiento &&
+    !['ABIERTO', 'EN_PROCESO', 'CERRADO'].includes(body.estadoSeguimiento)
+  ) {
+    return res.status(400).json({ error: 'Estado de seguimiento inválido' });
+  }
+
+  const nextCicloId = body.cicloId || actual.cicloId;
+  const nextAreaId = body.areaId || actual.areaId;
+  const nextFecha = body.fecha || actual.fecha.toISOString().slice(0, 10);
+  if (body.fecha && !/^\d{4}-\d{2}-\d{2}$/.test(body.fecha)) {
+    return res.status(400).json({ error: 'Fecha inválida (use AAAA-MM-DD)' });
+  }
+  const contextChanged =
+    body.cicloId !== undefined || body.areaId !== undefined || body.fecha !== undefined;
+
+  // Si cambia ciclo/área/fecha, re-vincular a la reunión correspondiente
+  let nextSesionId: string | null | undefined = body.sesionId;
+  if (contextChanged && body.sesionId === undefined) {
+    const fechaDate = new Date(nextFecha);
+    const existente = await prisma.sesionGrupoFocal.findFirst({
+      where: { cicloId: nextCicloId, areaId: nextAreaId, fecha: fechaDate },
+    });
+    if (existente) {
+      nextSesionId = existente.id;
+    } else {
+      const creada = await prisma.sesionGrupoFocal.create({
+        data: { cicloId: nextCicloId, areaId: nextAreaId, fecha: fechaDate },
+      });
+      nextSesionId = creada.id;
+    }
+  }
+
   const data: Prisma.HallazgoUpdateInput = {};
   if (body.cicloId) data.ciclo = { connect: { id: body.cicloId } };
   if (body.areaId) data.area = { connect: { id: body.areaId } };
   if (body.categoriaId) data.categoria = { connect: { id: body.categoriaId } };
   if (body.subcategoriaId === null) data.subcategoria = { disconnect: true };
   else if (body.subcategoriaId) data.subcategoria = { connect: { id: body.subcategoriaId } };
-  if (body.sesionId === null) data.sesion = { disconnect: true };
-  else if (body.sesionId) data.sesion = { connect: { id: body.sesionId } };
+  if (nextSesionId === null) data.sesion = { disconnect: true };
+  else if (nextSesionId) data.sesion = { connect: { id: nextSesionId } };
   if (body.fecha) data.fecha = new Date(body.fecha);
   if (body.termometro) {
     data.termometro = body.termometro;
     data.calificacion = await puntosTermometro(body.termometro);
   }
-  if (body.observacion !== undefined) data.observacion = body.observacion;
-  if (body.compromiso !== undefined) data.compromiso = body.compromiso;
+  if (body.observacion !== undefined) data.observacion = String(body.observacion).trim();
+  if (body.compromiso !== undefined) {
+    data.compromiso = body.compromiso ? String(body.compromiso).trim() : null;
+  }
   if (body.estadoSeguimiento) data.estadoSeguimiento = body.estadoSeguimiento;
   if (body.avances !== undefined) data.avances = body.avances;
 
-  const hallazgoId = paramId(req);
   await prisma.$transaction(async (tx) => {
     if (body.responsableIds) {
       await tx.hallazgoResponsable.deleteMany({ where: { hallazgoId } });

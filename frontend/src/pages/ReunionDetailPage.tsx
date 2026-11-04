@@ -29,6 +29,7 @@ export default function ReunionDetailPage() {
   const [responsables, setResponsables] = useState<Responsable[]>([]);
   const [saving, setSaving] = useState(false);
   const [flash, setFlash] = useState('');
+  const [flashError, setFlashError] = useState('');
   const [actaOpen, setActaOpen] = useState(false);
   const [masCampos, setMasCampos] = useState(false);
   const [acta, setActa] = useState('');
@@ -58,16 +59,26 @@ export default function ReunionDetailPage() {
 
   const guardarActa = async () => {
     if (!id) return;
-    await api.patch(`/sesiones/${id}`, { notasActa: acta || null });
-    setFlash('Acta guardada');
-    setTimeout(() => setFlash(''), 2000);
-    load();
+    setFlashError('');
+    try {
+      await api.patch(`/sesiones/${id}`, { notasActa: acta || null });
+      setFlash('Acta guardada correctamente');
+      setTimeout(() => setFlash(''), 2500);
+      load();
+    } catch {
+      setFlashError('No se pudo guardar el acta.');
+    }
   };
 
   const onQuickAdd = async (e: FormEvent) => {
     e.preventDefault();
-    if (!sesion || !form.categoriaId || !form.observacion.trim()) return;
+    if (!sesion || !form.categoriaId || !form.observacion.trim()) {
+      setFlashError('Complete categoría y observación para registrar el hallazgo.');
+      return;
+    }
     setSaving(true);
+    setFlashError('');
+    setFlash('');
     try {
       await api.post('/hallazgos', {
         sesionId: sesion.id,
@@ -85,10 +96,13 @@ export default function ReunionDetailPage() {
         subcategoriaId: f.subcategoriaId,
         termometro: f.termometro,
       }));
-      setFlash('Registro agregado');
-      setTimeout(() => setFlash(''), 1800);
+      setFlash('Hallazgo registrado correctamente');
+      setTimeout(() => setFlash(''), 2500);
       load();
       requestAnimationFrame(() => obsRef.current?.focus());
+    } catch (err: unknown) {
+      const ax = err as { response?: { data?: { error?: string } } };
+      setFlashError(ax.response?.data?.error || 'No se pudo registrar el hallazgo.');
     } finally {
       setSaving(false);
     }
@@ -119,11 +133,18 @@ export default function ReunionDetailPage() {
             {hallazgos.length} registro(s)
           </p>
         </div>
-        {flash && (
-          <span className="text-sm font-medium text-emerald-700 bg-emerald-50 border border-emerald-100 px-3 py-1.5 rounded-xl">
-            {flash}
-          </span>
-        )}
+        <div className="flex flex-col items-end gap-1.5">
+          {flash && (
+            <span className="text-sm font-medium text-emerald-700 bg-emerald-50 border border-emerald-100 px-3 py-1.5 rounded-xl">
+              {flash}
+            </span>
+          )}
+          {flashError && (
+            <span className="text-sm font-medium text-rose-700 bg-rose-50 border border-rose-100 px-3 py-1.5 rounded-xl">
+              {flashError}
+            </span>
+          )}
+        </div>
       </div>
 
       {puedeEditar && (
@@ -313,7 +334,7 @@ export default function ReunionDetailPage() {
                 <td className="px-3 py-2.5"><EstadoBadge value={h.estadoSeguimiento} /></td>
                 <td className="px-3 py-2.5">
                   <Link to={`/hallazgos/${h.id}`} className="text-primary-700 font-medium hover:underline text-xs">
-                    Detalle
+                    {puedeEditar ? 'Editar' : 'Detalle'}
                   </Link>
                 </td>
               </tr>
