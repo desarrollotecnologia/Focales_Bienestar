@@ -264,34 +264,50 @@ export default function DashboardPage() {
             </div>
 
             <div className="space-y-4">
-              {data.termometroAreas.map((a) => (
-                <div key={a.areaId} className="ui-row grid grid-cols-[minmax(7rem,10rem)_1fr_auto] gap-3 items-center rounded-lg px-2 py-1.5 -mx-2">
-                  <div>
-                    <p className="font-semibold text-stone-800 text-sm">{a.area}</p>
-                    <p className="text-xs text-stone-400">{a.hallazgos} hallazgos</p>
-                  </div>
-                  <div>
-                    <div className="h-3 rounded-full bg-stone-100 overflow-hidden">
-                      <div
-                        className={`h-full rounded-full dash-bar-fill ${scoreBarColor(a.calificacion)}`}
-                        style={{ width: `${Math.min(100, a.calificacion)}%` }}
-                      />
+              {data.termometroAreas.map((a) => {
+                const sinDatos = a.hallazgos === 0;
+                return (
+                  <div
+                    key={a.areaId}
+                    className={`ui-row grid grid-cols-[minmax(7rem,10rem)_1fr_auto] gap-3 items-center rounded-lg px-2 py-1.5 -mx-2 ${
+                      sinDatos ? 'opacity-60' : ''
+                    }`}
+                  >
+                    <div>
+                      <p className="font-semibold text-stone-800 text-sm">{a.area}</p>
+                      <p className="text-xs text-stone-400">
+                        {sinDatos ? 'Sin hallazgos en el filtro' : `${a.hallazgos} hallazgos`}
+                      </p>
+                    </div>
+                    <div>
+                      <div className="h-3 rounded-full bg-stone-100 overflow-hidden">
+                        <div
+                          className={`h-full rounded-full dash-bar-fill ${
+                            sinDatos ? 'bg-stone-300' : scoreBarColor(a.calificacion)
+                          }`}
+                          style={{ width: `${sinDatos ? 0 : Math.min(100, a.calificacion)}%` }}
+                        />
+                      </div>
+                    </div>
+                    <div className="text-right min-w-[9rem]">
+                      <p className="font-[family-name:var(--font-display)] text-lg text-primary-950 leading-none">
+                        {sinDatos ? '—' : a.calificacion}
+                      </p>
+                      <span
+                        className={`inline-block mt-1 px-2 py-0.5 rounded-md text-[11px] font-semibold ${
+                          sinDatos ? 'bg-stone-100 text-stone-500' : scoreBadge(a.calificacion)
+                        }`}
+                      >
+                        {a.estado}
+                      </span>
                     </div>
                   </div>
-                  <div className="text-right min-w-[9rem]">
-                    <p className="font-[family-name:var(--font-display)] text-lg text-primary-950 leading-none">
-                      {a.calificacion}
-                    </p>
-                    <span className={`inline-block mt-1 px-2 py-0.5 rounded-md text-[11px] font-semibold ${scoreBadge(a.calificacion)}`}>
-                      {a.estado}
-                    </span>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-4">
+          <div className="grid lg:grid-cols-3 gap-4">
             <div className="ui-card rounded-2xl border border-red-200 bg-gradient-to-b from-red-50 to-white p-5 shadow-sm">
               <div className="flex items-center gap-2 mb-4">
                 <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-red-600 text-white">
@@ -329,17 +345,20 @@ export default function DashboardPage() {
                 <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-amber-500 text-white">
                   <AlertTriangle size={16} />
                 </span>
-                <h3 className="font-semibold text-amber-950 text-lg">Medios agrupados</h3>
+                <h3 className="font-semibold text-amber-950 text-lg">
+                  Medios agrupados
+                  <span className="ml-2 text-amber-800/80 font-normal text-sm">
+                    ({data.mediosAgrupados.reduce((n, g) => n + g.count, 0)})
+                  </span>
+                </h3>
               </div>
               <div className="space-y-3 max-h-96 overflow-auto pr-1">
-                {data.mediosAgrupados.map((g) => (
+                {data.mediosAgrupados.map((g, i) => (
                   <div key={g.tema} className="ui-card rounded-xl bg-white/90 border border-amber-100 p-3 text-sm">
-                    <div className="flex items-center justify-between gap-2">
-                      <p className="font-semibold text-stone-800">{g.tema}</p>
-                      <span className="shrink-0 rounded-md bg-amber-100 text-amber-900 text-xs font-bold px-2 py-0.5">
-                        {g.count}
-                      </span>
-                    </div>
+                    <p className="font-semibold text-amber-950">
+                      {i + 1}. {g.tema}
+                      <span className="ml-2 text-amber-800/70 font-normal text-sm">({g.count})</span>
+                    </p>
                     <ul className="mt-2 space-y-1 text-stone-600">
                       {g.items.slice(0, 3).map((t, idx) => (
                         <li key={idx} className="flex gap-2">
@@ -350,6 +369,43 @@ export default function DashboardPage() {
                     </ul>
                   </div>
                 ))}
+                {!data.mediosAgrupados.length && (
+                  <p className="text-stone-400 text-sm py-6 text-center">Sin medios en el filtro.</p>
+                )}
+              </div>
+            </div>
+
+            <div className="ui-card rounded-2xl border border-emerald-200 bg-gradient-to-b from-emerald-50 to-white p-5 shadow-sm">
+              <div className="flex items-center gap-2 mb-4">
+                <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-600 text-white">
+                  <CheckCircle2 size={16} />
+                </span>
+                <h3 className="font-semibold text-emerald-900 text-lg">
+                  Hallazgos positivos
+                  <span className="ml-2 text-emerald-700/80 font-normal text-sm">
+                    ({(data.positivos || []).length})
+                  </span>
+                </h3>
+              </div>
+              <div className="space-y-3 max-h-96 overflow-auto pr-1">
+                {(data.positivos || []).map((p, i) => (
+                  <div
+                    key={p.id}
+                    className="ui-card rounded-xl bg-white/90 border border-emerald-100 p-3 text-sm shadow-sm"
+                  >
+                    <p className="font-semibold text-emerald-900">
+                      {i + 1}. {p.area}
+                      <span className="text-stone-500 font-normal">
+                        {' '}· {p.categoria}
+                        {p.subcategoria ? ` / ${p.subcategoria}` : ''}
+                      </span>
+                    </p>
+                    <p className="text-stone-600 mt-1.5 leading-relaxed">{p.observacion}</p>
+                  </div>
+                ))}
+                {!(data.positivos || []).length && (
+                  <p className="text-stone-400 text-sm py-6 text-center">Sin positivos en el filtro.</p>
+                )}
               </div>
             </div>
           </div>

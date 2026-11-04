@@ -81,6 +81,17 @@ export async function getDashboardData(filters: DashboardFilters) {
     porArea.set(h.areaId, cur);
   }
 
+  // Todas las áreas activas (si el filtro no fija un área); las sin hallazgos quedan en 0
+  const areasCatalogo = filters.areaId
+    ? await prisma.area.findMany({ where: { id: filters.areaId }, orderBy: { sortOrder: 'asc' } })
+    : await prisma.area.findMany({ where: { active: true }, orderBy: [{ sortOrder: 'asc' }, { name: 'asc' }] });
+
+  for (const a of areasCatalogo) {
+    if (!porArea.has(a.id)) {
+      porArea.set(a.id, { areaId: a.id, area: a.name, suma: 0, n: 0 });
+    }
+  }
+
   const termometroAreas = await Promise.all(
     [...porArea.values()].map(async (a) => {
       const calificacion = a.n ? Math.round((a.suma / a.n) * 100) / 100 : 0;
@@ -88,17 +99,19 @@ export async function getDashboardData(filters: DashboardFilters) {
         areaId: a.areaId,
         area: a.area,
         calificacion,
-        estado: await estadoAreaDesdePromedio(calificacion),
+        estado: a.n ? await estadoAreaDesdePromedio(calificacion) : 'Sin datos',
         hallazgos: a.n,
       };
     }),
   );
   termometroAreas.sort((a, b) => a.area.localeCompare(b.area));
 
+  // Promedio solo con áreas que sí tienen hallazgos en el filtro
+  const areasConDatos = termometroAreas.filter((a) => a.hallazgos > 0);
   const promedioGeneral =
-    termometroAreas.length > 0
+    areasConDatos.length > 0
       ? Math.round(
-          (termometroAreas.reduce((s, a) => s + a.calificacion, 0) / termometroAreas.length) * 100,
+          (areasConDatos.reduce((s, a) => s + a.calificacion, 0) / areasConDatos.length) * 100,
         ) / 100
       : 0;
 
@@ -137,17 +150,18 @@ export async function getDashboardData(filters: DashboardFilters) {
     };
   }
 
-  const criticos = hallazgos
-    .filter((h) => h.termometro === 'CRITICO')
-    .map((h) => ({
-      id: h.id,
-      fecha: h.fecha,
-      area: h.area.name,
-      categoria: h.categoria.name,
-      subcategoria: h.subcategoria?.name || null,
-      observacion: h.observacion,
-      estado: h.estadoSeguimiento,
-    }));
+  const mapDetalle = (h: (typeof hallazgos)[number]) => ({
+    id: h.id,
+    fecha: h.fecha,
+    area: h.area.name,
+    categoria: h.categoria.name,
+    subcategoria: h.subcategoria?.name || null,
+    observacion: h.observacion,
+    estado: h.estadoSeguimiento,
+  });
+
+  const criticos = hallazgos.filter((h) => h.termometro === 'CRITICO').map(mapDetalle);
+  const positivos = hallazgos.filter((h) => h.termometro === 'POSITIVO').map(mapDetalle);
 
   const mediosAgrupados = new Map<string, { tema: string; count: number; items: string[] }>();
   for (const h of hallazgos.filter((x) => x.termometro === 'MEDIO')) {
@@ -174,6 +188,7 @@ export async function getDashboardData(filters: DashboardFilters) {
     estadoPromedio: await estadoAreaDesdePromedio(promedioGeneral),
     comparativoPrevio,
     criticos,
+    positivos,
     mediosAgrupados: [...mediosAgrupados.values()].sort((a, b) => b.count - a.count),
     hallazgos,
   };

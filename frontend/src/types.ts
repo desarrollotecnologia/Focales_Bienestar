@@ -122,6 +122,15 @@ export interface DashboardData {
     observacion: string;
     estado: EstadoSeguimiento;
   }[];
+  positivos: {
+    id: string;
+    fecha: string;
+    area: string;
+    categoria: string;
+    subcategoria: string | null;
+    observacion: string;
+    estado: EstadoSeguimiento;
+  }[];
   mediosAgrupados: { tema: string; count: number; items: string[] }[];
   filtrosAplicados: Record<string, unknown>;
 }
