@@ -12,7 +12,7 @@ except ImportError:
     sys.exit(1)
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_XLSX = Path(r"c:\Users\CAMPUSLANDS\Downloads\SEGUIMIENTO GRUPOS FOCALES.xlsx")
+DEFAULT_XLSX = Path(r"c:\Users\CAMPUSLANDS\Downloads\SEGUIMIENTO GRUPOS FOCALES (2).xlsx")
 OUT = ROOT / "data" / "excel-seed.json"
 
 

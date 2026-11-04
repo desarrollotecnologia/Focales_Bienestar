@@ -41,11 +41,19 @@
     },
     {
       "categoria": "Dirección",
+      "nombre": "Gestión Documental"
+    },
+    {
+      "categoria": "Dirección",
       "nombre": "Liderazgo"
     },
     {
       "categoria": "Dirección",
       "nombre": "Planeación de proceso"
+    },
+    {
+      "categoria": "Dirección",
+      "nombre": "Procesos Contables"
     },
     {
       "categoria": "Dirección/Administración",
@@ -62,6 +70,10 @@
     {
       "categoria": "Gestión Humana",
       "nombre": "Beneficios"
+    },
+    {
+      "categoria": "Gestión Humana",
+      "nombre": "Beneficios Educativos"
     },
     {
       "categoria": "Gestión Humana",
@@ -110,6 +122,10 @@
     {
       "categoria": "Gestión Humana",
       "nombre": "Cultura Organizacional y Capacitación"
+    },
+    {
+      "categoria": "Gestión Humana",
+      "nombre": "Estructura Organizacional"
     },
     {
       "categoria": "Gestión Humana",
@@ -363,13 +379,17 @@
   "responsables": [
     "Administración",
     "Calidad",
+    "Cartera",
     "Comercial",
     "Comité Directivo",
     "Compras",
+    "Contabilidad",
     "Dir. Comercial",
+    "Direcciones",
     "Dirección",
     "Dirección - GG",
     "Dirección Comercial",
+    "Dirección Financiera",
     "Dirección Operaciones",
     "Dirección Planta",
     "Dirección de Planta",
@@ -379,6 +399,8 @@
     "Equipo Operaciones",
     "Equipo SST",
     "Especialista PMO",
+    "Finanzas",
+    "Gerencia General",
     "Gestión Humana",
     "Jefe de Planta",
     "Jefe de Producción",
@@ -2439,7 +2461,7 @@
       "subcategoria": "Equipos y Herramientas",
       "termometro": "MEDIO",
       "observacion": "Necesidad de sustitución de bombas para vaciado fisicoquímico en PTAR, solicitando mayor diámetro de succión en los nuevos equipos.",
-      "compromiso": "Incluir la especificación de mayor diámetro de succión dentro del proceso de compra y reemplazo de bombas que adelanta Mantenimiento.",
+      "compromiso": "",
       "responsables": [
         "Líder Ambiental",
         "Mantenimiento"
@@ -3658,6 +3680,197 @@
       "estado": "CERRADO",
       "avances": "",
       "calificacion": 100
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-10-23",
+      "area": "Administración",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Compensaciones",
+      "termometro": "CRITICO",
+      "observacion": "Percepción de desmejora salarial y pérdida de competitividad económica, asociada a la evolución de las condiciones salariales frente al costo de vida y a la percepción de insuficiencia en los beneficios actuales.",
+      "compromiso": "Realizar estudio comparativo de mercado salarial, evaluar equidad interna y presentar escenarios de ajuste o fortalecimiento de la compensación a Gerencia General.",
+      "responsables": [
+        "Dirección",
+        "Gestión Humana"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-10-23",
+      "area": "Administración",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Compensaciones",
+      "termometro": "MEDIO",
+      "observacion": "Inconformidad frente al auxilio de movilidad, cuyo valor permanece sin incremento desde 2018 y no tiene carácter prestacional, generando percepción de desactualización y pérdida de capacidad adquisitiva.",
+      "compromiso": "Revisar la pertinencia, valor y condiciones del auxilio de movilidad, evaluando alternativas de actualización y su viabilidad presupuestal, jurídica y tributaria.",
+      "responsables": [
+        "Dirección",
+        "Gestión Humana",
+        "Finanzas"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-10-23",
+      "area": "Administración",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Bienestar y Salario Emocional",
+      "termometro": "MEDIO",
+      "observacion": "Percepción de pocos beneficios y limitada evolución de la propuesta de bienestar, pese a reconocerse un ambiente laboral favorable.",
+      "compromiso": "Revisar y fortalecer la propuesta de beneficios corporativos, priorizando iniciativas de impacto económico, familiar y emocional para los colaboradores.",
+      "responsables": [
+        "Gestión Humana",
+        "Dirección"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-10-23",
+      "area": "Administración",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Beneficios",
+      "termometro": "MEDIO",
+      "observacion": "Propuesta de ampliar el auxilio de lentes a los hijos de los colaboradores, fortaleciendo el alcance familiar de los beneficios de bienestar.",
+      "compromiso": "Evaluar la viabilidad presupuestal, cobertura, criterios de acceso y condiciones para extender el auxilio de lentes a los hijos de los colaboradores.",
+      "responsables": [
+        "Gestión Humana",
+        "Finanzas"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-10-23",
+      "area": "Administración",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Beneficios Educativos",
+      "termometro": "MEDIO",
+      "observacion": "Solicitud de incremento en el valor del auxilio educativo, considerando la necesidad de fortalecer el apoyo al desarrollo académico de los colaboradores y sus familias.",
+      "compromiso": "Revisar el valor, cobertura y criterios de asignación del auxilio educativo, presentando alternativas de actualización y análisis de impacto presupuestal.",
+      "responsables": [
+        "Gestión Humana",
+        "Finanzas"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-10-23",
+      "area": "Administración",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Compensaciones",
+      "termometro": "MEDIO",
+      "observacion": "Propuesta de incrementar el valor de la extraprima o establecer su reconocimiento como un porcentaje del salario del colaborador, buscando mayor proporcionalidad y percepción de equidad.",
+      "compromiso": "Evaluar escenarios de actualización de la extraprima, comparando incremento fijo y reconocimiento porcentual sobre el salario, con análisis de impacto económico y equidad interna.",
+      "responsables": [
+        "Dirección",
+        "Gestión Humana",
+        "Finanzas"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-10-23",
+      "area": "Administración",
+      "categoria": "Gestión Humana",
+      "subcategoria": "Estructura Organizacional",
+      "termometro": "CRITICO",
+      "observacion": "Sobrecarga laboral en determinados roles administrativos, asociada a concentración de responsabilidades y exigencias operativas, con posibles efectos sobre motivación, productividad y sostenibilidad del desempeño.",
+      "compromiso": "Evaluar cargas laborales, distribución de responsabilidades y capacidad operativa de los cargos, identificando alternativas de redistribución, automatización o fortalecimiento de recursos.",
+      "responsables": [
+        "Dirección",
+        "Gestión Humana"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-10-23",
+      "area": "Administración",
+      "categoria": "Dirección",
+      "subcategoria": "Procesos Contables",
+      "termometro": "CRITICO",
+      "observacion": "Desmotivación en Contabilidad frente a las condiciones de los cierres mensuales, ejecutados en aproximadamente tres días, incluidos fines de semana, con bonificación de $100.000. Las horas extras se compensan en tiempo, generando represamiento de actividades al retorno y acumulación de carga laboral.",
+      "compromiso": "Revisar el modelo de cierre contable, tiempos, recursos y mecanismos de reconocimiento. Evaluar alternativas de optimización operativa y revisar la gestión de horas extras y compensaciones conforme a la normativa laboral vigente.",
+      "responsables": [
+        "Dirección Financiera",
+        "Gestión Humana"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 20
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-10-23",
+      "area": "Administración",
+      "categoria": "Dirección",
+      "subcategoria": "Gestión Documental",
+      "termometro": "MEDIO",
+      "observacion": "Saturación y acumulación documental en los archivos de Contabilidad y Cartera, dificultando la organización, consulta y gestión eficiente de la información.",
+      "compromiso": "Evaluar capacidad de almacenamiento, organización documental y alternativas de intervención física o digitalización, conforme a los lineamientos de conservación documental.",
+      "responsables": [
+        "Contabilidad",
+        "Cartera",
+        "Tecnología"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-10-23",
+      "area": "Administración",
+      "categoria": "Dirección",
+      "subcategoria": "Liderazgo",
+      "termometro": "MEDIO",
+      "observacion": "Necesidad de definir una línea de dirección clara y unificada para Colbeef, que permita alinear a las Direcciones y líderes bajo objetivos, prioridades y criterios comunes.",
+      "compromiso": "Definir y socializar lineamientos estratégicos, prioridades organizacionales y criterios de dirección compartidos, fortaleciendo la alineación entre líderes y equipos.",
+      "responsables": [
+        "Gerencia General",
+        "Direcciones"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 60
+    },
+    {
+      "ciclo": "Ciclo 2",
+      "fecha": "2026-10-23",
+      "area": "Administración",
+      "categoria": "Mantenimiento",
+      "subcategoria": "Infraestructura",
+      "termometro": "CRITICO",
+      "observacion": "Deterioro progresivo de la vía principal de acceso a planta, cuya condición continúa empeorando, generando preocupación por la seguridad y movilidad de los colaboradores.",
+      "compromiso": "Realizar evaluación técnica del estado de la vía, priorizar alternativas de intervención y establecer un plan de mantenimiento o adecuación con estimación de recursos y tiempos.",
+      "responsables": [
+        "Dirección",
+        "Compras",
+        "Mantenimiento"
+      ],
+      "estado": "ABIERTO",
+      "avances": "",
+      "calificacion": 20
     }
   ]
 }

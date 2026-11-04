@@ -194,12 +194,18 @@ async function main() {
     cicloMap.set(nombre, ciclo.id);
   }
 
-  // Evitar duplicar hallazgos si se re-ejecuta seed
+  // Evitar duplicar hallazgos si se re-ejecuta seed (FORCE_REIMPORT_HALLAZGOS=1 para regenerar desde Excel)
+  const forceReimport = process.env.FORCE_REIMPORT_HALLAZGOS === '1';
   const existingCount = await prisma.hallazgo.count();
-  if (existingCount > 0) {
+  if (existingCount > 0 && !forceReimport) {
     console.log(`→ Ya hay ${existingCount} hallazgos. No se reimportan (evita duplicados).`);
-    console.log('  Para reimportar: vacíe hallazgos/sesiones y vuelva a ejecutar seed.');
+    console.log('  Para reimportar: FORCE_REIMPORT_HALLAZGOS=1 npx prisma db seed');
   } else {
+    if (forceReimport && existingCount > 0) {
+      console.log(`→ Reimportando: se eliminan ${existingCount} hallazgos y sesiones previas`);
+      await prisma.hallazgo.deleteMany();
+      await prisma.sesionGrupoFocal.deleteMany();
+    }
     console.log(`→ Importando ${data.hallazgos.length} hallazgos + sesiones por área/fecha`);
     const sesionCache = new Map<string, string>();
 
