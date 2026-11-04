@@ -14,13 +14,28 @@ export const TERMOMETRO_DESC_FALLBACK: Record<Termometro, string> = {
   CRITICO: 'Puntos críticos / Riesgos altos que afectan el clima y la operación',
 };
 
+/** Paleta única (dashboard / PPTX / UI Escala). */
+export const ESTADO_COLORES: Record<string, string> = {
+  Excelente: '059669',
+  Bueno: '0284C7',
+  'Aceptable / Estable': 'CA8A04',
+  'En Riesgo / Alerta': 'EA580C',
+  'Crítico / Vulnerable': 'E11D48',
+};
+
 export const ESTADOS_AREA_FALLBACK = [
-  { minPts: 90, maxPts: 100, estado: 'Excelente', color: '059669' },
-  { minPts: 80, maxPts: 89, estado: 'Bueno', color: '0284C7' },
-  { minPts: 70, maxPts: 79, estado: 'Aceptable / Estable', color: 'CA8A04' },
-  { minPts: 50, maxPts: 69, estado: 'En Riesgo / Alerta', color: 'EA580C' },
-  { minPts: 0, maxPts: 49, estado: 'Crítico / Vulnerable', color: 'E11D48' },
+  { minPts: 90, maxPts: 100, estado: 'Excelente', color: ESTADO_COLORES.Excelente },
+  { minPts: 80, maxPts: 89, estado: 'Bueno', color: ESTADO_COLORES.Bueno },
+  { minPts: 70, maxPts: 79, estado: 'Aceptable / Estable', color: ESTADO_COLORES['Aceptable / Estable'] },
+  { minPts: 50, maxPts: 69, estado: 'En Riesgo / Alerta', color: ESTADO_COLORES['En Riesgo / Alerta'] },
+  { minPts: 0, maxPts: 49, estado: 'Crítico / Vulnerable', color: ESTADO_COLORES['Crítico / Vulnerable'] },
 ];
+
+export function colorPorEstadoNombre(estado: string, color?: string | null): string {
+  const raw = (color || '').replace('#', '').trim().toUpperCase();
+  if (/^[0-9A-F]{6}$/.test(raw)) return raw;
+  return ESTADO_COLORES[estado.trim()] || '57534E';
+}
 
 type EscalaCache = {
   termometro: Record<Termometro, number>;
@@ -87,11 +102,25 @@ async function loadEscala(): Promise<EscalaCache> {
           minPts: e.minPts,
           maxPts: e.maxPts,
           estado: e.estado,
-          color: e.color,
+          color: colorPorEstadoNombre(e.estado, e.color),
         }))
       : ESTADOS_AREA_FALLBACK.map((e) => ({ ...e })),
     loadedAt: Date.now(),
   };
+
+  // Backfill colores vacíos en BD para que coincidan con la paleta del sistema
+  for (const e of estados) {
+    const expected = colorPorEstadoNombre(e.estado, e.color);
+    if (!e.color || e.color.replace('#', '').toUpperCase() !== expected) {
+      if (!e.color) {
+        await prisma.escalaEstadoArea.update({
+          where: { id: e.id },
+          data: { color: expected },
+        });
+      }
+    }
+  }
+
   return cache;
 }
 

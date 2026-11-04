@@ -192,6 +192,7 @@ router.put('/escala', requireRole('ADMIN'), async (req, res) => {
     puntosTermometro,
     validateEstadosArea,
     TERMOMETRO_DESC_FALLBACK,
+    colorPorEstadoNombre,
   } = await import('../services/scoring');
   const body = req.body as {
     termometro?: { termometro: string; puntos: number; descripcion?: string }[];
@@ -237,7 +238,7 @@ router.put('/escala', requireRole('ADMIN'), async (req, res) => {
         minPts: Number(e.minPts),
         maxPts: Number(e.maxPts),
         estado: e.estado.trim(),
-        color: e.color?.replace('#', '') || null,
+        color: colorPorEstadoNombre(e.estado, e.color),
       })),
     });
   }

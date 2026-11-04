@@ -29,6 +29,36 @@ const TERM_BG: Record<Termometro, string> = {
   CRITICO: 'bg-rose-50 border-rose-200',
 };
 
+/** Misma paleta que dashboard / PPTX / seed — no inventar otros hex. */
+const ESTADO_COLORES: Record<string, string> = {
+  Excelente: '059669',
+  Bueno: '0284C7',
+  'Aceptable / Estable': 'CA8A04',
+  'En Riesgo / Alerta': 'EA580C',
+  'Crítico / Vulnerable': 'E11D48',
+};
+
+const PALETA_SISTEMA = [
+  { hex: '059669', label: 'Verde (Excelente)' },
+  { hex: '0284C7', label: 'Azul (Bueno)' },
+  { hex: 'CA8A04', label: 'Ámbar (Aceptable)' },
+  { hex: 'EA580C', label: 'Naranja (En Riesgo)' },
+  { hex: 'E11D48', label: 'Rojo (Crítico)' },
+] as const;
+
+function colorDeEstado(estado: string, color?: string | null): string {
+  const raw = (color || '').replace('#', '').trim().toUpperCase();
+  if (/^[0-9A-F]{6}$/.test(raw)) return raw;
+  return ESTADO_COLORES[estado.trim()] || '78716C';
+}
+
+function normalizeEstados(rows: EstadoRow[]): EstadoRow[] {
+  return (rows || []).map((e) => ({
+    ...e,
+    color: colorDeEstado(e.estado, e.color),
+  }));
+}
+
 export default function EscalaPage() {
   const { isAdmin } = useAuth();
   const [terms, setTerms] = useState<TermRow[]>([]);
@@ -46,12 +76,7 @@ export default function EscalaPage() {
           descripcion: t.descripcion || '',
         })),
       );
-      setEstados(
-        (r.data.estadosArea || []).map((e: EstadoRow) => ({
-          ...e,
-          color: (e.color || '').replace('#', ''),
-        })),
-      );
+      setEstados(normalizeEstados(r.data.estadosArea || []));
       setFormula(r.data.formulaArea || '');
     });
 
@@ -66,18 +91,14 @@ export default function EscalaPage() {
     setError('');
     setMsg('');
     try {
+      const estadosConColor = normalizeEstados(estados);
       const r = await api.put('/catalogos/escala', {
         termometro: terms,
-        estadosArea: estados,
+        estadosArea: estadosConColor,
         recalcularHallazgos: true,
       });
       setTerms(r.data.termometro);
-      setEstados(
-        (r.data.estadosArea || []).map((x: EstadoRow) => ({
-          ...x,
-          color: (x.color || '').replace('#', ''),
-        })),
-      );
+      setEstados(normalizeEstados(r.data.estadosArea || []));
       setMsg(
         `Escala guardada. Se recalcularon ${r.data.recalculados ?? 0} hallazgos con los nuevos puntos.`,
       );
@@ -174,6 +195,22 @@ export default function EscalaPage() {
               </button>
             )}
           </div>
+          <div className="px-4 py-2.5 border-b border-stone-100 flex flex-wrap items-center gap-2">
+            <span className="text-xs font-medium text-stone-500 mr-1">Paleta del sistema:</span>
+            {PALETA_SISTEMA.map((c) => (
+              <span
+                key={c.hex}
+                className="inline-flex items-center gap-1.5 text-[11px] text-stone-600"
+                title={c.label}
+              >
+                <span
+                  className="w-3.5 h-3.5 rounded-full border border-black/10 shrink-0"
+                  style={{ backgroundColor: `#${c.hex}` }}
+                />
+                {c.label.split(' ')[0]}
+              </span>
+            ))}
+          </div>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead className="bg-primary-950 text-white">
@@ -224,28 +261,48 @@ export default function EscalaPage() {
                         className="w-full min-w-[160px] border rounded-lg px-2 py-1.5 disabled:bg-stone-50"
                         value={e.estado}
                         onChange={(ev) => {
+                          const nombre = ev.target.value;
                           const next = [...estados];
-                          next[i] = { ...e, estado: ev.target.value };
+                          next[i] = {
+                            ...e,
+                            estado: nombre,
+                            color: ESTADO_COLORES[nombre.trim()] || e.color,
+                          };
                           setEstados(next);
                         }}
                       />
                     </td>
                     <td className="px-4 py-2">
-                      <div className="flex items-center gap-2">
-                        <span
-                          className="w-5 h-5 rounded border border-stone-200"
-                          style={{ backgroundColor: `#${e.color || 'ccc'}` }}
-                        />
-                        <input
-                          disabled={!isAdmin}
-                          className="w-24 border rounded-lg px-2 py-1.5 font-mono text-xs disabled:bg-stone-50"
-                          value={e.color}
-                          onChange={(ev) => {
-                            const next = [...estados];
-                            next[i] = { ...e, color: ev.target.value.replace('#', '') };
-                            setEstados(next);
-                          }}
-                        />
+                      <div className="flex flex-col gap-1.5 min-w-[160px]">
+                        <div className="flex items-center gap-1.5">
+                          {PALETA_SISTEMA.map((c) => {
+                            const actual = colorDeEstado(e.estado, e.color);
+                            const selected = actual === c.hex;
+                            return (
+                              <button
+                                key={c.hex}
+                                type="button"
+                                disabled={!isAdmin}
+                                title={c.label}
+                                onClick={() => {
+                                  if (!isAdmin) return;
+                                  const next = [...estados];
+                                  next[i] = { ...e, color: c.hex };
+                                  setEstados(next);
+                                }}
+                                className={`w-7 h-7 rounded-full border-2 shrink-0 disabled:cursor-default transition-transform ${
+                                  selected
+                                    ? 'border-primary-950 scale-110 shadow-sm'
+                                    : 'border-white ring-1 ring-stone-200 hover:scale-105'
+                                }`}
+                                style={{ backgroundColor: `#${c.hex}` }}
+                              />
+                            );
+                          })}
+                        </div>
+                        <span className="font-mono text-[10px] text-stone-500 uppercase">
+                          #{colorDeEstado(e.estado, e.color)}
+                        </span>
                       </div>
                     </td>
                     {isAdmin && (

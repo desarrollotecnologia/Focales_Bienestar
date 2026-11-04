@@ -514,17 +514,20 @@ function CompChip({ label, value, strong }: { label: string; value: number; stro
   );
 }
 
+/** Misma lógica/colores que Escala (Excel): 0–49 / 50–69 / 70–79 / 80–89 / 90–100 */
 function scoreBarColor(score: number) {
-  if (score < 50) return 'bg-red-500';
-  if (score < 70) return 'bg-amber-500';
-  if (score < 85) return 'bg-sky-500';
-  return 'bg-emerald-500';
+  if (score < 50) return 'bg-rose-500'; // E11D48 Crítico
+  if (score < 70) return 'bg-orange-500'; // EA580C En Riesgo
+  if (score < 80) return 'bg-amber-500'; // CA8A04 Aceptable
+  if (score < 90) return 'bg-sky-600'; // 0284C7 Bueno
+  return 'bg-emerald-500'; // 059669 Excelente
 }
 
 function scoreBadge(score: number) {
-  if (score < 50) return 'bg-red-100 text-red-800';
-  if (score < 70) return 'bg-amber-100 text-amber-900';
-  if (score < 85) return 'bg-sky-100 text-sky-800';
+  if (score < 50) return 'bg-rose-100 text-rose-800';
+  if (score < 70) return 'bg-orange-100 text-orange-900';
+  if (score < 80) return 'bg-amber-100 text-amber-900';
+  if (score < 90) return 'bg-sky-100 text-sky-800';
   return 'bg-emerald-100 text-emerald-800';
 }
 

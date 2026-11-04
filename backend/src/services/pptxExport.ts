@@ -41,18 +41,19 @@ function filtrosTexto(f: DashboardFilters): string {
   return parts.length ? parts.join('  ·  ') : 'Sin filtros (todos los registros)';
 }
 
+/** Misma paleta/rangos que Escala: Crítico / Riesgo / Aceptable / Bueno / Excelente */
 function scoreColor(score: number): string {
-  if (score < 50) return C.crit;
-  if (score < 70) return C.mid;
-  if (score < 80) return C.sky;
+  if (score < 50) return C.crit; // E11D48
+  if (score < 70) return C.mid; // EA580C
+  if (score < 80) return 'CA8A04'; // Aceptable
   if (score < 90) return '0284C7'; // Bueno
-  return C.pos;
+  return C.pos; // 059669 Excelente
 }
 
 function scoreBg(score: number): string {
   if (score < 50) return C.critBg;
   if (score < 70) return C.midBg;
-  if (score < 80) return C.skyBg;
+  if (score < 80) return 'FEF9C3';
   if (score < 90) return 'E0F2FE';
   return C.posBg;
 }
