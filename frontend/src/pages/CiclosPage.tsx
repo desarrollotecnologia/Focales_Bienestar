@@ -1,14 +1,15 @@
 import { FormEvent, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import api from '@/lib/api';
 import { useAuth } from '@/context/AuthContext';
-import type { Area, Ciclo } from '@/types';
+import type { Area, Ciclo, SesionGrupoFocal } from '@/types';
 
 export default function CiclosPage() {
   const { canEdit } = useAuth();
   const [ciclos, setCiclos] = useState<Ciclo[]>([]);
   const [areas, setAreas] = useState<Area[]>([]);
   const [selected, setSelected] = useState<string>('');
-  const [detalle, setDetalle] = useState<Ciclo & { sesiones?: unknown[] } | null>(null);
+  const [detalle, setDetalle] = useState<(Ciclo & { sesiones?: SesionGrupoFocal[] }) | null>(null);
   const [nombre, setNombre] = useState('');
   const [anio, setAnio] = useState(new Date().getFullYear());
   const [sesion, setSesion] = useState({ areaId: '', fecha: '', hora: '' });
@@ -141,6 +142,35 @@ export default function CiclosPage() {
                     </li>
                   ))}
                 </ul>
+              </div>
+
+              <div className="border-t pt-4">
+                <div className="flex items-center justify-between gap-2 mb-2">
+                  <h4 className="text-sm font-semibold">Reuniones del ciclo</h4>
+                  <Link to={`/reuniones?cicloId=${detalle.id}`} className="text-xs text-primary-700 font-medium hover:underline">
+                    Ver todas
+                  </Link>
+                </div>
+                {(detalle.sesiones?.length ?? 0) === 0 ? (
+                  <p className="text-sm text-stone-400">Aún no hay reuniones registradas.</p>
+                ) : (
+                  <ul className="space-y-2">
+                    {detalle.sesiones?.map((s) => (
+                      <li key={s.id}>
+                        <Link
+                          to={`/reuniones/${s.id}`}
+                          className="flex justify-between gap-3 text-sm px-3 py-2 rounded-xl border border-stone-100 hover:bg-primary-50"
+                        >
+                          <span>
+                            <span className="font-medium text-primary-950">{String(s.fecha).slice(0, 10)}</span>
+                            <span className="text-stone-500"> · {s.area.name}</span>
+                          </span>
+                          <span className="text-primary-700 font-medium">Abrir</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
 
               {canEdit && detalle.estado === 'ABIERTO' && (

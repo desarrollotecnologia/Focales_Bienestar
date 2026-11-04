@@ -4,14 +4,17 @@ import {
   ClipboardList,
   RefreshCw,
   CalendarRange,
+  CalendarDays,
   Tags,
   LogOut,
   Users,
+  Shield,
 } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
 
 const links = [
   { to: '/', label: 'Dashboard', icon: LayoutDashboard },
+  { to: '/reuniones', label: 'Reuniones', icon: CalendarDays },
   { to: '/hallazgos', label: 'Hallazgos', icon: ClipboardList },
   { to: '/ciclos', label: 'Ciclos', icon: RefreshCw },
   { to: '/resumen-mensual', label: 'Resumen mensual', icon: CalendarRange },
@@ -19,8 +22,12 @@ const links = [
 ];
 
 export default function Layout() {
-  const { user, logout } = useAuth();
+  const { user, logout, isAdmin } = useAuth();
   const navigate = useNavigate();
+
+  const navLinks = isAdmin
+    ? [...links, { to: '/usuarios', label: 'Usuarios', icon: Shield }]
+    : links;
 
   return (
     <div className="min-h-screen flex bg-stone-50">
@@ -32,13 +39,13 @@ export default function Layout() {
           </h1>
         </div>
         <nav className="flex-1 px-3 py-4 space-y-1">
-          {links.map(({ to, label, icon: Icon }) => (
+          {navLinks.map(({ to, label, icon: Icon }) => (
             <NavLink
               key={to}
               to={to}
               end={to === '/'}
               className={({ isActive }) =>
-                `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition ${
+                `nav-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm ${
                   isActive ? 'bg-primary-700 text-white' : 'text-primary-100 hover:bg-white/10'
                 }`
               }
@@ -61,7 +68,7 @@ export default function Layout() {
               logout();
               navigate('/login');
             }}
-            className="flex items-center gap-2 text-sm text-primary-200 hover:text-white"
+            className="flex items-center gap-2 text-sm text-primary-200 hover:text-white hover:translate-x-0.5"
           >
             <LogOut size={16} />
             Cerrar sesión

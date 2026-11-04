@@ -21,6 +21,7 @@ const includeHallazgo = {
 router.get('/', async (req, res) => {
   const {
     cicloId,
+    sesionId,
     areaId,
     categoriaId,
     termometro,
@@ -36,6 +37,7 @@ router.get('/', async (req, res) => {
 
   const where: Prisma.HallazgoWhereInput = {};
   if (cicloId) where.cicloId = cicloId;
+  if (sesionId) where.sesionId = sesionId;
   if (areaId) where.areaId = areaId;
   if (categoriaId) where.categoriaId = categoriaId;
   if (termometro) where.termometro = termometro as Termometro;
@@ -106,18 +108,47 @@ router.post('/', requireRole('ADMIN', 'EDITOR'), async (req, res) => {
     responsableIds?: string[];
   };
 
-  if (!body.cicloId || !body.areaId || !body.categoriaId || !body.fecha || !body.termometro || !body.observacion) {
+  let cicloId = body.cicloId;
+  let areaId = body.areaId;
+  let fecha = body.fecha;
+  let sesionId = body.sesionId || null;
+
+  if (sesionId) {
+    const sesion = await prisma.sesionGrupoFocal.findUnique({ where: { id: sesionId } });
+    if (!sesion) return res.status(400).json({ error: 'Reunión no encontrada' });
+    cicloId = sesion.cicloId;
+    areaId = sesion.areaId;
+    fecha = sesion.fecha.toISOString().slice(0, 10);
+  }
+
+  if (!cicloId || !areaId || !body.categoriaId || !fecha || !body.termometro || !body.observacion) {
     return res.status(400).json({ error: 'Faltan campos obligatorios' });
+  }
+
+  // Si no viene sesión, vincular a la reunión del mismo ciclo+área+fecha (o crearla)
+  if (!sesionId) {
+    const fechaDate = new Date(fecha);
+    const existente = await prisma.sesionGrupoFocal.findFirst({
+      where: { cicloId, areaId, fecha: fechaDate },
+    });
+    if (existente) {
+      sesionId = existente.id;
+    } else {
+      const creada = await prisma.sesionGrupoFocal.create({
+        data: { cicloId, areaId, fecha: fechaDate },
+      });
+      sesionId = creada.id;
+    }
   }
 
   const item = await prisma.hallazgo.create({
     data: {
-      cicloId: body.cicloId,
-      sesionId: body.sesionId || null,
-      areaId: body.areaId,
+      cicloId,
+      sesionId,
+      areaId,
       categoriaId: body.categoriaId,
       subcategoriaId: body.subcategoriaId || null,
-      fecha: new Date(body.fecha),
+      fecha: new Date(fecha),
       termometro: body.termometro,
       observacion: body.observacion,
       compromiso: body.compromiso || null,

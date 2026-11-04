@@ -57,6 +57,19 @@ export interface Ciclo {
   progreso?: CicloProgreso;
 }
 
+export interface SesionGrupoFocal {
+  id: string;
+  cicloId: string;
+  areaId: string;
+  fecha: string;
+  hora?: string | null;
+  notasActa?: string | null;
+  area: Area;
+  ciclo: Ciclo;
+  _count?: { hallazgos: number };
+  hallazgos?: Hallazgo[];
+}
+
 export interface Hallazgo {
   id: string;
   fecha: string;
@@ -67,6 +80,7 @@ export interface Hallazgo {
   avances?: string | null;
   calificacion: number;
   cicloId: string;
+  sesionId?: string | null;
   areaId: string;
   categoriaId: string;
   subcategoriaId?: string | null;

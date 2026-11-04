@@ -94,7 +94,7 @@ export default function HallazgosPage() {
         {canEdit && (
           <button
             onClick={() => setShowForm((v) => !v)}
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary-800 text-white text-sm font-semibold"
+            className="btn-primary inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary-800 text-white text-sm font-semibold"
           >
             <Plus size={16} /> Nuevo hallazgo
           </button>
@@ -194,7 +194,7 @@ export default function HallazgosPage() {
         </form>
       )}
 
-      <div className="bg-white border border-stone-200 rounded-2xl overflow-hidden">
+      <div className="ui-card bg-white border border-stone-200 rounded-2xl overflow-hidden">
         <table className="w-full text-sm">
           <thead className="bg-primary-950 text-white">
             <tr>
@@ -209,7 +209,7 @@ export default function HallazgosPage() {
           </thead>
           <tbody>
             {items.map((h) => (
-              <tr key={h.id} className="border-b border-stone-100 align-top hover:bg-stone-50">
+              <tr key={h.id} className="border-b border-stone-100 align-top">
                 <td className="px-3 py-3 whitespace-nowrap">{String(h.fecha).slice(0, 10)}</td>
                 <td className="px-3 py-3">{h.area.name}</td>
                 <td className="px-3 py-3">

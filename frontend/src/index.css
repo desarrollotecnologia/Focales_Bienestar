@@ -13,12 +13,21 @@
   --color-primary-900: #14532d;
   --color-primary-950: #052e16;
   --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Fraunces", Georgia, serif;
+  --font-display: "Roboto Condensed", "Arial Narrow", sans-serif;
 }
 
 body {
   @apply bg-stone-50 text-stone-900 antialiased;
   font-family: var(--font-sans);
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
 .login-page {
@@ -44,3 +53,131 @@ body {
 .badge-abierto { @apply bg-sky-100 text-sky-800 border border-sky-200; }
 .badge-proceso { @apply bg-violet-100 text-violet-800 border border-violet-200; }
 .badge-cerrado { @apply bg-stone-200 text-stone-700 border border-stone-300; }
+
+/* Dashboard atmosphere */
+.dash-hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 80% 120% at 100% 0%, rgba(34, 197, 94, 0.18), transparent 55%),
+    linear-gradient(135deg, #052e16 0%, #14532d 55%, #166534 100%);
+}
+
+.dash-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+  background-image: url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.45'%3E%3Cpath d='M24 0h2v48h-2zM0 24h48v2H0z'/%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+@keyframes dash-rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes dash-bar {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.dash-rise {
+  animation: dash-rise 0.45s ease-out both;
+}
+
+.dash-rise-2 { animation-delay: 0.06s; }
+.dash-rise-3 { animation-delay: 0.12s; }
+.dash-rise-4 { animation-delay: 0.18s; }
+
+.dash-bar-fill {
+  transform-origin: left center;
+  animation: dash-bar 0.7s ease-out both;
+}
+
+/* ── Micro-interactions (suaves) ── */
+@media (prefers-reduced-motion: no-preference) {
+  button,
+  a,
+  .ui-card,
+  .ui-row,
+  select {
+    transition:
+      transform 0.18s ease,
+      box-shadow 0.18s ease,
+      background-color 0.18s ease,
+      border-color 0.18s ease,
+      color 0.18s ease,
+      opacity 0.18s ease;
+  }
+
+  button:not(:disabled):hover {
+    transform: translateY(-1px);
+  }
+
+  button:not(:disabled):active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  a:hover {
+    opacity: 0.92;
+  }
+
+  .ui-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(5, 46, 22, 0.08);
+    border-color: rgba(22, 101, 52, 0.28);
+  }
+
+  table tbody tr {
+    transition: background-color 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  table tbody tr:hover {
+    background-color: rgba(240, 253, 244, 0.85);
+  }
+
+  .ui-row:hover {
+    background-color: rgba(240, 253, 244, 0.9);
+  }
+
+  select:hover {
+    border-color: #16a34a;
+  }
+
+  select:focus {
+    transform: translateY(-1px);
+  }
+
+  .nav-link {
+    transition: background-color 0.18s ease, transform 0.18s ease, color 0.18s ease;
+  }
+
+  .nav-link:hover {
+    transform: translateX(3px);
+  }
+
+  .btn-primary {
+    transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+  }
+
+  .btn-primary:not(:disabled):hover {
+    filter: brightness(1.06);
+    box-shadow: 0 8px 18px rgba(22, 101, 52, 0.28);
+  }
+
+  .dash-bar-fill {
+    transition: width 0.35s ease;
+  }
+
+  .dash-bar-fill:hover {
+    filter: brightness(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dash-rise,
+  .dash-bar-fill {
+    animation: none !important;
+  }
+}

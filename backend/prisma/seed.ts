@@ -86,6 +86,28 @@ async function main() {
     });
   }
 
+  console.log('→ Usuario de prueba local');
+  const demoUser = 'prueba.local';
+  const demoHash = await bcrypt.hash('PruebaLocal2026*', 10);
+  await prisma.user.upsert({
+    where: { username: demoUser },
+    update: {
+      passwordHash: demoHash,
+      fullName: 'Usuario de Prueba Local',
+      email: 'prueba.local@focales.demo',
+      role: 'ADMIN',
+      active: true,
+    },
+    create: {
+      username: demoUser,
+      email: 'prueba.local@focales.demo',
+      fullName: 'Usuario de Prueba Local',
+      passwordHash: demoHash,
+      role: 'ADMIN',
+      active: true,
+    },
+  });
+
   console.log('→ Áreas');
   const areaMap = new Map<string, string>();
   let order = 1;

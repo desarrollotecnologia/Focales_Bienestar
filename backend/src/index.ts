@@ -4,8 +4,10 @@ import path from 'path';
 import { config } from './config';
 import { errorHandler, notFound } from './middleware/errorHandler';
 import authRoutes from './routes/auth.routes';
+import usersRoutes from './routes/users.routes';
 import catalogosRoutes from './routes/catalogos.routes';
 import ciclosRoutes from './routes/ciclos.routes';
+import sesionesRoutes from './routes/sesiones.routes';
 import hallazgosRoutes from './routes/hallazgos.routes';
 import dashboardRoutes from './routes/dashboard.routes';
 
@@ -23,8 +25,10 @@ app.get('/api/health', (_req, res) => {
 });
 
 app.use('/api/auth', authRoutes);
+app.use('/api/users', usersRoutes);
 app.use('/api/catalogos', catalogosRoutes);
 app.use('/api/ciclos', ciclosRoutes);
+app.use('/api/sesiones', sesionesRoutes);
 app.use('/api/hallazgos', hallazgosRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 
