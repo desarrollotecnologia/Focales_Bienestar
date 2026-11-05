@@ -9,6 +9,7 @@ export interface User {
   fullName: string;
   role: UserRole;
   email?: string | null;
+  mustChangePassword?: boolean;
 }
 
 export interface Area {

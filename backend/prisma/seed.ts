@@ -72,7 +72,8 @@ async function main() {
   });
 
   console.log('→ Usuario Coordinación Gestión Humana');
-  const passwordHash = await bcrypt.hash('Colbeef2026*', 10);
+  const { STANDARD_PASSWORD } = await import('../src/constants/password');
+  const passwordHash = await bcrypt.hash(STANDARD_PASSWORD, 10);
   const loginUser = 'coordinacion.gestionhumana@colbeef.com';
   const existingAdmin = await prisma.user.findFirst({
     where: {
@@ -89,6 +90,7 @@ async function main() {
         passwordHash,
         role: 'ADMIN',
         active: true,
+        // No forzar cambio en cada seed si ya cambió; solo al crear
       },
     });
   } else {
@@ -99,6 +101,7 @@ async function main() {
         fullName: 'Coordinación Gestión Humana',
         passwordHash,
         role: 'ADMIN',
+        mustChangePassword: true,
       },
     });
   }
@@ -114,6 +117,7 @@ async function main() {
       email: 'prueba.local@focales.demo',
       role: 'ADMIN',
       active: true,
+      mustChangePassword: false, // cuenta local de desarrollo
     },
     create: {
       username: demoUser,
@@ -122,6 +126,7 @@ async function main() {
       passwordHash: demoHash,
       role: 'ADMIN',
       active: true,
+      mustChangePassword: false,
     },
   });
 

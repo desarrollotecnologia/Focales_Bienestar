@@ -1,12 +1,13 @@
 import { Router } from 'express';
 import { EstadoSeguimiento, Prisma, Termometro } from '@prisma/client';
 import { prisma } from '../lib/prisma';
-import { authenticate, requireRole } from '../middleware/auth';
+import { authenticate, denyIfMustChangePassword, requireRole } from '../middleware/auth';
 import { puntosTermometro } from '../services/scoring';
 import { paramId } from '../utils/params';
 
 const router = Router();
 router.use(authenticate);
+router.use(denyIfMustChangePassword);
 
 const includeHallazgo = {
   area: true,

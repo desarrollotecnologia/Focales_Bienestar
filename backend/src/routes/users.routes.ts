@@ -2,11 +2,17 @@ import { Router } from 'express';
 import bcrypt from 'bcryptjs';
 import { UserRole } from '@prisma/client';
 import { prisma } from '../lib/prisma';
-import { authenticate, requireRole } from '../middleware/auth';
+import { authenticate, denyIfMustChangePassword, requireRole } from '../middleware/auth';
 import { paramId } from '../utils/params';
+import {
+  STANDARD_PASSWORD,
+  MIN_PASSWORD_LENGTH,
+  isStandardPassword,
+} from '../constants/password';
 
 const router = Router();
 router.use(authenticate);
+router.use(denyIfMustChangePassword);
 router.use(requireRole('ADMIN'));
 
 const publicUser = {
@@ -16,6 +22,7 @@ const publicUser = {
   fullName: true,
   role: true,
   active: true,
+  mustChangePassword: true,
   createdAt: true,
   updatedAt: true,
 } as const;
@@ -45,8 +52,10 @@ router.post('/', async (req, res) => {
   if (!username?.trim() || !password || !fullName?.trim()) {
     return res.status(400).json({ error: 'Usuario, contraseña y nombre son requeridos' });
   }
-  if (password.length < 6) {
-    return res.status(400).json({ error: 'La contraseña debe tener al menos 6 caracteres' });
+  if (password.length < MIN_PASSWORD_LENGTH) {
+    return res.status(400).json({
+      error: `La contraseña debe tener al menos ${MIN_PASSWORD_LENGTH} caracteres`,
+    });
   }
   const parsedRole = parseRole(role) || 'EDITOR';
 
@@ -62,6 +71,8 @@ router.post('/', async (req, res) => {
     return res.status(400).json({ error: 'Ya existe un usuario con ese login o correo' });
   }
 
+  const mustChangePassword = isStandardPassword(password);
+
   const user = await prisma.user.create({
     data: {
       username: username.trim(),
@@ -70,6 +81,7 @@ router.post('/', async (req, res) => {
       email: email?.trim() || null,
       role: parsedRole,
       active: true,
+      mustChangePassword,
     },
     select: publicUser,
   });
@@ -89,7 +101,6 @@ router.patch('/:id', async (req, res) => {
   const target = await prisma.user.findUnique({ where: { id } });
   if (!target) return res.status(404).json({ error: 'Usuario no encontrado' });
 
-  // No desactivar ni degradar al único ADMIN activo
   if (target.role === 'ADMIN' && target.active) {
     const adminCount = await prisma.user.count({
       where: { role: 'ADMIN', active: true },
@@ -112,8 +123,10 @@ router.patch('/:id', async (req, res) => {
     return res.status(400).json({ error: 'Rol inválido' });
   }
 
-  if (password !== undefined && password.length > 0 && password.length < 6) {
-    return res.status(400).json({ error: 'La contraseña debe tener al menos 6 caracteres' });
+  if (password !== undefined && password.length > 0 && password.length < MIN_PASSWORD_LENGTH) {
+    return res.status(400).json({
+      error: `La contraseña debe tener al menos ${MIN_PASSWORD_LENGTH} caracteres`,
+    });
   }
 
   const user = await prisma.user.update({
@@ -123,11 +136,37 @@ router.patch('/:id', async (req, res) => {
       ...(email !== undefined ? { email: email?.trim() || null } : {}),
       ...(parsedRole ? { role: parsedRole } : {}),
       ...(active !== undefined ? { active } : {}),
-      ...(password ? { passwordHash: await bcrypt.hash(password, 10) } : {}),
+      ...(password
+        ? {
+            passwordHash: await bcrypt.hash(password, 10),
+            mustChangePassword: isStandardPassword(password),
+          }
+        : {}),
     },
     select: publicUser,
   });
   res.json(user);
+});
+
+/** Restablece a Colbeef2026* y obliga a cambiarla en el próximo login. */
+router.post('/:id/reset-password', async (req, res) => {
+  const id = paramId(req);
+  const target = await prisma.user.findUnique({ where: { id } });
+  if (!target) return res.status(404).json({ error: 'Usuario no encontrado' });
+
+  const user = await prisma.user.update({
+    where: { id },
+    data: {
+      passwordHash: await bcrypt.hash(STANDARD_PASSWORD, 10),
+      mustChangePassword: true,
+    },
+    select: publicUser,
+  });
+
+  res.json({
+    ...user,
+    message: `Contraseña restablecida a ${STANDARD_PASSWORD}. El usuario deberá cambiarla al iniciar sesión.`,
+  });
 });
 
 router.delete('/:id', async (req, res) => {

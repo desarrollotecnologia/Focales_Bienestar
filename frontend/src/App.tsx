@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { useAuth } from '@/context/AuthContext';
 import Layout from '@/components/Layout';
 import LoginPage from '@/pages/LoginPage';
+import ChangePasswordPage from '@/pages/ChangePasswordPage';
 import DashboardPage from '@/pages/DashboardPage';
 import HallazgosPage from '@/pages/HallazgosPage';
 import HallazgoDetailPage from '@/pages/HallazgoDetailPage';
@@ -15,10 +16,24 @@ import EscalaPage from '@/pages/EscalaPage';
 import type { UserRole } from '@/types';
 
 function PrivateRoute({ children }: { children: React.ReactNode }) {
-  const { user, loading } = useAuth();
-  if (loading) return <div className="min-h-screen grid place-items-center text-stone-500">Cargando…</div>;
+  const { user, loading, mustChangePassword } = useAuth();
+  if (loading) {
+    return <div className="min-h-screen grid place-items-center text-stone-500">Cargando…</div>;
+  }
   if (!user) return <Navigate to="/login" replace />;
+  if (mustChangePassword) return <Navigate to="/cambiar-password" replace />;
   return <>{children}</>;
+}
+
+function ChangePasswordRoute() {
+  const { user, loading, mustChangePassword } = useAuth();
+  if (loading) {
+    return <div className="min-h-screen grid place-items-center text-stone-500">Cargando…</div>;
+  }
+  if (!user) return <Navigate to="/login" replace />;
+  // Solo accesible si debe cambiar (flujo forzado)
+  if (!mustChangePassword) return <Navigate to="/" replace />;
+  return <ChangePasswordPage />;
 }
 
 /** Bloquea rutas: Consulta (VIEWER) solo Dashboard. */
@@ -42,6 +57,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/login" element={<LoginPage />} />
+      <Route path="/cambiar-password" element={<ChangePasswordRoute />} />
       <Route
         path="/"
         element={

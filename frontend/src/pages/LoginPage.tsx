@@ -17,8 +17,12 @@ export default function LoginPage() {
     setError('');
     setLoading(true);
     try {
-      await login(username, password);
-      navigate('/');
+      const user = await login(username, password);
+      if (user.mustChangePassword) {
+        navigate('/cambiar-password', { replace: true });
+      } else {
+        navigate('/', { replace: true });
+      }
     } catch {
       setError('Usuario o contraseña incorrectos');
     } finally {
@@ -76,16 +80,17 @@ export default function LoginPage() {
               </button>
             </div>
           </label>
+          <p className="text-xs text-stone-400">
+            Si es su primer ingreso o le restablecieron la clave, use la contraseña estándar y el
+            sistema le pedirá cambiarla.
+          </p>
           <button
             type="submit"
             disabled={loading}
-            className="btn-primary w-full py-3 rounded-xl text-white font-semibold bg-gradient-to-b from-primary-700 to-primary-800 hover:from-primary-600 hover:to-primary-700 disabled:opacity-60"
+            className="w-full py-3 rounded-xl bg-primary-800 text-white text-sm font-semibold disabled:opacity-50"
           >
             {loading ? 'Ingresando…' : 'Ingresar'}
           </button>
-          <p className="text-xs text-center text-stone-400 pt-2">
-            Acceso Coordinación Gestión Humana
-          </p>
         </form>
       </div>
     </div>

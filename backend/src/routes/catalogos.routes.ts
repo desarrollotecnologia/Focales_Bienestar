@@ -1,10 +1,11 @@
 import { Router } from 'express';
 import { prisma } from '../lib/prisma';
-import { authenticate, requireRole } from '../middleware/auth';
+import { authenticate, denyIfMustChangePassword, requireRole } from '../middleware/auth';
 import { paramId } from '../utils/params';
 
 const router = Router();
 router.use(authenticate);
+router.use(denyIfMustChangePassword);
 
 function wantAll(req: { query: Record<string, unknown> }) {
   return String(req.query.all || '') === '1';

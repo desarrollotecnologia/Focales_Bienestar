@@ -1,12 +1,13 @@
 import { Router } from 'express';
 import { EstadoSeguimiento, Termometro } from '@prisma/client';
-import { authenticate } from '../middleware/auth';
+import { authenticate, denyIfMustChangePassword } from '../middleware/auth';
 import { getDashboardData, DashboardFilters } from '../services/dashboard';
 import { buildDashboardPptx } from '../services/pptxExport';
 import { mesLabel } from '../services/scoring';
 
 const router = Router();
 router.use(authenticate);
+router.use(denyIfMustChangePassword);
 
 function parseFilters(query: Record<string, string | undefined>): DashboardFilters {
   return {

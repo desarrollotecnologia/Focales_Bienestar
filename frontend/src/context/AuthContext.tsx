@@ -5,15 +5,22 @@ import type { User } from '@/types';
 interface AuthContextType {
   user: User | null;
   loading: boolean;
-  login: (username: string, password: string) => Promise<void>;
+  login: (username: string, password: string) => Promise<User>;
   logout: () => void;
+  refreshUser: (user: User, token?: string) => void;
   canEdit: boolean;
   isAdmin: boolean;
   /** Rol Consulta: solo Dashboard + filtros */
   isViewer: boolean;
+  mustChangePassword: boolean;
 }
 
 const AuthContext = createContext<AuthContextType | null>(null);
+
+function persist(user: User, token?: string) {
+  if (token) localStorage.setItem('token', token);
+  localStorage.setItem('user', JSON.stringify(user));
+}
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
@@ -23,21 +30,38 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const token = localStorage.getItem('token');
     const saved = localStorage.getItem('user');
     if (token && saved) {
-      setUser(JSON.parse(saved));
-      api.get('/auth/me').catch(() => {
-        localStorage.removeItem('token');
+      try {
+        setUser(JSON.parse(saved));
+      } catch {
         localStorage.removeItem('user');
-        setUser(null);
-      });
+      }
+      api
+        .get('/auth/me')
+        .then((r) => {
+          setUser(r.data);
+          localStorage.setItem('user', JSON.stringify(r.data));
+        })
+        .catch(() => {
+          localStorage.removeItem('token');
+          localStorage.removeItem('user');
+          setUser(null);
+        })
+        .finally(() => setLoading(false));
+      return;
     }
     setLoading(false);
   }, []);
 
   const login = async (username: string, password: string) => {
     const { data } = await api.post('/auth/login', { username, password });
-    localStorage.setItem('token', data.token);
-    localStorage.setItem('user', JSON.stringify(data.user));
+    persist(data.user, data.token);
     setUser(data.user);
+    return data.user as User;
+  };
+
+  const refreshUser = (next: User, token?: string) => {
+    persist(next, token);
+    setUser(next);
   };
 
   const logout = () => {
@@ -53,9 +77,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         loading,
         login,
         logout,
+        refreshUser,
         canEdit: user?.role === 'ADMIN' || user?.role === 'EDITOR',
         isAdmin: user?.role === 'ADMIN',
         isViewer: user?.role === 'VIEWER',
+        mustChangePassword: Boolean(user?.mustChangePassword),
       }}
     >
       {children}

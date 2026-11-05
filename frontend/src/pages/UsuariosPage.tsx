@@ -1,9 +1,11 @@
 import { FormEvent, useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
-import { Eye, EyeOff, Pencil, Plus, Trash2, X } from 'lucide-react';
+import { Eye, EyeOff, KeyRound, Pencil, Plus, Trash2, X } from 'lucide-react';
 import api from '@/lib/api';
 import { useAuth } from '@/context/AuthContext';
 import type { UserRole } from '@/types';
+
+const STANDARD_PASSWORD = 'Colbeef2026*';
 
 interface ManagedUser {
   id: string;
@@ -12,6 +14,7 @@ interface ManagedUser {
   fullName: string;
   role: UserRole;
   active: boolean;
+  mustChangePassword?: boolean;
   createdAt: string;
   updatedAt: string;
 }
@@ -26,7 +29,7 @@ const emptyForm = {
   username: '',
   fullName: '',
   email: '',
-  password: '',
+  password: STANDARD_PASSWORD,
   role: 'EDITOR' as UserRole,
   active: true,
 };
@@ -41,7 +44,9 @@ export default function UsuariosPage() {
   const [msg, setMsg] = useState('');
   const [error, setError] = useState('');
   const [confirmDelete, setConfirmDelete] = useState<ManagedUser | null>(null);
+  const [confirmReset, setConfirmReset] = useState<ManagedUser | null>(null);
   const [deleting, setDeleting] = useState(false);
+  const [resetting, setResetting] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
   const load = () => api.get('/users').then((r) => setItems(r.data));
@@ -131,6 +136,28 @@ export default function UsuariosPage() {
       setConfirmDelete(null);
     } finally {
       setDeleting(false);
+    }
+  };
+
+  const doReset = async () => {
+    if (!confirmReset) return;
+    setResetting(true);
+    setError('');
+    try {
+      const { data } = await api.post(`/users/${confirmReset.id}/reset-password`);
+      setMsg(
+        data.message ||
+          `Contraseña de "${confirmReset.fullName}" restablecida a ${STANDARD_PASSWORD}`,
+      );
+      setConfirmReset(null);
+      load();
+      setTimeout(() => setMsg(''), 4000);
+    } catch (err: unknown) {
+      const ax = err as { response?: { data?: { error?: string } } };
+      setError(ax.response?.data?.error || 'No se pudo restablecer la contraseña');
+      setConfirmReset(null);
+    } finally {
+      setResetting(false);
     }
   };
 
@@ -287,6 +314,7 @@ export default function UsuariosPage() {
               <th className="text-left px-4 py-3">Usuario</th>
               <th className="text-left px-4 py-3">Rol</th>
               <th className="text-left px-4 py-3">Estado</th>
+              <th className="text-left px-4 py-3">Clave</th>
               <th className="text-left px-4 py-3"></th>
             </tr>
           </thead>
@@ -321,7 +349,27 @@ export default function UsuariosPage() {
                   </span>
                 </td>
                 <td className="px-4 py-3">
+                  {u.mustChangePassword ? (
+                    <span className="text-xs font-semibold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md">
+                      Debe cambiar
+                    </span>
+                  ) : (
+                    <span className="text-xs text-stone-400">Personalizada</span>
+                  )}
+                </td>
+                <td className="px-4 py-3">
                   <div className="flex items-center justify-end gap-1">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setError('');
+                        setConfirmReset(u);
+                      }}
+                      className="p-2 rounded-lg text-amber-700 hover:bg-amber-50"
+                      title={`Restablecer a ${STANDARD_PASSWORD}`}
+                    >
+                      <KeyRound size={15} />
+                    </button>
                     <button
                       type="button"
                       onClick={() => openEdit(u)}
@@ -348,7 +396,7 @@ export default function UsuariosPage() {
             ))}
             {items.length === 0 && (
               <tr>
-                <td colSpan={5} className="px-4 py-10 text-center text-stone-400">
+                <td colSpan={6} className="px-4 py-10 text-center text-stone-400">
                   No hay usuarios
                 </td>
               </tr>
@@ -357,7 +405,40 @@ export default function UsuariosPage() {
         </table>
       </div>
 
-      {/* Cuadro de confirmación antes de eliminar */}
+      {confirmReset && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4">
+          <div className="bg-white rounded-2xl shadow-xl max-w-md w-full p-6 space-y-4">
+            <h3 className="text-lg font-semibold text-primary-950">¿Restablecer contraseña?</h3>
+            <p className="text-sm text-stone-600">
+              La clave de <strong>{confirmReset.fullName}</strong> ({confirmReset.username})
+              volverá a <strong className="font-mono">{STANDARD_PASSWORD}</strong> y deberá
+              cambiarla obligatoriamente al iniciar sesión.
+            </p>
+            {error && (
+              <p className="text-sm text-rose-700 bg-rose-50 rounded-xl px-3 py-2">{error}</p>
+            )}
+            <div className="flex justify-end gap-2 pt-2">
+              <button
+                type="button"
+                disabled={resetting}
+                onClick={() => setConfirmReset(null)}
+                className="px-4 py-2 rounded-xl border border-stone-200 text-sm font-medium"
+              >
+                Cancelar
+              </button>
+              <button
+                type="button"
+                disabled={resetting}
+                onClick={doReset}
+                className="px-4 py-2 rounded-xl bg-amber-600 text-white text-sm font-semibold disabled:opacity-50"
+              >
+                {resetting ? 'Restableciendo…' : 'Sí, restablecer'}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {confirmDelete && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4">
           <div className="bg-white rounded-2xl shadow-xl max-w-md w-full p-6 space-y-4">
