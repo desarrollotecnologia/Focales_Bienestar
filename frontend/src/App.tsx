@@ -51,6 +51,8 @@ function RoleRoute({
 }
 
 const STAFF: UserRole[] = ['ADMIN', 'EDITOR'];
+/** Consulta puede abrir el listado al hacer clic en una barra del histórico. */
+const CON_HALLAZGOS: UserRole[] = ['ADMIN', 'EDITOR', 'VIEWER'];
 const ADMIN_ONLY: UserRole[] = ['ADMIN'];
 
 export default function App() {
@@ -70,7 +72,7 @@ export default function App() {
         <Route
           path="hallazgos"
           element={
-            <RoleRoute roles={STAFF}>
+            <RoleRoute roles={CON_HALLAZGOS}>
               <HallazgosPage />
             </RoleRoute>
           }
@@ -78,7 +80,7 @@ export default function App() {
         <Route
           path="hallazgos/:id"
           element={
-            <RoleRoute roles={STAFF}>
+            <RoleRoute roles={CON_HALLAZGOS}>
               <HallazgoDetailPage />
             </RoleRoute>
           }

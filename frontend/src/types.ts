@@ -135,3 +135,44 @@ export interface DashboardData {
   mediosAgrupados: { tema: string; count: number; items: string[] }[];
   filtrosAplicados: Record<string, unknown>;
 }
+
+export type TendenciaDir = 'mejoro' | 'empeoro' | 'estable' | 'sin_datos';
+
+export interface TendenciaData {
+  filtros: {
+    anioDesde: number;
+    anioHasta: number;
+    areaIds: string[];
+    cicloIds: string[];
+    granularidad: 'mes' | 'semana';
+  };
+  periodos: {
+    key: string;
+    label: string;
+    promedio: number;
+    hallazgos: number;
+    areas: { areaId: string; area: string; promedio: number; hallazgos: number }[];
+  }[];
+  series: {
+    id: string;
+    nombre: string;
+    puntos: { key: string; label: string; valor: number | null; hallazgos: number }[];
+  }[];
+  evolucion: {
+    desde: string;
+    hasta: string;
+    promedioInicial: number;
+    promedioActual: number;
+    delta: number;
+    tendencia: TendenciaDir;
+  } | null;
+  areasEvolucion: {
+    areaId: string;
+    area: string;
+    promedioInicial: number | null;
+    promedioActual: number | null;
+    delta: number | null;
+    tendencia: TendenciaDir;
+  }[];
+  totalHallazgos: number;
+}

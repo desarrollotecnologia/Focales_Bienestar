@@ -105,6 +105,7 @@ export default function ResumenMensualPage() {
             )}
           </Panel>
           <Panel title="Estado termómetro" className="lg:col-span-2">
+            <div className="table-scroll">
             <table className="w-full text-sm">
               <thead>
                 <tr className="text-left text-stone-500 border-b">
@@ -128,6 +129,7 @@ export default function ResumenMensualPage() {
                 </tr>
               </tbody>
             </table>
+            </div>
           </Panel>
         </div>
       )}

@@ -307,6 +307,7 @@ export default function UsuariosPage() {
       )}
 
       <div className="bg-white border border-stone-200 rounded-2xl overflow-hidden">
+        <div className="table-scroll">
         <table className="w-full text-sm">
           <thead className="bg-primary-950 text-white">
             <tr>
@@ -403,6 +404,7 @@ export default function UsuariosPage() {
             )}
           </tbody>
         </table>
+        </div>
       </div>
 
       {confirmReset && (

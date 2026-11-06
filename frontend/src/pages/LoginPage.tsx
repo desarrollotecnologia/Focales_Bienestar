@@ -31,8 +31,8 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="login-page min-h-screen flex items-center justify-center px-4">
-      <div className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl px-8 py-10">
+    <div className="login-page min-h-full flex items-center justify-center px-4 py-8">
+      <div className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl px-5 sm:px-8 py-8 sm:py-10">
         <div className="text-center mb-8">
           <p className="text-xs tracking-[0.25em] uppercase text-primary-700 font-semibold">Colbeef</p>
           <h1 className="font-[family-name:var(--font-display)] text-3xl text-primary-900 mt-2">

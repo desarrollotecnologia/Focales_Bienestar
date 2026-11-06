@@ -46,8 +46,8 @@ export default function ChangePasswordPage() {
   };
 
   return (
-    <div className="login-page min-h-screen flex items-center justify-center px-4">
-      <div className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl px-8 py-10">
+    <div className="login-page min-h-full flex items-center justify-center px-4 py-8">
+      <div className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl px-5 sm:px-8 py-8 sm:py-10">
         <div className="text-center mb-6">
           <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-100 text-primary-800 mb-3">
             <KeyRound size={22} />

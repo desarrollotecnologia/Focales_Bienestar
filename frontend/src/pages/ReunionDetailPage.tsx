@@ -296,6 +296,7 @@ export default function ReunionDetailPage() {
           </h3>
           <span className="text-xs text-stone-500">{hallazgos.length} filas</span>
         </div>
+        <div className="table-scroll">
         <table className="w-full text-sm">
           <thead className="bg-primary-950 text-white">
             <tr>
@@ -341,6 +342,7 @@ export default function ReunionDetailPage() {
             ))}
           </tbody>
         </table>
+        </div>
       </div>
 
       {canEdit && (

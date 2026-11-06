@@ -29,15 +29,20 @@ const C = {
 
 function filtrosTexto(f: DashboardFilters): string {
   const parts: string[] = [];
-  if (f.anio && f.mes) parts.push(`Mes: ${mesLabel(f.anio, f.mes)}`);
+  if (f.anios?.length === 1 && f.meses?.length === 1) {
+    parts.push(`Mes: ${mesLabel(f.anios[0], f.meses[0])}`);
+  } else {
+    if (f.anios?.length) parts.push(`Años: ${f.anios.join(', ')}`);
+    if (f.meses?.length) parts.push(`Meses: ${f.meses.join(', ')}`);
+  }
   if (f.fechaDesde || f.fechaHasta) {
     parts.push(`Rango: ${f.fechaDesde || '…'} → ${f.fechaHasta || '…'}`);
   }
-  if (f.cicloId) parts.push('Ciclo filtrado');
-  if (f.areaId) parts.push('Área filtrada');
-  if (f.categoriaId) parts.push('Categoría filtrada');
-  if (f.termometro) parts.push(`Termómetro: ${f.termometro}`);
-  if (f.estado) parts.push(`Estado: ${f.estado}`);
+  if (f.cicloIds?.length) parts.push(`Ciclos: ${f.cicloIds.length}`);
+  if (f.areaIds?.length) parts.push(`Áreas: ${f.areaIds.length}`);
+  if (f.categoriaIds?.length) parts.push(`Categorías: ${f.categoriaIds.length}`);
+  if (f.termometros?.length) parts.push(`Termómetro: ${f.termometros.join(', ')}`);
+  if (f.estados?.length) parts.push(`Estado: ${f.estados.join(', ')}`);
   return parts.length ? parts.join('  ·  ') : 'Sin filtros (todos los registros)';
 }
 

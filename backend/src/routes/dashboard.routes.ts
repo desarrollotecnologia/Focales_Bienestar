@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { EstadoSeguimiento, Termometro } from '@prisma/client';
 import { authenticate, denyIfMustChangePassword } from '../middleware/auth';
-import { getDashboardData, DashboardFilters } from '../services/dashboard';
+import { getDashboardData, getTendenciaHistorica, DashboardFilters } from '../services/dashboard';
 import { buildDashboardPptx } from '../services/pptxExport';
 import { mesLabel } from '../services/scoring';
 
@@ -9,26 +9,64 @@ const router = Router();
 router.use(authenticate);
 router.use(denyIfMustChangePassword);
 
-function parseFilters(query: Record<string, string | undefined>): DashboardFilters {
+function parseIdList(raw: string | string[] | undefined): string[] {
+  if (!raw) return [];
+  const parts = Array.isArray(raw) ? raw : String(raw).split(',');
+  return [...new Set(parts.map((s) => String(s).trim()).filter(Boolean))];
+}
+
+function parseNumList(raw: string | string[] | undefined): number[] {
+  return parseIdList(raw)
+    .map(Number)
+    .filter((n) => Number.isFinite(n));
+}
+
+function parseFilters(query: Record<string, string | string[] | undefined>): DashboardFilters {
+  const cicloIds = parseIdList(query.cicloIds ?? query.cicloId);
+  const areaIds = parseIdList(query.areaIds ?? query.areaId);
+  const categoriaIds = parseIdList(query.categoriaIds ?? query.categoriaId);
+  const termometros = parseIdList(query.termometros ?? query.termometro).filter((t) =>
+    ['CRITICO', 'MEDIO', 'POSITIVO'].includes(t),
+  ) as Termometro[];
+  const estados = parseIdList(query.estados ?? query.estado).filter((e) =>
+    ['ABIERTO', 'EN_PROCESO', 'CERRADO'].includes(e),
+  ) as EstadoSeguimiento[];
+
+  let anios = parseNumList(query.anios ?? query.anio);
+  let meses = parseNumList(query.meses ?? query.mes);
+
   return {
-    cicloId: query.cicloId || undefined,
-    areaId: query.areaId || undefined,
-    categoriaId: query.categoriaId || undefined,
-    termometro: (query.termometro as Termometro) || undefined,
-    estado: (query.estado as EstadoSeguimiento) || undefined,
-    fechaDesde: query.fechaDesde || undefined,
-    fechaHasta: query.fechaHasta || undefined,
-    anio: query.anio ? Number(query.anio) : undefined,
-    mes: query.mes ? Number(query.mes) : undefined,
+    cicloIds: cicloIds.length ? cicloIds : undefined,
+    areaIds: areaIds.length ? areaIds : undefined,
+    categoriaIds: categoriaIds.length ? categoriaIds : undefined,
+    termometros: termometros.length ? termometros : undefined,
+    estados: estados.length ? estados : undefined,
+    fechaDesde: typeof query.fechaDesde === 'string' ? query.fechaDesde : undefined,
+    fechaHasta: typeof query.fechaHasta === 'string' ? query.fechaHasta : undefined,
+    anios: anios.length ? anios : undefined,
+    meses: meses.length ? meses : undefined,
   };
 }
 
 router.get('/', async (req, res) => {
-  const filters = parseFilters(req.query as Record<string, string>);
+  const filters = parseFilters(req.query as Record<string, string | string[]>);
   const data = await getDashboardData(filters);
-  // No devolver hallazgos completos en dashboard (pesado); el front usa agregados
   const { hallazgos: _h, ...rest } = data;
   res.json(rest);
+});
+
+router.get('/tendencia', async (req, res) => {
+  const q = req.query as Record<string, string | string[] | undefined>;
+  const areaIds = parseIdList(q.areaIds ?? q.areaId);
+  const cicloIds = parseIdList(q.cicloIds ?? q.cicloId);
+  const data = await getTendenciaHistorica({
+    anioDesde: q.anioDesde ? Number(q.anioDesde) : undefined,
+    anioHasta: q.anioHasta ? Number(q.anioHasta) : undefined,
+    areaIds,
+    cicloIds,
+    granularidad: q.granularidad === 'semana' ? 'semana' : 'mes',
+  });
+  res.json(data);
 });
 
 router.get('/meses', async (req, res) => {
@@ -54,12 +92,16 @@ router.get('/meses', async (req, res) => {
 });
 
 router.get('/export/pptx', async (req, res) => {
-  const filters = parseFilters(req.query as Record<string, string>);
+  const filters = parseFilters(req.query as Record<string, string | string[]>);
   const data = await getDashboardData(filters);
   const buffer = await buildDashboardPptx(data);
 
   const nameParts = ['reporte-focales'];
-  if (filters.anio && filters.mes) nameParts.push(`${filters.anio}-${String(filters.mes).padStart(2, '0')}`);
+  if (filters.anios?.length === 1 && filters.meses?.length === 1) {
+    nameParts.push(`${filters.anios[0]}-${String(filters.meses[0]).padStart(2, '0')}`);
+  } else if (filters.anios?.length) {
+    nameParts.push(filters.anios.join('-'));
+  }
   const filename = `${nameParts.join('-')}.pptx`;
 
   res.setHeader(

@@ -1,5 +1,5 @@
 import { FormEvent, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { Plus, Search } from 'lucide-react';
 import api from '@/lib/api';
 import { useAuth } from '@/context/AuthContext';
@@ -19,8 +19,33 @@ const emptyForm = {
   responsableIds: [] as string[],
 };
 
+const MESES = [
+  'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+  'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre',
+];
+
+function periodoTitulo(key: string) {
+  const week = /^(\d{4})-S(\d{2})$/.exec(key);
+  if (week) return `Semana ${Number(week[2])} de ${week[1]}`;
+  const month = /^(\d{4})-(\d{2})$/.exec(key);
+  if (month) return `${MESES[Number(month[2]) - 1] || month[2]} ${month[1]}`;
+  return key;
+}
+
 export default function HallazgosPage() {
   const { canEdit } = useAuth();
+  const [searchParams] = useSearchParams();
+  const periodo = searchParams.get('periodo') || '';
+  const origen = searchParams.get('origen') || '';
+  const urlAreaId = searchParams.get('areaId') || '';
+  const urlAreaIds = searchParams.get('areaIds') || '';
+  const urlCicloIds = searchParams.get('cicloIds') || '';
+  const urlAnios = searchParams.get('anios') || '';
+  const urlMeses = searchParams.get('meses') || '';
+  const urlCategoriaIds = searchParams.get('categoriaIds') || '';
+  const urlTermometros = searchParams.get('termometros') || '';
+  const urlEstados = searchParams.get('estados') || '';
+  const desdeDashboard = Boolean(periodo || origen);
   const [items, setItems] = useState<Hallazgo[]>([]);
   const [total, setTotal] = useState(0);
   const [ciclos, setCiclos] = useState<Ciclo[]>([]);
@@ -36,9 +61,18 @@ export default function HallazgosPage() {
   const [error, setError] = useState('');
 
   const load = () => {
-    const params = new URLSearchParams({ pageSize: '100' });
+    const params = new URLSearchParams({ pageSize: desdeDashboard ? '200' : '100' });
     if (q) params.set('q', q);
-    if (cicloId) params.set('cicloId', cicloId);
+    if (periodo) params.set('periodo', periodo);
+    if (urlAnios) params.set('anios', urlAnios);
+    if (urlMeses) params.set('meses', urlMeses);
+    if (urlCategoriaIds) params.set('categoriaIds', urlCategoriaIds);
+    if (urlTermometros) params.set('termometros', urlTermometros);
+    if (urlEstados) params.set('estados', urlEstados);
+    if (urlAreaId) params.set('areaId', urlAreaId);
+    else if (urlAreaIds) params.set('areaIds', urlAreaIds);
+    if (urlCicloIds) params.set('cicloIds', urlCicloIds);
+    else if (cicloId) params.set('cicloId', cicloId);
     api.get(`/hallazgos?${params}`).then((r) => {
       setItems(r.data.items);
       setTotal(r.data.total);
@@ -56,17 +90,19 @@ export default function HallazgosPage() {
       setAreas(a.data.filter((x: Area) => x.active));
       setCategorias(cat.data);
       setResponsables(r.data);
-      const abierto = c.data.find((x: Ciclo) => x.estado === 'ABIERTO');
-      if (abierto) {
-        setCicloId(abierto.id);
-        setForm((f) => ({ ...f, cicloId: abierto.id }));
+      if (!desdeDashboard) {
+        const abierto = c.data.find((x: Ciclo) => x.estado === 'ABIERTO');
+        if (abierto) {
+          setCicloId(abierto.id);
+          setForm((f) => ({ ...f, cicloId: abierto.id }));
+        }
       }
     });
-  }, []);
+  }, [desdeDashboard]);
 
   useEffect(() => {
     load();
-  }, [cicloId]);
+  }, [cicloId, periodo, urlAreaId, urlAreaIds, urlCicloIds, urlAnios, urlMeses, urlCategoriaIds, urlTermometros, urlEstados]);
 
   const subs = categorias.find((c) => c.id === form.categoriaId)?.subcategorias || [];
 
@@ -104,7 +140,13 @@ export default function HallazgosPage() {
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <h2 className="font-[family-name:var(--font-display)] text-2xl text-primary-950">Hallazgos</h2>
-          <p className="text-sm text-stone-500">{total} registros (tabla maestra del Excel)</p>
+          <p className="text-sm text-stone-500">
+            {desdeDashboard
+              ? `${total} hallazgos${
+                  urlAreaId ? ` de ${areas.find((a) => a.id === urlAreaId)?.name || 'el área'}` : ''
+                }${periodo ? ` · ${periodoTitulo(periodo)}` : ''}`
+              : `${total} registros (tabla maestra del Excel)`}
+          </p>
         </div>
         {canEdit && (
           <button
@@ -129,6 +171,24 @@ export default function HallazgosPage() {
         <p className="text-sm text-rose-700 bg-rose-50 border border-rose-100 rounded-xl px-3 py-2">
           {error}
         </p>
+      )}
+
+      {desdeDashboard && (
+        <div className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-primary-100 bg-primary-50 px-3 py-2 text-sm text-primary-950">
+          <span>
+            {origen === 'area' ? 'Área del termómetro: ' : 'Contenido de la barra: '}
+            <strong>
+              {urlAreaId
+                ? areas.find((a) => a.id === urlAreaId)?.name || 'Área'
+                : 'Filtro actual'}
+            </strong>
+            {periodo ? ` · ${periodoTitulo(periodo)}` : ''}
+            {' · mismos filtros del dashboard'}
+          </span>
+          <Link to="/" className="font-semibold text-primary-800 hover:underline">
+            Volver al dashboard
+          </Link>
+        </div>
       )}
 
       <div className="flex flex-wrap gap-3">
@@ -225,6 +285,7 @@ export default function HallazgosPage() {
       )}
 
       <div className="ui-card bg-white border border-stone-200 rounded-2xl overflow-hidden">
+        <div className="table-scroll">
         <table className="w-full text-sm">
           <thead className="bg-primary-950 text-white">
             <tr>
@@ -258,6 +319,7 @@ export default function HallazgosPage() {
             ))}
           </tbody>
         </table>
+        </div>
       </div>
     </div>
   );

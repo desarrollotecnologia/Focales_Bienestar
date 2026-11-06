@@ -3,6 +3,7 @@ import { EstadoSeguimiento, Prisma, Termometro } from '@prisma/client';
 import { prisma } from '../lib/prisma';
 import { authenticate, denyIfMustChangePassword, requireRole } from '../middleware/auth';
 import { puntosTermometro } from '../services/scoring';
+import { periodoBounds } from '../services/dashboard';
 import { paramId } from '../utils/params';
 
 const router = Router();
@@ -32,26 +33,103 @@ router.get('/', async (req, res) => {
     fechaHasta,
     anio,
     mes,
+    periodo,
+    areaIds,
+    cicloIds,
+    categoriaIds,
+    termometros,
+    estados,
+    anios,
+    meses,
     page = '1',
     pageSize = '50',
   } = req.query as Record<string, string>;
 
   const where: Prisma.HallazgoWhereInput = {};
-  if (cicloId) where.cicloId = cicloId;
+  const ciclos = (cicloIds || cicloId || '')
+    .split(',')
+    .map((s) => s.trim())
+    .filter(Boolean);
+  if (ciclos.length === 1) where.cicloId = ciclos[0];
+  else if (ciclos.length > 1) where.cicloId = { in: ciclos };
   if (sesionId) where.sesionId = sesionId;
-  if (areaId) where.areaId = areaId;
-  if (categoriaId) where.categoriaId = categoriaId;
-  if (termometro) where.termometro = termometro as Termometro;
-  if (estado) where.estadoSeguimiento = estado as EstadoSeguimiento;
+  const areas = (areaIds || areaId || '')
+    .split(',')
+    .map((s) => s.trim())
+    .filter(Boolean);
+  if (areas.length === 1) where.areaId = areas[0];
+  else if (areas.length > 1) where.areaId = { in: areas };
+  const categorias = (categoriaIds || categoriaId || '')
+    .split(',')
+    .map((s) => s.trim())
+    .filter(Boolean);
+  if (categorias.length === 1) where.categoriaId = categorias[0];
+  else if (categorias.length > 1) where.categoriaId = { in: categorias };
+
+  const terms = (termometros || termometro || '')
+    .split(',')
+    .map((s) => s.trim())
+    .filter((t) => ['CRITICO', 'MEDIO', 'POSITIVO'].includes(t)) as Termometro[];
+  if (terms.length === 1) where.termometro = terms[0];
+  else if (terms.length > 1) where.termometro = { in: terms };
+
+  const estadosList = (estados || estado || '')
+    .split(',')
+    .map((s) => s.trim())
+    .filter((e) => ['ABIERTO', 'EN_PROCESO', 'CERRADO'].includes(e)) as EstadoSeguimiento[];
+  if (estadosList.length === 1) where.estadoSeguimiento = estadosList[0];
+  else if (estadosList.length > 1) where.estadoSeguimiento = { in: estadosList };
+
   if (q) {
-    where.OR = [
-      { observacion: { contains: q } },
-      { compromiso: { contains: q } },
-      { avances: { contains: q } },
+    where.AND = [
+      ...(Array.isArray(where.AND) ? where.AND : where.AND ? [where.AND] : []),
+      {
+        OR: [
+          { observacion: { contains: q } },
+          { compromiso: { contains: q } },
+          { avances: { contains: q } },
+        ],
+      },
     ];
   }
 
-  if (anio && mes) {
+  const anioNums = (anios || '')
+    .split(',')
+    .map((s) => s.trim())
+    .filter(Boolean)
+    .map(Number)
+    .filter((n) => Number.isFinite(n) && n > 1900);
+  const mesNums = (meses || '')
+    .split(',')
+    .map((s) => Number(s.trim()))
+    .filter((n) => n >= 1 && n <= 12);
+
+  const bounds = periodo ? periodoBounds(periodo) : null;
+  if (bounds) {
+    where.fecha = { gte: bounds.gte, lte: bounds.lte };
+  } else if (anioNums.length || mesNums.length) {
+    const years = anioNums.length ? anioNums : [2024, 2025, 2026, 2027];
+    const months = mesNums.length ? mesNums : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+    const ranges = years.flatMap((y) =>
+      (mesNums.length ? months : [0]).map((m) =>
+        m === 0
+          ? {
+              fecha: {
+                gte: new Date(Date.UTC(y, 0, 1)),
+                lte: new Date(Date.UTC(y, 11, 31, 23, 59, 59)),
+              },
+            }
+          : {
+              fecha: {
+                gte: new Date(Date.UTC(y, m - 1, 1)),
+                lte: new Date(Date.UTC(y, m, 0, 23, 59, 59)),
+              },
+            },
+      ),
+    );
+    if (ranges.length === 1) Object.assign(where, ranges[0]);
+    else where.AND = [...(Array.isArray(where.AND) ? where.AND : []), { OR: ranges }];
+  } else if (anio && mes) {
     const y = Number(anio);
     const m = Number(mes);
     where.fecha = {

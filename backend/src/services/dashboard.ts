@@ -1,32 +1,76 @@
 import { Prisma, EstadoSeguimiento, Termometro } from '@prisma/client';
 import { prisma } from '../lib/prisma';
-import { estadoAreaDesdePromedio } from './scoring';
+import { estadoAreaDesdePromedio, mesLabel } from './scoring';
 
 export interface DashboardFilters {
-  cicloId?: string;
-  areaId?: string;
-  categoriaId?: string;
-  termometro?: Termometro;
-  estado?: EstadoSeguimiento;
+  cicloIds?: string[];
+  areaIds?: string[];
+  categoriaIds?: string[];
+  termometros?: Termometro[];
+  estados?: EstadoSeguimiento[];
   fechaDesde?: string;
   fechaHasta?: string;
-  anio?: number;
-  mes?: number;
+  anios?: number[];
+  meses?: number[];
+}
+
+function applyIn<T extends string>(
+  where: Prisma.HallazgoWhereInput,
+  key: 'cicloId' | 'areaId' | 'categoriaId',
+  ids?: string[],
+) {
+  if (!ids?.length) return;
+  if (ids.length === 1) (where as Record<string, unknown>)[key] = ids[0];
+  else (where as Record<string, unknown>)[key] = { in: ids };
 }
 
 function buildWhere(f: DashboardFilters): Prisma.HallazgoWhereInput {
   const where: Prisma.HallazgoWhereInput = {};
 
-  if (f.cicloId) where.cicloId = f.cicloId;
-  if (f.areaId) where.areaId = f.areaId;
-  if (f.categoriaId) where.categoriaId = f.categoriaId;
-  if (f.termometro) where.termometro = f.termometro;
-  if (f.estado) where.estadoSeguimiento = f.estado;
+  applyIn(where, 'cicloId', f.cicloIds);
+  applyIn(where, 'areaId', f.areaIds);
+  applyIn(where, 'categoriaId', f.categoriaIds);
 
-  if (f.anio && f.mes) {
-    const start = new Date(Date.UTC(f.anio, f.mes - 1, 1));
-    const end = new Date(Date.UTC(f.anio, f.mes, 0));
-    where.fecha = { gte: start, lte: end };
+  if (f.termometros?.length === 1) where.termometro = f.termometros[0];
+  else if (f.termometros && f.termometros.length > 1) where.termometro = { in: f.termometros };
+
+  if (f.estados?.length === 1) where.estadoSeguimiento = f.estados[0];
+  else if (f.estados && f.estados.length > 1) where.estadoSeguimiento = { in: f.estados };
+
+  const anios = (f.anios || []).filter((n) => Number.isFinite(n));
+  const meses = (f.meses || []).filter((n) => n >= 1 && n <= 12);
+
+  if (anios.length && meses.length) {
+    const ranges = anios.flatMap((y) =>
+      meses.map((m) => ({
+        fecha: {
+          gte: new Date(Date.UTC(y, m - 1, 1)),
+          lte: new Date(Date.UTC(y, m, 0, 23, 59, 59)),
+        },
+      })),
+    );
+    if (ranges.length === 1) Object.assign(where, ranges[0]);
+    else where.OR = ranges;
+  } else if (anios.length) {
+    const ranges = anios.map((y) => ({
+      fecha: {
+        gte: new Date(Date.UTC(y, 0, 1)),
+        lte: new Date(Date.UTC(y, 11, 31, 23, 59, 59)),
+      },
+    }));
+    if (ranges.length === 1) Object.assign(where, ranges[0]);
+    else where.OR = ranges;
+  } else if (meses.length) {
+    // Sin año: buscar esos meses en un rango amplio (últimos años típicos)
+    const years = [2024, 2025, 2026, 2027];
+    where.OR = years.flatMap((y) =>
+      meses.map((m) => ({
+        fecha: {
+          gte: new Date(Date.UTC(y, m - 1, 1)),
+          lte: new Date(Date.UTC(y, m, 0, 23, 59, 59)),
+        },
+      })),
+    );
   } else if (f.fechaDesde || f.fechaHasta) {
     where.fecha = {};
     if (f.fechaDesde) where.fecha.gte = new Date(f.fechaDesde);
@@ -81,9 +125,12 @@ export async function getDashboardData(filters: DashboardFilters) {
     porArea.set(h.areaId, cur);
   }
 
-  // Todas las áreas activas (si el filtro no fija un área); las sin hallazgos quedan en 0
-  const areasCatalogo = filters.areaId
-    ? await prisma.area.findMany({ where: { id: filters.areaId }, orderBy: { sortOrder: 'asc' } })
+  // Todas las áreas activas (o solo las filtradas); las sin hallazgos quedan en 0
+  const areasCatalogo = filters.areaIds?.length
+    ? await prisma.area.findMany({
+        where: { id: { in: filters.areaIds } },
+        orderBy: { sortOrder: 'asc' },
+      })
     : await prisma.area.findMany({ where: { active: true }, orderBy: [{ sortOrder: 'asc' }, { name: 'asc' }] });
 
   for (const a of areasCatalogo) {
@@ -104,7 +151,13 @@ export async function getDashboardData(filters: DashboardFilters) {
       };
     }),
   );
-  termometroAreas.sort((a, b) => a.area.localeCompare(b.area));
+  termometroAreas.sort((a, b) => {
+    const aSin = a.hallazgos === 0;
+    const bSin = b.hallazgos === 0;
+    if (aSin !== bSin) return aSin ? 1 : -1;
+    if (a.calificacion !== b.calificacion) return a.calificacion - b.calificacion;
+    return a.area.localeCompare(b.area);
+  });
 
   // Promedio solo con áreas que sí tienen hallazgos en el filtro
   const areasConDatos = termometroAreas.filter((a) => a.hallazgos > 0);
@@ -124,12 +177,21 @@ export async function getDashboardData(filters: DashboardFilters) {
     total: number;
   } | null = null;
 
-  if (filters.anio && filters.mes) {
+  const aniosSel = (filters.anios || []).slice().sort();
+  const mesesSel = (filters.meses || []).slice().sort((a, b) => a - b);
+  if (aniosSel.length === 1 && mesesSel.length === 1) {
+    const y = aniosSel[0];
+    const m = mesesSel[0];
     const prevWhere: Prisma.HallazgoWhereInput = {
-      ...buildWhere({ ...filters, anio: undefined, mes: undefined, fechaDesde: undefined, fechaHasta: undefined }),
-      fecha: { lt: new Date(Date.UTC(filters.anio, filters.mes - 1, 1)) },
+      ...buildWhere({
+        ...filters,
+        anios: undefined,
+        meses: undefined,
+        fechaDesde: undefined,
+        fechaHasta: undefined,
+      }),
+      fecha: { lt: new Date(Date.UTC(y, m - 1, 1)) },
     };
-    if (filters.cicloId) prevWhere.cicloId = filters.cicloId;
 
     const previos = await prisma.hallazgo.groupBy({
       by: ['estadoSeguimiento'],
@@ -195,5 +257,267 @@ export async function getDashboardData(filters: DashboardFilters) {
 }
 
 export async function getResumenMensual(anio: number, mes: number, cicloId?: string) {
-  return getDashboardData({ anio, mes, cicloId });
+  return getDashboardData({
+    anios: [anio],
+    meses: [mes],
+    cicloIds: cicloId ? [cicloId] : undefined,
+  });
+}
+
+export interface TendenciaFilters {
+  anioDesde?: number;
+  anioHasta?: number;
+  /** Una o varias áreas; vacío = todas */
+  areaIds?: string[];
+  /** Uno o varios ciclos; vacío = todos */
+  cicloIds?: string[];
+  /** mes (default) | semana */
+  granularidad?: 'mes' | 'semana';
+}
+
+function periodKey(fecha: Date, granularidad: 'mes' | 'semana'): string {
+  const y = fecha.getUTCFullYear();
+  const m = fecha.getUTCMonth() + 1;
+  if (granularidad === 'semana') {
+    // Semana ISO aproximada por UTC (lunes = inicio)
+    const tmp = new Date(Date.UTC(y, fecha.getUTCMonth(), fecha.getUTCDate()));
+    const day = tmp.getUTCDay() || 7;
+    tmp.setUTCDate(tmp.getUTCDate() + 4 - day);
+    const yearStart = new Date(Date.UTC(tmp.getUTCFullYear(), 0, 1));
+    const week = Math.ceil(((tmp.getTime() - yearStart.getTime()) / 86400000 + 1) / 7);
+    return `${tmp.getUTCFullYear()}-S${String(week).padStart(2, '0')}`;
+  }
+  return `${y}-${String(m).padStart(2, '0')}`;
+}
+
+/** Rango UTC que agrupa la misma clave que usa la gráfica (2026-07 o 2026-S29). */
+export function periodoBounds(key: string): { gte: Date; lte: Date } | null {
+  const month = /^(\d{4})-(\d{2})$/.exec(key);
+  if (month) {
+    const y = Number(month[1]);
+    const m = Number(month[2]);
+    if (m < 1 || m > 12) return null;
+    return {
+      gte: new Date(Date.UTC(y, m - 1, 1)),
+      lte: new Date(Date.UTC(y, m, 0, 23, 59, 59, 999)),
+    };
+  }
+  const week = /^(\d{4})-S(\d{2})$/.exec(key);
+  if (week) {
+    const y = Number(week[1]);
+    const w = Number(week[2]);
+    if (w < 1 || w > 53) return null;
+    const jan4 = new Date(Date.UTC(y, 0, 4));
+    const day = jan4.getUTCDay() || 7;
+    const monday = new Date(jan4);
+    monday.setUTCDate(jan4.getUTCDate() - day + 1 + (w - 1) * 7);
+    const end = new Date(monday);
+    end.setUTCDate(monday.getUTCDate() + 6);
+    end.setUTCHours(23, 59, 59, 999);
+    return { gte: monday, lte: end };
+  }
+  return null;
+}
+
+function periodLabel(key: string, granularidad: 'mes' | 'semana'): string {
+  if (granularidad === 'semana') {
+    const [y, s] = key.split('-');
+    return `${s}/${y.slice(2)}`;
+  }
+  const [y, m] = key.split('-').map(Number);
+  return mesLabel(y, m);
+}
+
+export async function getTendenciaHistorica(filters: TendenciaFilters) {
+  const granularidad = filters.granularidad === 'semana' ? 'semana' : 'mes';
+  const now = new Date();
+  const anioHasta = filters.anioHasta ?? now.getUTCFullYear();
+  const anioDesde = filters.anioDesde ?? anioHasta;
+
+  const areaIds = (filters.areaIds || []).filter(Boolean);
+  const cicloIds = (filters.cicloIds || []).filter(Boolean);
+
+  const where: Prisma.HallazgoWhereInput = {
+    fecha: {
+      gte: new Date(Date.UTC(anioDesde, 0, 1)),
+      lte: new Date(Date.UTC(anioHasta, 11, 31, 23, 59, 59)),
+    },
+  };
+  if (cicloIds.length === 1) where.cicloId = cicloIds[0];
+  else if (cicloIds.length > 1) where.cicloId = { in: cicloIds };
+  if (areaIds.length === 1) where.areaId = areaIds[0];
+  else if (areaIds.length > 1) where.areaId = { in: areaIds };
+
+  const hallazgos = await prisma.hallazgo.findMany({
+    where,
+    select: {
+      fecha: true,
+      calificacion: true,
+      areaId: true,
+      area: { select: { id: true, name: true } },
+    },
+    orderBy: { fecha: 'asc' },
+  });
+
+  type Bucket = {
+    key: string;
+    suma: number;
+    n: number;
+    porArea: Map<string, { areaId: string; area: string; suma: number; n: number }>;
+  };
+
+  const buckets = new Map<string, Bucket>();
+
+  for (const h of hallazgos) {
+    const key = periodKey(new Date(h.fecha), granularidad);
+    let b = buckets.get(key);
+    if (!b) {
+      b = { key, suma: 0, n: 0, porArea: new Map() };
+      buckets.set(key, b);
+    }
+    b.suma += h.calificacion;
+    b.n += 1;
+    const a = b.porArea.get(h.areaId) || {
+      areaId: h.areaId,
+      area: h.area.name,
+      suma: 0,
+      n: 0,
+    };
+    a.suma += h.calificacion;
+    a.n += 1;
+    b.porArea.set(h.areaId, a);
+  }
+
+  const periodos = [...buckets.values()]
+    .sort((a, b) => a.key.localeCompare(b.key))
+    .map((b) => {
+      const promedio = b.n ? Math.round((b.suma / b.n) * 100) / 100 : 0;
+      const areas = [...b.porArea.values()]
+        .map((a) => ({
+          areaId: a.areaId,
+          area: a.area,
+          promedio: Math.round((a.suma / a.n) * 100) / 100,
+          hallazgos: a.n,
+        }))
+        .sort((x, y) => x.area.localeCompare(y.area));
+      return {
+        key: b.key,
+        label: periodLabel(b.key, granularidad),
+        promedio,
+        hallazgos: b.n,
+        areas,
+      };
+    });
+
+  // Series: General + áreas con datos (máx. 6 si no hay filtro de área)
+  const areaNames = new Map<string, string>();
+  for (const p of periodos) {
+    for (const a of p.areas) areaNames.set(a.areaId, a.area);
+  }
+
+  const seriesIds =
+    areaIds.length > 0
+      ? areaIds.filter((id) => areaNames.has(id))
+      : [...areaNames.entries()]
+          .sort((a, b) => a[1].localeCompare(b[1]))
+          .map(([id]) => id);
+
+  const series = [
+    {
+      id: 'general',
+      nombre: 'General',
+      puntos: periodos.map((p) => ({
+        key: p.key,
+        label: p.label,
+        valor: p.promedio,
+        hallazgos: p.hallazgos,
+      })),
+    },
+    ...seriesIds.map((id) => ({
+      id,
+      nombre: areaNames.get(id) || id,
+      puntos: periodos.map((p) => {
+        const a = p.areas.find((x) => x.areaId === id);
+        return {
+          key: p.key,
+          label: p.label,
+          valor: a?.promedio ?? null,
+          hallazgos: a?.hallazgos ?? 0,
+        };
+      }),
+    })),
+  ];
+
+  const primero = periodos[0];
+  const ultimo = periodos[periodos.length - 1];
+  let evolucion: {
+    desde: string;
+    hasta: string;
+    promedioInicial: number;
+    promedioActual: number;
+    delta: number;
+    tendencia: 'mejoro' | 'empeoro' | 'estable' | 'sin_datos';
+  } | null = null;
+
+  if (primero && ultimo) {
+    const delta = Math.round((ultimo.promedio - primero.promedio) * 100) / 100;
+    evolucion = {
+      desde: primero.label,
+      hasta: ultimo.label,
+      promedioInicial: primero.promedio,
+      promedioActual: ultimo.promedio,
+      delta,
+      tendencia: Math.abs(delta) < 0.5 ? 'estable' : delta > 0 ? 'mejoro' : 'empeoro',
+    };
+  }
+
+  // Comparativo por área: primer periodo con datos vs último
+  const areasEvolucion = [...areaNames.entries()]
+    .map(([areaId, area]) => {
+      const conDatos = periodos
+        .map((p) => p.areas.find((a) => a.areaId === areaId))
+        .filter(Boolean) as { promedio: number; hallazgos: number }[];
+      if (conDatos.length < 1) {
+        return {
+          areaId,
+          area,
+          promedioInicial: null as number | null,
+          promedioActual: null as number | null,
+          delta: null as number | null,
+          tendencia: 'sin_datos' as const,
+        };
+      }
+      const ini = conDatos[0].promedio;
+      const act = conDatos[conDatos.length - 1].promedio;
+      const delta = Math.round((act - ini) * 100) / 100;
+      return {
+        areaId,
+        area,
+        promedioInicial: ini,
+        promedioActual: act,
+        delta,
+        tendencia:
+          Math.abs(delta) < 0.5
+            ? ('estable' as const)
+            : delta > 0
+              ? ('mejoro' as const)
+              : ('empeoro' as const),
+      };
+    })
+    .sort((a, b) => a.area.localeCompare(b.area));
+
+  return {
+    filtros: {
+      anioDesde,
+      anioHasta,
+      areaIds,
+      cicloIds,
+      granularidad,
+    },
+    periodos,
+    series,
+    evolucion,
+    areasEvolucion,
+    totalHallazgos: hallazgos.length,
+  };
 }
